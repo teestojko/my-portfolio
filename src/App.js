@@ -15,11 +15,12 @@ function App() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // 3秒ごとに画像切り替え
+      setCurrentIndex(prevIndex => (prevIndex + 1) % images.length);
+    }, 3000);
 
-    return () => clearInterval(interval); // クリーンアップ
-  }, []);
+    return () => clearInterval(interval);
+  }, [images.length]); // 依存配列に images.length を追加
+
 
   return (
     <div className="portfolio">
