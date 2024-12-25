@@ -21,7 +21,7 @@
     overflow-y: auto; /* 縦スクロールを許可 */
 }
 
-.image-container img {
+.image-container-img {
     position: absolute;
     top: 0;
     left: 0;
@@ -31,7 +31,7 @@
     transition: opacity 2s ease-out, transform 2s ease-out;
 }
 
-.image-container img.active {
+.image-container-img.active {
     opacity: 1;
     transform: translateY(0);
 }
