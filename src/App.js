@@ -3,7 +3,6 @@ import LightEffects from "./LightEffects";
 import "./App.css";
 
 function App() {
-  const currentIndex = useImageChanger(images, 3000);
   const images = [
     "/images/underwater.jpg",
     "/images/sky.jpg",
@@ -13,6 +12,7 @@ function App() {
     { comment: "共に新たな創造を...", credit: "Photo by Sam Schooler on Unsplash" },
   ];
 
+  const { currentImage, currentText } = useImageChanger(images, texts, 3000);
 
   return (
     <div className="portfolio">
