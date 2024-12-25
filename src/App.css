@@ -28,21 +28,19 @@ body{
     overflow-y: auto; /* 縦スクロールを許可 */
 }
 
-.portfolio img {
+.image-container img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 3s ease-in-out;
-    z-index: 1; /* 画像を背景よりも上に配置 */
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-.portfolio img.active {
+.image-container img.active {
     opacity: 1;
-    transition: opacity 3s ease-in-out;
-    z-index: 1; /* 画像を背景よりも上に配置 */
+    transform: translateY(0);
 }
 
 .text-overlay {
