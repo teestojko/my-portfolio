@@ -30,8 +30,8 @@ function App() {
         {images.map((src, index) => (
           <img
             key={index}
-            src={src}
-            alt={`Image ${index}`}
+            src={images[index].src}
+            alt={images[index].alt}
             className={index === currentIndex ? "active" : ""}
           />
         ))}
