@@ -12,7 +12,7 @@ function App() {
     { comment: "共に新たな創造を...", credit: "Photo by Sam Schooler on Unsplash" },
   ];
 
-  const { currentImage, currentText } = useImageChanger(images, texts, 3000);
+  const { currentImage, currentText, currentIndex } = useImageChanger(images, texts, 3000);
 
   return (
     <div className="portfolio">
