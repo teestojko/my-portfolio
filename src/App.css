@@ -28,19 +28,28 @@ body{
     overflow-y: auto; /* 縦スクロールを許可 */
 }
 
-.portfolio img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    z-index: 1; /* 画像を背景よりも上に配置 */
+.image-container img {
+  opacity: 0; /* 初期状態は透明 */
+  transition: opacity 2s ease-in-out; /* 2秒間のトランジション */
 }
 
-.portfolio img.active {
-    opacity: 1;
+.image-container img.active {
+  opacity: 1; /* 表示状態 */
+}
+
+.image-container {
+  position: relative;
+  width: 100%; /* 必要に応じて調整 */
+  height: 100%; /* 必要に応じて調整 */
+  overflow: hidden;
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* 必要に応じて調整 */
+  height: auto; /* 必要に応じて調整 */
 }
 
 .text-overlay {
