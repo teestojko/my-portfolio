@@ -1,4 +1,4 @@
-import { useImageChanger } from "./utils/changeImage";
+import useImageChanger from "./utils/changeImage";
 import LightEffects from "./LightEffects";
 import "./App.css";
 
