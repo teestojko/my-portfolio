@@ -30,8 +30,8 @@ function App() {
         {images.map((src, index) => (
           <img
             key={index}
-            src={images[index].src}
-            alt={images[index].alt}
+            src={src} // 直接 src を使用
+            alt={`Image ${index + 1}`} // 任意の alt テキスト
             className={index === currentIndex ? "active" : ""}
           />
         ))}
