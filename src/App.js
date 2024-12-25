@@ -20,7 +20,7 @@ function App() {
         <div className="image-container">
           <img src={currentImage} alt="Portfolio" className="active" />
         </div>
-        <div className="text-overlay active">
+        <div className="text-overlay">
           <div className="portfolio_comment">{currentText.comment}</div>
           <div className="image_credit">{currentText.credit}</div>
         </div>
