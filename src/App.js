@@ -5,8 +5,8 @@ import "./App.css";
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
-    { src: "/images/underwater.jpg" },
-    { src: "/images/sky.jpg" },
+    "/images/underwater.jpg",
+    "/images/sky.jpg",
   ];
   const texts = [
     { comment: "今よりも\nより良い明日へ", credit: "Photo by Cristian Palmer on Unsplash" },
@@ -25,17 +25,7 @@ function App() {
   return (
     <div className="portfolio">
       <div className="portfolio_inner">
-        {/* <img src={images[currentIndex]} alt="Portfolio" className="active" /> */}
-        <div className="image-container">
-        {images.map((src, index) => (
-          <img
-            key={index}
-            src={images.src}
-            alt=""
-            className={index === currentIndex ? "active" : ""}
-          />
-        ))}
-    </div>
+        <img src={images[currentIndex]} alt="Portfolio" className="active" />
         <div className="text-overlay active">
           <div className="portfolio_comment">{texts[currentIndex].comment}</div>
           <div className="image_credit">{texts[currentIndex].credit}</div>
