@@ -5,8 +5,8 @@ import "./App.css";
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
-    "images/underwater.jpg",
-    "images/sky.jpg",
+    { src: "/images/underwater.jpg" },
+    { src: "/images/sky.jpg" },
   ];
   const texts = [
     { comment: "今よりも\nより良い明日へ", credit: "Photo by Cristian Palmer on Unsplash" },
@@ -30,7 +30,7 @@ function App() {
         {images.map((src, index) => (
           <img
             key={index}
-            src={images[index].src}
+            src={images.src}
             alt=""
             className={index === currentIndex ? "active" : ""}
           />
