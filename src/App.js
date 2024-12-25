@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useImageChanger } from "./utils/changeImage";
 import LightEffects from "./LightEffects";
 import "./App.css";
 
 function App() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const currentIndex = useImageChanger(images, 3000);
   const images = [
     "/images/underwater.jpg",
     "/images/sky.jpg",
@@ -13,25 +13,17 @@ function App() {
     { comment: "共に新たな創造を...", credit: "Photo by Sam Schooler on Unsplash" },
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex(prevIndex => (prevIndex + 1) % images.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [images.length]); // 依存配列に images.length を追加
-
 
   return (
     <div className="portfolio">
       <div className="portfolio_inner">
-        <img src={images[currentIndex]} alt="Portfolio" className="active" />
-        <div className="text-overlay active">
-          <div className="portfolio_comment">{texts[currentIndex].comment}</div>
-          <div className="image_credit">{texts[currentIndex].credit}</div>
+        <div className="image-container">
+          <img src={currentImage} alt="Portfolio" className="active" />
         </div>
-
-        {/* 光のエフェクトを追加 */}
+        <div className="text-overlay active">
+          <div className="portfolio_comment">{currentText.comment}</div>
+          <div className="image_credit">{currentText.credit}</div>
+        </div>
         <LightEffects />
 
         <div className="custom-background">
