@@ -18,7 +18,7 @@ function App() {
     <div className="portfolio">
       <div className="portfolio_inner">
         <div className="image-container">
-          <img src={currentImage} alt="Portfolio" className="active" />
+          <img src={currentImage} alt="Portfolio" className={currentIndex === 0 ? 'active' : ''} />
         </div>
         <div className="text-overlay active">
           <div className="portfolio_comment">{currentText.comment}</div>
