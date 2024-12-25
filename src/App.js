@@ -18,8 +18,18 @@ function App() {
     <div className="portfolio">
       <div className="portfolio_inner">
         <div className="image-container">
-          <img src={currentImage} alt="Portfolio" className="image-container-img" />
+          {images.map((image, index) => (
+            <img 
+              key={index} 
+              src={image} 
+              alt="Portfolio" 
+              className={`image-container-img ${currentIndex === index ? 'active' : ''}`} 
+            />
+          ))}
         </div>
+        {/* <div className="image-container">
+          <img src={currentImage} alt="Portfolio" className="image-container-img" />
+        </div> */}
         <div className="text-overlay active">
           <div className="portfolio_comment">{currentText.comment}</div>
           <div className="image_credit">{currentText.credit}</div>
