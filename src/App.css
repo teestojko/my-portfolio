@@ -185,7 +185,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-20px); /* 上に移動 */
+    transform: translateY(-500px); /* 上に移動 */
   }
   100% {
     transform: translateY(0); /* 元に戻る */
@@ -207,9 +207,9 @@
         transform: translateY(0);
     }
     50% {
-        transform: translateY(var(--random-move-y, -20px)) 
-        translateX(var(--random-move-x, 0px)) 
-        scale(var(--random-scale, 1.2));
+        transform: translateY(var(--random-move-y, -500px)) 
+        translateX(var(--random-move-x, 500px)) 
+        scale(var(--random-scale, 5));
     }
 }
 
