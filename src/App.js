@@ -24,7 +24,9 @@ function App() {
           stroke: randomColor,
           width: '100%', // SVGの幅を親要素に合わせる
           display: 'block', // 横方向のスペースを使わない
-          '--random-move': `${randomTranslateY}px`, // CSS変数でランダムな移動幅を渡す
+          '--random-move-y': `${randomTranslateY}px`, // CSS変数でランダムな上下移動幅を渡す
+          '--random-move-x': `${randomTranslateX}px`, // CSS変数でランダムな左右移動幅を渡す
+          '--random-scale': randomScale, // CSS変数でランダムなスケールを渡す
         }}
         viewBox="0 0 1440 320"
         xmlns="http://www.w3.org/2000/svg"
