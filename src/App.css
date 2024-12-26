@@ -207,7 +207,9 @@
         transform: translateY(0);
     }
     50% {
-        transform: translateY(var(--random-move, -20px)); /* ランダムな上下移動 */
+        transform: translateY(var(--random-move-y, -20px)) 
+        translateX(var(--random-move-x, 0px)) 
+        scale(var(--random-scale, 1.2));
     }
 }
 

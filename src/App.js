@@ -9,7 +9,9 @@ function App() {
     const randomDelay = Math.random() * 5; // 0〜5秒の遅延
     const randomHeight = Math.random() * 100; // 0〜100pxの高さ
     const randomColor = `hsl(${Math.random() * 360}, 70%, 80%)`; // ランダムな色
-    const randomTranslateY = Math.random() * 300 + 10; // 10px〜40pxのランダムな上下移動幅
+    const randomTranslateY = Math.random() * 30 + 10; // 10px〜40pxのランダムな上下移動幅
+    const randomTranslateX = Math.random() * 50 - 25; // -25px〜25pxのランダムな左右移動幅
+    const randomScale = Math.random() * 0.5 + 0.8;
 
     waves.push(
       <svg
