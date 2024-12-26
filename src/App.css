@@ -207,7 +207,7 @@
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-20px);
+        transform: translateY(var(--random-move, -20px)); /* ランダムな上下移動 */
     }
 }
 
