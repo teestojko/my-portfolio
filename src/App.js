@@ -31,9 +31,9 @@ function App() {
 
     // ランダムな位置に移動させるための関数
     const moveCubeRandomly = () => {
-      const maxX = window.innerWidth / 2 - 1;  // 画面の端から1単位以内に収める
-      const maxY = window.innerHeight / 2 - 1;  // 画面の端から1単位以内に収める
-      const maxZ = 5;  // カメラとの距離を考慮して制限
+      const maxX = 2;  // 画面内に収めるための最大x軸範囲
+      const maxY = 2;  // 画面内に収めるための最大y軸範囲
+      const maxZ = 3;  // 画面内に収めるための最大z軸範囲
 
       // x, y, z軸でランダムな位置を設定
       targetPositionRef.current.x = Math.random() * 2 * maxX - maxX;  // x軸でランダム (-maxXからmaxX)
