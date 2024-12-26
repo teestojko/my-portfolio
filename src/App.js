@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from "react";
 import * as THREE from "three";
 import "./App.css";
 
-
 function App() {
   const sceneRef = useRef(null);
   const cubeRef = useRef(null);  // キューブへの参照を保持
@@ -32,16 +31,21 @@ function App() {
 
     // ランダムな位置に移動させるための関数
     const moveCubeRandomly = () => {
-      targetPositionRef.current.x = Math.random() * 10 - 5;  // x軸でランダムに位置を変更 (-5から5)
-      targetPositionRef.current.y = Math.random() * 10 - 5;  // y軸でランダムに位置を変更
-      targetPositionRef.current.z = Math.random() * 10 - 5;  // z軸でランダムに位置を変更
+      const maxX = window.innerWidth / 2 - 1;  // 画面の端から1単位以内に収める
+      const maxY = window.innerHeight / 2 - 1;  // 画面の端から1単位以内に収める
+      const maxZ = 5;  // カメラとの距離を考慮して制限
+
+      // x, y, z軸でランダムな位置を設定
+      targetPositionRef.current.x = Math.random() * 2 * maxX - maxX;  // x軸でランダム (-maxXからmaxX)
+      targetPositionRef.current.y = Math.random() * 2 * maxY - maxY;  // y軸でランダム (-maxYからmaxY)
+      targetPositionRef.current.z = Math.random() * 2 * maxZ - maxZ;  // z軸でランダム (-maxZからmaxZ)
     };
 
     // 目標位置に向かってスムーズに移動させるための補間
     const smoothMove = () => {
       if (cubeRef.current) {
         // 現在の位置から目標位置に向かってスムーズに移動
-        cubeRef.current.position.lerp(targetPositionRef.current, 0.1); // 0.1は補間のスピード
+        cubeRef.current.position.lerp(targetPositionRef.current, 1); // 0.1は補間のスピード
       }
     };
 
