@@ -47,7 +47,7 @@ function App() {
       <div className="portfolio_inner">
         <div className="text-overlay active">
           <div className="portfolio_comment">
-            {currentText.comment}
+            {currentText.texts}
           </div>
         </div>
         < LightEffects />
