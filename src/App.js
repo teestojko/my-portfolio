@@ -34,9 +34,6 @@ function App() {
       camera.position.x = mouseX * 5;
       camera.position.y = -mouseY * 5;
 
-      // キューブの回転
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
     };
 
     // マウスムーブイベントリスナーの追加
@@ -45,6 +42,10 @@ function App() {
     // アニメーションループ
     const animate = () => {
       requestAnimationFrame(animate);
+
+      // キューブの回転
+      cube.rotation.x += 0.01;
+      cube.rotation.y += 0.01;
 
       // カメラを再レンダリング
       renderer.render(scene, camera);
