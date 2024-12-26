@@ -19,6 +19,8 @@ function App() {
           animationDelay: `${randomDelay}s`,
           top: `${randomHeight}%`,
           stroke: randomColor,
+          width: '100%', // SVGの幅を親要素に合わせる
+          display: 'block', // 横方向のスペースを使わない
         }}
         viewBox="0 0 1440 320"
         xmlns="http://www.w3.org/2000/svg"
