@@ -61,7 +61,7 @@ function App() {
           </div>
         </div>
 
-        <div className="extra-content hidden">
+        <div className={`extra-content ${currentIndex === 0 ? "visible" : "hidden"}`}>
           {generateWaves(5)} {/* ランダムに動く波線を5つ生成 */}
         </div>
       </div>
