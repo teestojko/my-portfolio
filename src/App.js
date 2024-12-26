@@ -4,8 +4,8 @@ import "./App.css";
 
 function App() {
   const texts = [
-    { comment: "今よりも\nより良い明日へ", credit: "Photo by Cristian Palmer on Unsplash" },
-    { comment: "共に新たな創造を...", credit: "Photo by Sam Schooler on Unsplash" },
+    { comment: "今よりも\nより良い明日へ" },
+    { comment: "共に新たな創造を..." },
   ];
 
   const { currentText , currentIndex } = useImageChanger( texts, 3000 );
@@ -47,7 +47,7 @@ function App() {
       <div className="portfolio_inner">
         <div className="text-overlay active">
           <div className="portfolio_comment">
-            {currentText.texts}
+            {currentText.comment}
           </div>
         </div>
         < LightEffects />
