@@ -1,4 +1,4 @@
-import LightEffects from "./LightEffects";
+// import LightEffects from "./LightEffects";
 import "./App.css";
 
 function App() {
@@ -38,12 +38,12 @@ function App() {
   return (
     <div className="portfolio">
       <div className="portfolio_inner">
-        <div className="text-overlay active">
+        {/* <div className="text-overlay active">
           <div className="portfolio_comment">
             {currentText.comment}
           </div>
         </div>
-        < LightEffects />
+        < LightEffects /> */}
 
         {/* <div className="custom-background">
           <div className="overlay-content">
