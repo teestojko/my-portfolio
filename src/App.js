@@ -92,7 +92,7 @@ function App() {
     };
   }, []);
 
-  return <div ref={sceneRef} style={{ width: "100%", height: "100vh", backgroundColor: "#222" }} />;
+  return <div ref={sceneRef} style={{ width: "100%", height: "100vh", backgroundColor: "rgb(240 240 240)" }} />;
 }
 
 export default App;
