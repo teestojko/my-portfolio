@@ -7,6 +7,7 @@ function App() {
   const sceneRef = useRef(null);
   const cubeRef = useRef(null);  // キューブへの参照を保持
   const cameraRef = useRef(null);  // カメラへの参照を保持
+  const targetPositionRef = useRef(new THREE.Vector3());  // 目標位置
 
   useEffect(() => {
     // シーン、カメラ、レンダラーのセットアップ
@@ -31,15 +32,21 @@ function App() {
 
     // ランダムな位置に移動させるための関数
     const moveCubeRandomly = () => {
+      targetPositionRef.current.x = Math.random() * 10 - 5;  // x軸でランダムに位置を変更 (-5から5)
+      targetPositionRef.current.y = Math.random() * 10 - 5;  // y軸でランダムに位置を変更
+      targetPositionRef.current.z = Math.random() * 10 - 5;  // z軸でランダムに位置を変更
+    };
+
+    // 目標位置に向かってスムーズに移動させるための補間
+    const smoothMove = () => {
       if (cubeRef.current) {
-        cubeRef.current.position.x = Math.random() * 10 - 5;  // x軸でランダムに位置を変更 (-5から5)
-        cubeRef.current.position.y = Math.random() * 10 - 5;  // y軸でランダムに位置を変更
-        cubeRef.current.position.z = Math.random() * 10 - 5;  // z軸でランダムに位置を変更
+        // 現在の位置から目標位置に向かってスムーズに移動
+        cubeRef.current.position.lerp(targetPositionRef.current, 0.1); // 0.1は補間のスピード
       }
     };
 
     // 定期的にランダムな位置に移動
-    const intervalId = setInterval(moveCubeRandomly, 2000); // 2秒ごとに位置変更
+    const intervalId = setInterval(moveCubeRandomly, 2000); // 2秒ごとに目標位置を変更
 
     // マウスムーブイベントリスナーの追加
     const onMouseMove = (event) => {
@@ -64,6 +71,9 @@ function App() {
         cubeRef.current.rotation.x += 0.01;
         cubeRef.current.rotation.y += 0.01;
       }
+
+      // キューブをスムーズに移動
+      smoothMove();
 
       // カメラを再レンダリング
       renderer.render(scene, camera);
