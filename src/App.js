@@ -45,7 +45,7 @@ function App() {
     const smoothMove = () => {
       if (cubeRef.current) {
         // 現在の位置から目標位置に向かってスムーズに移動
-        cubeRef.current.position.lerp(targetPositionRef.current, 1); // 0.1は補間のスピード
+        cubeRef.current.position.lerp(targetPositionRef.current, 0.9); // 0.1は補間のスピード
       }
     };
 
