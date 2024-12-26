@@ -1,4 +1,4 @@
-// import LightEffects from "./LightEffects";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
@@ -38,23 +38,7 @@ function App() {
   return (
     <div className="portfolio">
       <div className="portfolio_inner">
-        {/* <div className="text-overlay active">
-          <div className="portfolio_comment">
-            {currentText.comment}
-          </div>
-        </div>
-        < LightEffects /> */}
-
-        {/* <div className="custom-background">
-          <div className="overlay-content">
-            <div className="portfolio_company">
-              <p className="company_message hidden">あなたの作りたいを<br />叶えます</p>
-              <p className="company_title hidden">web engineer<br />Tetsuya Kishi</p>
-            </div>
-          </div>
-        </div> */}
-
-        <div className={`extra-content ${currentIndex === 0 ? "visible" : "hidden"}`}>
+        <div className={`extra-content`}>
           {generateWaves(5)} {/* ランダムに動く波線を5つ生成 */}
         </div>
       </div>
