@@ -14,6 +14,7 @@ function App() {
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     cameraRef.current = camera;  // カメラの参照を保持
     const renderer = new THREE.WebGLRenderer();
+    renderer.setClearColor(new THREE.Color(0xf0f0f0)); // 背景色を設定 (rgb(240, 240, 240))
     renderer.setSize(window.innerWidth, window.innerHeight);
     sceneRef.current.appendChild(renderer.domElement);
 
