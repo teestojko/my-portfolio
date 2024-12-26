@@ -1,14 +1,7 @@
-import useImageChanger from "./utils/changeImage";
 import LightEffects from "./LightEffects";
 import "./App.css";
 
 function App() {
-  const texts = [
-    { comment: "今よりも\nより良い明日へ" },
-    { comment: "共に新たな創造を..." },
-  ];
-
-  const { currentText , currentIndex } = useImageChanger( texts, 3000 );
 
   const generateWaves = (count) => {
     const waves = [];
@@ -52,14 +45,14 @@ function App() {
         </div>
         < LightEffects />
 
-        <div className="custom-background">
+        {/* <div className="custom-background">
           <div className="overlay-content">
             <div className="portfolio_company">
               <p className="company_message hidden">あなたの作りたいを<br />叶えます</p>
               <p className="company_title hidden">web engineer<br />Tetsuya Kishi</p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className={`extra-content ${currentIndex === 0 ? "visible" : "hidden"}`}>
           {generateWaves(5)} {/* ランダムに動く波線を5つ生成 */}
