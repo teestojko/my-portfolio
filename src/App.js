@@ -8,7 +8,7 @@ function App() {
     { comment: "共に新たな創造を...", credit: "Photo by Sam Schooler on Unsplash" },
   ];
 
-  const { currentText } = useImageChanger( texts, 3000 );
+  const { currentText , currentIndex } = useImageChanger( texts, 3000 );
 
   const generateWaves = (count) => {
     const waves = [];
