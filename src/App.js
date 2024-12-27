@@ -52,7 +52,7 @@ function App() {
     const smoothMove = () => {
       for (let i = 0; i < 10; i++) {
         if (cubesRef.current[i]) {
-          cubesRef.current[i].position.lerp(targetPositionsRef.current[i], 0.1); // 0.1は補間のスピード
+          cubesRef.current[i].position.lerp(targetPositionsRef.current[i], 0.01); // 0.1は補間のスピード
         }
       }
     };
