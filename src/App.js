@@ -10,6 +10,8 @@ function App() {
 
     // シーン、カメラ、レンダラーのセットアップ
     const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xffffff); // 背景を白に設定
+
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 10; // 初期位置
     const renderer = new THREE.WebGLRenderer();
@@ -19,7 +21,11 @@ function App() {
     // 3Dキューブの作成
     for (let i = 0; i < 50; i++) {
       const geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
-      const material = new THREE.MeshStandardMaterial({ color: Math.random() * 0xffffff });
+      const material = new THREE.MeshStandardMaterial({
+        color: Math.random() * 0xffffff,
+        metalness: 0.5,
+        roughness: 0.2,
+      });
       const cube = new THREE.Mesh(geometry, material);
 
       // ランダムな位置に配置
@@ -31,12 +37,11 @@ function App() {
     }
 
     // ライトの追加
-    const light = new THREE.PointLight(0xffffff, 1.5, 50);
+    const light = new THREE.PointLight(0xffffff, 2.0); // 強いポイントライト
     light.position.set(5, 5, 5);
     scene.add(light);
 
-    // 環境光の追加
-    const ambientLight = new THREE.AmbientLight(0x404040, 0.5);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.0); // 明るい環境光
     scene.add(ambientLight);
 
     // マウス移動イベント
