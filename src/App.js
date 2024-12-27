@@ -52,8 +52,8 @@ function App() {
       const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
       const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
 
-      targetRotationX = mouseY * 0.2; // 回転角度を制限
-      targetRotationY = mouseX * 0.2; // 回転角度を制限
+      targetRotationX = mouseY * 1.0; // 回転角度を制限
+      targetRotationY = mouseX * 1.0; // 回転角度を制限
     };
 
     window.addEventListener("mousemove", onMouseMove);
