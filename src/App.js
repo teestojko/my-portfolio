@@ -4,49 +4,56 @@ import "./App.css";
 
 function App() {
   const sceneRef = useRef(null);
-  const cubeRef = useRef(null);  // キューブへの参照を保持
+  const cubesRef = useRef([]);  // キューブの参照を保持する配列
   const cameraRef = useRef(null);  // カメラへの参照を保持
-  const targetPositionRef = useRef(new THREE.Vector3());  // 目標位置
+  const targetPositionsRef = useRef([]);  // 目標位置を保持する配列
 
   useEffect(() => {
     // シーン、カメラ、レンダラーのセットアップ
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    cameraRef.current = camera;  // カメラの参照を保持
+    cameraRef.current = camera;
     const renderer = new THREE.WebGLRenderer();
-    renderer.setClearColor(new THREE.Color(0xf0f0f0)); // 背景色を設定 (rgb(240, 240, 240))
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(new THREE.Color(0xf0f0f0)); // 背景色を設定
     sceneRef.current.appendChild(renderer.domElement);
 
-    // 3Dキューブの作成
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const cube = new THREE.Mesh(geometry, material);
-    cubeRef.current = cube;  // キューブの参照を保持
-
-    // キューブをシーンに追加
-    scene.add(cube);
+    // 10個のキューブの作成と配置
+    for (let i = 0; i < 10; i++) {
+      const geometry = new THREE.BoxGeometry(1, 1, 1);
+      const material = new THREE.MeshBasicMaterial({ color: Math.random() * 0xffffff });
+      const cube = new THREE.Mesh(geometry, material);
+      cubesRef.current.push(cube); // キューブを配列に追加
+      targetPositionsRef.current.push(new THREE.Vector3()); // 目標位置を追加
+      scene.add(cube);
+      cube.position.x = Math.random() * 10 - 5; // ランダムに配置
+      cube.position.y = Math.random() * 10 - 5;
+      cube.position.z = Math.random() * 10 - 5;
+    }
 
     // カメラの位置設定
-    camera.position.z = 5;
+    camera.position.z = 10;
 
     // ランダムな位置に移動させるための関数
     const moveCubeRandomly = () => {
-      const maxX = 2;  // 画面内に収めるための最大x軸範囲
-      const maxY = 2;  // 画面内に収めるための最大y軸範囲
-      const maxZ = 3;  // 画面内に収めるための最大z軸範囲
+      for (let i = 0; i < 10; i++) {
+        const maxX = 5;  // 画面内に収めるための最大x軸範囲
+        const maxY = 5;  // 画面内に収めるための最大y軸範囲
+        const maxZ = 5;  // 画面内に収めるための最大z軸範囲
 
-      // x, y, z軸でランダムな位置を設定
-      targetPositionRef.current.x = Math.random() * 2 * maxX - maxX;  // x軸でランダム (-maxXからmaxX)
-      targetPositionRef.current.y = Math.random() * 2 * maxY - maxY;  // y軸でランダム (-maxYからmaxY)
-      targetPositionRef.current.z = Math.random() * 2 * maxZ - maxZ;  // z軸でランダム (-maxZからmaxZ)
+        // ランダムな位置を設定
+        targetPositionsRef.current[i].x = Math.random() * 2 * maxX - maxX;
+        targetPositionsRef.current[i].y = Math.random() * 2 * maxY - maxY;
+        targetPositionsRef.current[i].z = Math.random() * 2 * maxZ - maxZ;
+      }
     };
 
     // 目標位置に向かってスムーズに移動させるための補間
     const smoothMove = () => {
-      if (cubeRef.current) {
-        // 現在の位置から目標位置に向かってスムーズに移動
-        cubeRef.current.position.lerp(targetPositionRef.current, 0.01); // 0.1は補間のスピード
+      for (let i = 0; i < 10; i++) {
+        if (cubesRef.current[i]) {
+          cubesRef.current[i].position.lerp(targetPositionsRef.current[i], 0.1); // 0.1は補間のスピード
+        }
       }
     };
 
@@ -71,13 +78,15 @@ function App() {
     const animate = () => {
       requestAnimationFrame(animate);
 
-      // キューブの回転
-      if (cubeRef.current) {
-        cubeRef.current.rotation.x += 0.01;
-        cubeRef.current.rotation.y += 0.01;
+      // 各キューブの回転
+      for (let i = 0; i < 10; i++) {
+        if (cubesRef.current[i]) {
+          cubesRef.current[i].rotation.x += 0.01;
+          cubesRef.current[i].rotation.y += 0.01;
+        }
       }
 
-      // キューブをスムーズに移動
+      // 各キューブをスムーズに移動
       smoothMove();
 
       // カメラを再レンダリング
@@ -93,7 +102,7 @@ function App() {
     };
   }, []);
 
-  return <div ref={sceneRef} className= "scene-container" />;
+  return <div ref={sceneRef} className="scene-container" />;
 }
 
 export default App;
