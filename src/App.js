@@ -6,10 +6,12 @@ function App() {
   const sceneRef = useRef(null);
 
   useEffect(() => {
+    if (!sceneRef.current) return;
+
     // シーン、カメラ、レンダラーのセットアップ
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 5; // 初期位置
+    camera.position.z = 10; // 初期位置
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     sceneRef.current.appendChild(renderer.domElement);
@@ -29,9 +31,13 @@ function App() {
     }
 
     // ライトの追加
-    const light = new THREE.PointLight(0xffffff, 1, 100);
-    light.position.set(10, 10, 10);
+    const light = new THREE.PointLight(0xffffff, 1.5, 50);
+    light.position.set(5, 5, 5);
     scene.add(light);
+
+    // 環境光の追加
+    const ambientLight = new THREE.AmbientLight(0x404040, 0.5);
+    scene.add(ambientLight);
 
     // マウス移動イベント
     let targetRotationX = 0;
