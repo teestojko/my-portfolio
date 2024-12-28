@@ -18,6 +18,8 @@ function App() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     sceneRef.current.appendChild(renderer.domElement);
 
+    const cubes = []; // キューブを格納する配列
+
     // 3Dキューブの作成
     for (let i = 0; i < 200; i++) { // キューブの数
       const geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5); // キューブサイズ
@@ -33,6 +35,14 @@ function App() {
       cube.position.y = (Math.random() - 0.5) * 100;
       cube.position.z = (Math.random() - 0.5) * 100;
 
+      // ランダムな回転速度を設定
+      cube.rotationSpeed = {
+        x: Math.random() * 0.02 - 0.01, // -0.01 ~ 0.01
+        y: Math.random() * 0.02 - 0.01, // -0.01 ~ 0.01
+        z: Math.random() * 0.02 - 0.01, // -0.01 ~ 0.01
+      };
+
+      cubes.push(cube); // キューブを配列に追加
       scene.add(cube);
     }
 
@@ -61,6 +71,13 @@ function App() {
     // アニメーションループ
     const animate = () => {
       requestAnimationFrame(animate);
+
+      // 各キューブの回転を更新
+      cubes.forEach((cube) => {
+        cube.rotation.x += cube.rotationSpeed.x;
+        cube.rotation.y += cube.rotationSpeed.y;
+        cube.rotation.z += cube.rotationSpeed.z;
+      });
 
       // カメラのスムーズな回転をクォータニオンで反映
       const rotationSpeed = 0.04; // 補間速度
