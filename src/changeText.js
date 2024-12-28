@@ -2,32 +2,47 @@ import { useState, useEffect } from "react";
 
 // テキストアニメーションのカスタムフック
 export function useTextAnimation(initialText, targetText, delay = 2000, speed = 100) {
-    const [text, setText] = useState(initialText);
+    const [text, setText] = useState("");
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
-        setText(initialText); // 初期テキストを即座に設定
+        // 初期テキスト（portfolio）を徐々に表示
+        const initialInterval = setInterval(() => {
+            setIndex((prevIndex) => {
+                if (prevIndex < initialText.length) {
+                    return prevIndex + 1;
+                }
+                clearInterval(initialInterval); // 初期テキストの表示完了
+                return prevIndex;
+            });
+        }, 100); // 初期テキストのアニメーション速度（1秒間）
 
+        // 初期テキストの表示後、ターゲットテキストのアニメーション開始
         const timeout = setTimeout(() => {
-            const interval = setInterval(() => {
+            const targetInterval = setInterval(() => {
                 setIndex((prevIndex) => {
-                    if (prevIndex < targetText.length) {
+                    if (prevIndex < targetText.length + initialText.length) {
                         return prevIndex + 1;
                     }
-                    clearInterval(interval); // 全文字が表示されたらアニメーション停止
+                    clearInterval(targetInterval); // 全文字の表示が完了したら停止
                     return prevIndex;
                 });
             }, speed);
-        }, delay); // アニメーション開始までの遅延
+        }, delay); // 初期テキストの表示完了後の遅延
 
-        return () => clearTimeout(timeout);
+        return () => {
+            clearInterval(initialInterval);
+            clearTimeout(timeout);
+        };
     }, [initialText, targetText, delay, speed]);
 
     useEffect(() => {
-        if (index > 0) {
-            setText(targetText.slice(0, index)); // 現在のインデックスまでの文字を表示
+        if (index <= initialText.length) {
+            setText(initialText.slice(0, index)); // 初期テキストのアニメーション
+        } else {
+            setText(targetText.slice(0, index - initialText.length)); // ターゲットテキストのアニメーション
         }
-    }, [index, targetText]);
+    }, [index, initialText, targetText]);
 
     return text; // 現在のテキストを返す
 }
