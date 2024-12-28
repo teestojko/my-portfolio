@@ -1,16 +1,19 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import * as THREE from "three";
 import "./App.css";
 
 function App() {
   const sceneRef = useRef(null);
 
+  // テキストアニメーション用の state
+  const [text, setText] = useState("portfolio");
+  const [index, setIndex] = useState(0);
+
   useEffect(() => {
     if (!sceneRef.current) return;
 
     // シーン、カメラ、レンダラーのセットアップ
     const scene = new THREE.Scene();
-    // scene.background = new THREE.Color(0x343434);
 
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 15; // カメラ奥行き位置
@@ -119,7 +122,47 @@ function App() {
     };
   }, []);
 
-  return <div ref={sceneRef} style={{ width: "100%", height: "100vh" }} />;
+  // テキストアニメーションの処理
+  useEffect(() => {
+    const targetText = "web engineer Tetsuya Kishi";
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => {
+        if (prevIndex < targetText.length) {
+          return prevIndex + 1;
+        }
+        clearInterval(interval);
+        return prevIndex;
+      });
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const targetText = "web engineer Tetsuya Kishi";
+    setText(targetText.slice(0, index));
+  }, [index]);
+
+  return (
+    <div style={{ position: "relative" }}>
+      <div ref={sceneRef} style={{ width: "100%", height: "100vh" }} />
+      <div
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          color: "white",
+          fontSize: "3rem",
+          fontWeight: "bold",
+          textAlign: "center",
+          pointerEvents: "none",
+        }}
+      >
+        {text}
+      </div>
+    </div>
+  );
 }
 
 export default App;
