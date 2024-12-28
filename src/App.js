@@ -10,7 +10,7 @@ function App() {
 
     // シーン、カメラ、レンダラーのセットアップ
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x4d4d00); // 暗い金色
+    // scene.background = new THREE.Color(0x343434);
 
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 50; // カメラを引くことで広がった範囲をカバー
