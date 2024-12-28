@@ -46,3 +46,5 @@ export function useTextAnimation(initialText, targetText, delay = 2000, speed = 
 
     return text; // 現在のテキストを返す
 }
+
+
