@@ -10,17 +10,17 @@ function App() {
 
     // シーン、カメラ、レンダラーのセットアップ
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x4d4d00); // 背景を白に設定
+    scene.background = new THREE.Color(0x4d4d00); // 暗い金色
 
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 10; // 初期位置
+    camera.position.z = 50; // カメラを引くことで広がった範囲をカバー
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     sceneRef.current.appendChild(renderer.domElement);
 
     // 3Dキューブの作成
-    for (let i = 0; i < 50; i++) {
-      const geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+    for (let i = 0; i < 200; i++) { // キューブの数を増やす
+      const geometry = new THREE.BoxGeometry(1, 1, 1); // 少し大きめのキューブ
       const material = new THREE.MeshStandardMaterial({
         color: Math.random() * 0xffffff,
         metalness: 0.5,
@@ -28,17 +28,17 @@ function App() {
       });
       const cube = new THREE.Mesh(geometry, material);
 
-      // ランダムな位置に配置
-      cube.position.x = (Math.random() - 0.5) * 10;
-      cube.position.y = (Math.random() - 0.5) * 10;
-      cube.position.z = (Math.random() - 0.5) * 10;
+      // 配置範囲を拡大
+      cube.position.x = (Math.random() - 0.5) * 100;
+      cube.position.y = (Math.random() - 0.5) * 100;
+      cube.position.z = (Math.random() - 0.5) * 100;
 
       scene.add(cube);
     }
 
     // ライトの追加
     const light = new THREE.PointLight(0xffffff, 2.0); // 強いポイントライト
-    light.position.set(5, 5, 5);
+    light.position.set(50, 50, 50);
     scene.add(light);
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 1.0); // 明るい環境光
@@ -62,7 +62,7 @@ function App() {
     const animate = () => {
       requestAnimationFrame(animate);
 
-    // カメラのスムーズな回転をクォータニオンで反映
+      // カメラのスムーズな回転をクォータニオンで反映
       const rotationSpeed = 0.04; // 補間速度
       const currentRotation = new THREE.Euler(
         camera.rotation.x + (targetRotationX - camera.rotation.x) * rotationSpeed,
