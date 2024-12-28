@@ -20,7 +20,7 @@ function App() {
 
     // 3Dキューブの作成
     for (let i = 0; i < 200; i++) { // キューブの数
-      const geometry = new THREE.BoxGeometry(3, 3, 3); // キューブサイズ
+      const geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5); // キューブサイズ
       const material = new THREE.MeshStandardMaterial({
         color: Math.random() * 0xffffff,
         metalness: 0.5,
@@ -41,7 +41,7 @@ function App() {
     light.position.set(50, 50, 50);
     scene.add(light);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 3.0); // 明るい環境光
+    const ambientLight = new THREE.AmbientLight(0xffffff, 3.0); // 環境光の明度
     scene.add(ambientLight);
 
     // マウス移動イベント
