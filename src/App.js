@@ -124,7 +124,10 @@ function App() {
 
   // テキストアニメーションの処理
   useEffect(() => {
-    const targetText = "web engineer Tetsuya Kishi";
+  const delay = 2000; // 2秒待機
+
+  const targetText = "web engineer Tetsuya Kishi";
+  const startAnimation = () => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => {
         if (prevIndex < targetText.length) {
@@ -134,9 +137,12 @@ function App() {
         return prevIndex;
       });
     }, 100);
+  };
 
-    return () => clearInterval(interval);
-  }, []);
+  const timeout = setTimeout(startAnimation, delay); // アニメーション開始を遅らせる
+
+  return () => clearTimeout(timeout);
+}, []);
 
   useEffect(() => {
     const targetText = "web engineer Tetsuya Kishi";
