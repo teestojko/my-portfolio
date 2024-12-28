@@ -13,14 +13,14 @@ function App() {
     // scene.background = new THREE.Color(0x343434);
 
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 10; // カメラを引くことで広がった範囲をカバー
+    camera.position.z = 10; // カメラ奥行き位置
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     sceneRef.current.appendChild(renderer.domElement);
 
     // 3Dキューブの作成
     for (let i = 0; i < 200; i++) { // キューブの数を増やす
-      const geometry = new THREE.BoxGeometry(1, 1, 1); // 少し大きめのキューブ
+      const geometry = new THREE.BoxGeometry(3, 3, 3); // 少し大きめのキューブ
       const material = new THREE.MeshStandardMaterial({
         color: Math.random() * 0xffffff,
         metalness: 0.5,
