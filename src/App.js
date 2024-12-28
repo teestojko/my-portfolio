@@ -42,6 +42,13 @@ function App() {
         z: Math.random() * 0.02 - 0.01, // -0.01 ~ 0.01
       };
 
+      // ランダムな移動速度を設定
+      cube.movementSpeed = {
+        x: Math.random() * 0.1 - 0.05, // -0.05 ~ 0.05
+        y: Math.random() * 0.1 - 0.05, // -0.05 ~ 0.05
+        z: Math.random() * 0.1 - 0.05, // -0.05 ~ 0.05
+      };
+
       cubes.push(cube); // キューブを配列に追加
       scene.add(cube);
     }
@@ -72,11 +79,23 @@ function App() {
     const animate = () => {
       requestAnimationFrame(animate);
 
-      // 各キューブの回転を更新
+      // 各キューブの回転と移動を更新
       cubes.forEach((cube) => {
+        // 回転を更新
         cube.rotation.x += cube.rotationSpeed.x;
         cube.rotation.y += cube.rotationSpeed.y;
         cube.rotation.z += cube.rotationSpeed.z;
+
+        // 移動を更新
+        cube.position.x += cube.movementSpeed.x;
+        cube.position.y += cube.movementSpeed.y;
+        cube.position.z += cube.movementSpeed.z;
+
+        // 境界条件の処理（画面範囲を超えたら逆方向へ移動）
+        const boundary = 50; // 範囲
+        if (Math.abs(cube.position.x) > boundary) cube.movementSpeed.x *= -1;
+        if (Math.abs(cube.position.y) > boundary) cube.movementSpeed.y *= -1;
+        if (Math.abs(cube.position.z) > boundary) cube.movementSpeed.z *= -1;
       });
 
       // カメラのスムーズな回転をクォータニオンで反映
