@@ -29,9 +29,9 @@ function App() {
       const cube = new THREE.Mesh(geometry, material);
 
       // 配置範囲を拡大
-      cube.position.x = (Math.random() - 0.5) * 100;
-      cube.position.y = (Math.random() - 0.5) * 100;
-      cube.position.z = (Math.random() - 0.5) * 100;
+      cube.position.x = (Math.random() - 0.5) * 15;
+      cube.position.y = (Math.random() - 0.5) * 15;
+      cube.position.z = (Math.random() - 0.5) * 15;
 
       scene.add(cube);
     }
