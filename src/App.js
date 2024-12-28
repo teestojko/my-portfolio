@@ -52,8 +52,8 @@ function App() {
       const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
       const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
 
-      targetRotationX = mouseY * 0.6; // 回転角度を制限
-      targetRotationY = mouseX * 0.6; // 回転角度を制限
+      targetRotationX = mouseY * 0.9; // 回転角度を制限
+      targetRotationY = mouseX * 0.9; // 回転角度を制限
     };
 
     window.addEventListener("mousemove", onMouseMove);
@@ -62,9 +62,14 @@ function App() {
     const animate = () => {
       requestAnimationFrame(animate);
 
-      // カメラのスムーズな回転
-      camera.rotation.x += (targetRotationX - camera.rotation.x) * 0.1; // 補間でスムーズに
-      camera.rotation.y += (targetRotationY - camera.rotation.y) * 0.1; // 補間でスムーズに
+    // カメラのスムーズな回転をクォータニオンで反映
+      const rotationSpeed = 0.1; // 補間速度
+      const currentRotation = new THREE.Euler(
+        camera.rotation.x + (targetRotationX - camera.rotation.x) * rotationSpeed,
+        camera.rotation.y + (targetRotationY - camera.rotation.y) * rotationSpeed,
+        0
+      );
+      camera.quaternion.setFromEuler(currentRotation);
 
       // シーンのレンダリング
       renderer.render(scene, camera);
