@@ -10,7 +10,7 @@ function App() {
 
     // シーン、カメラ、レンダラーのセットアップ
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xffffff); // 背景を白に設定
+    scene.background = new THREE.Color(0x4d4d00); // 背景を白に設定
 
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 10; // 初期位置
@@ -63,7 +63,7 @@ function App() {
       requestAnimationFrame(animate);
 
     // カメラのスムーズな回転をクォータニオンで反映
-      const rotationSpeed = 0.1; // 補間速度
+      const rotationSpeed = 0.04; // 補間速度
       const currentRotation = new THREE.Euler(
         camera.rotation.x + (targetRotationX - camera.rotation.x) * rotationSpeed,
         camera.rotation.y + (targetRotationY - camera.rotation.y) * rotationSpeed,
