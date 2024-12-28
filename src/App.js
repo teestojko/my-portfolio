@@ -13,7 +13,7 @@ function App() {
     // scene.background = new THREE.Color(0x343434);
 
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 50; // カメラを引くことで広がった範囲をカバー
+    camera.position.z = 10; // カメラを引くことで広がった範囲をカバー
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     sceneRef.current.appendChild(renderer.domElement);
@@ -29,9 +29,9 @@ function App() {
       const cube = new THREE.Mesh(geometry, material);
 
       // 配置範囲を拡大
-      cube.position.x = (Math.random() - 0.5) * 15;
-      cube.position.y = (Math.random() - 0.5) * 15;
-      cube.position.z = (Math.random() - 0.5) * 15;
+      cube.position.x = (Math.random() - 0.5) * 100;
+      cube.position.y = (Math.random() - 0.5) * 100;
+      cube.position.z = (Math.random() - 0.5) * 100;
 
       scene.add(cube);
     }
