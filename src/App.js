@@ -102,23 +102,11 @@ function App() {
   }, []);
 
   return (
-    <div style={{ position: "relative" }}>
-      <div ref={sceneRef} style={{ width: "100%", height: "100vh" }} />
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          color: "white",
-          fontSize: "3rem",
-          fontWeight: "bold",
-          textAlign: "center",
-          pointerEvents: "none",
-        }}
-      >
-        {animatedText}
-      </div>
+    <div className="scene-container">
+      <div ref={sceneRef} className="scene" />
+        <div className="text-overlay">
+          {animatedText}
+        </div>
     </div>
   );
 }
