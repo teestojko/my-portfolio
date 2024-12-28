@@ -213,7 +213,7 @@
     }
 }
 
-/* .scene-container {
+.scene-container {
   width: 100%;
   height: 100vh;
 }
@@ -227,7 +227,7 @@
   height: 100vh;
 }
 
-.text-overlay {
+.scene-text {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -239,4 +239,4 @@
   pointer-events: none;
 }
 
- */
+

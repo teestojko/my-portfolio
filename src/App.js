@@ -104,7 +104,7 @@ function App() {
   return (
     <div className="scene-container">
       <div ref={sceneRef} className="scene" />
-        <div className="text-overlay">
+        <div className="scene-text">
           {animatedText}
         </div>
     </div>
