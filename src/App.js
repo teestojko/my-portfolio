@@ -9,7 +9,7 @@ function App() {
   const backgroundRef = useRef(null);
 
   // カスタムフックでテキストアニメーションを制御
-  const animatedText = useTextAnimation("portfolio", "web engineer Tetsuya Kishi", 2000, 100);
+  const animatedText = useTextAnimation("portfolio", "web engineer\nTetsuya Kishi", 2000, 100);
 
   useEffect(() => {
     if (!sceneRef.current) return;

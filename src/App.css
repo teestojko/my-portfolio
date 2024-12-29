@@ -66,5 +66,6 @@
     text-shadow: 0 0 5px #ffffe0, 0 0 10px #ffffe0, 0 0 20px #ffeb3b,
                 0 0 30px #ffeb3b, 0 0 40px #ffd700, 0 0 50px #ffd700,
                 0 0 75px #ffd700;
+    white-space: pre-line;
 }
 
