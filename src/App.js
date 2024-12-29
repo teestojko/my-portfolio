@@ -3,7 +3,6 @@ import * as THREE from "three";
 import "./App.css";
 import { useTextAnimation } from "./changeText";
 import { randomizeLights } from "./lightEffect";
-import DistortedCircle from "./DistortedCircle";
 
 function App() {
   const sceneRef = useRef(null);
@@ -118,9 +117,6 @@ function App() {
         <div className="light-effect"></div>
         <div className="light-effect"></div>
         <div className="light-effect"></div>
-      </div>
-      <div>
-        <DistortedCircle />
       </div>
     </>
   );
