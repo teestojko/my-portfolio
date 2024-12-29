@@ -68,7 +68,7 @@
 }
 
 .fade-slide {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(20px);
     animation: fadeSlide 1s ease forwards;
 }
