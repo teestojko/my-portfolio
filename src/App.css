@@ -34,17 +34,9 @@
 } */
 
 .custom-background{
-    position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     margin: 0;
-}
-
-.content {
-  padding: 100vh 2rem 2rem; /* スクロールする余白 */
-  font-size: 1.2rem;
-  color: #fff;
-  background: #121212;
 }
 
 @keyframes float {
