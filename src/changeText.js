@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 // テキストアニメーションのカスタムフック
-export function useTextAnimation(initialText, targetText, delay = 2000, speed = 100) {
+export function useTextAnimation(initialText, targetText, delay = 4000, speed = 100) {
     const [text, setText] = useState("");
     const [index, setIndex] = useState(0);
 
