@@ -32,7 +32,7 @@ export function randomizeLights() {
         });
 
         // 再帰的に呼び出してランダムな動きを繰り返す
-        setTimeout(updateLights, 5000); // 5秒ごとに動きを更新
+        setTimeout(updateLights, 4000); // 5秒ごとに動きを更新
     }
 
     updateLights(); // 初回実行
