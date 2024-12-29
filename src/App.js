@@ -80,7 +80,8 @@ function App() {
       const scrollPosition = window.scrollY;
       const background = backgroundRef.current;
 
-      if (scrollPosition > window.innerHeight * 0.1) {
+      if (scrollPosition > window.innerHeight * 0.1)//表示までのスクロール幅
+      {
         background.style.opacity = 1;
         background.style.transform = "translateY(0)";
       } else {
@@ -106,6 +107,11 @@ function App() {
         <div className="scene-text">{animatedText}</div>
       </div>
       <div ref={backgroundRef} className="custom-background">
+        <div className="light-effect"></div>
+        <div className="light-effect"></div>
+        <div className="light-effect"></div>
+        <div className="light-effect"></div>
+        <div className="light-effect"></div>
         <div className="light-effect"></div>
         <div className="light-effect"></div>
         <div className="light-effect"></div>
