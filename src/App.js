@@ -7,8 +7,7 @@ function App() {
   const sceneRef = useRef(null);
 
   // カスタムフックでテキストアニメーションを制御
-  // const animatedText = useTextAnimation("portfolio", "web engineer Tetsuya Kishi", 2000, 100);
-  const { text, animationClass } = useTextAnimation("portfolio", "web engineer Tetsuya Kishi", 2000, 100);
+  const animatedText = useTextAnimation("portfolio", "web engineer Tetsuya Kishi", 2000, 100);
 
   useEffect(() => {
     if (!sceneRef.current) return;
@@ -105,16 +104,11 @@ function App() {
   return (
     <div className="scene-container">
       <div ref={sceneRef} className="scene" />
-        {/* <div className="scene-text">
+        <div className="scene-text">
           {animatedText}
-        </div> */}
-        <div className={`scene-text ${animationClass}`}>
-        {text}
-      </div>
+        </div>
     </div>
   );
 }
 
 export default App;
-
-
