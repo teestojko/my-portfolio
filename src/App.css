@@ -2,64 +2,6 @@
     box-sizing: border-box;
 }
 
-.portfolio{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-}
-
-.portfolio_inner{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    overflow-y: auto; /* 縦スクロールを許可 */
-}
-
-.text-overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
-    text-align: center;
-    z-index: 2;
-}
-
-.text-overlay.active {
-    opacity: 1;
-}
-
-.portfolio_comment {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5em;
-    color: white;
-    transition: opacity 2s ease-in-out;
-    text-shadow: 0 0 5px #ffffe0, 0 0 10px #ffffe0, 0 0 20px #ffeb3b,
-                    0 0 30px #ffeb3b, 0 0 40px #ffd700, 0 0 50px #ffd700,
-                    0 0 75px #ffd700;
-}
-
-.image_credit {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    font-size: 0.4rem;
-    color: white;
-    margin: 0;
-}
-
 .light-effect {
     position: absolute;
     width: 100px;
@@ -83,113 +25,6 @@
     width: 100%;
     height: 100%;
     margin: 0;
-}
-
-.overlay-content{
-    text-align: center;
-    width: 100%;
-    height: 100%;
-}
-
-.portfolio_company{
-    margin: 0 25vw;
-    align-content: center;
-    height: 100vh;
-}
-
-.company_title{
-    margin: 0;
-    width: 50vw;
-    height: 20vh;
-    align-content: center;
-    font-size: 3rem;
-    color: white;
-    transition: opacity 1.5s ease-in-out;
-    text-shadow: 0 0 5px #ffffe0, 0 0 10px #ffffe0, 0 0 20px #ffeb3b,
-                    0 0 30px #ffeb3b, 0 0 40px #ffd700, 0 0 50px #ffd700,
-                    0 0 75px #ffd700;
-    animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-    from {
-        text-shadow: 0 0 5px #ffffe0, 0 0 10px #ffffe0, 0 0 20px #ffeb3b,
-                    0 0 30px #ffeb3b, 0 0 40px #ffd700, 0 0 50px #ffd700,
-                    0 0 75px #ffd700;
-    }
-    to {
-        text-shadow: 0 0 10px #ffffe0, 0 0 20px #ffeb3b, 0 0 30px #ffd700,
-                    0 0 40px #ffd700, 0 0 50px #ffd700, 0 0 75px #ffd700,
-                    0 0 100px #ffd700;
-    }
-}
-
-.hidden {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 1s ease;
-}
-
-.visible {
-  opacity: 1;
-  pointer-events: auto;
-  transition: opacity 1s ease;
-}
-
-
-.company_message {
-    font-size: 2rem;
-    color: white;
-    margin: 0;
-    height: 10vh;
-    transition: opacity 1.5s ease-in-out;
-    text-shadow: 0 0 5px #ffffe0, 0 0 10px #ffffe0, 0 0 20px #ffeb3b,
-                    0 0 30px #ffeb3b, 0 0 40px #ffd700, 0 0 50px #ffd700,
-                    0 0 75px #ffd700;
-}
-
-.extra-content {
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    margin: 0 auto;
-    padding: 50px;
-    text-align: center;
-    background: #333;
-    color: white;
-    font-size: 1.5rem;
-    position: relative;
-    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #fbc2eb);
-        background-size: 300% 300%;
-        animation: gradientAnimation 10s ease infinite;
-    }
-    @keyframes gradientAnimation {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-}
-
-    svg {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: auto;
-}
-
-.wave-path {
-  animation: waveAnimation 3s ease-in-out infinite;
-}
-
-@keyframes waveAnimation {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-500px); /* 上に移動 */
-  }
-  100% {
-    transform: translateY(0); /* 元に戻る */
-  }
 }
 
 .more-light-effect {
@@ -227,25 +62,25 @@
   height: 100vh;
 }
 
-.scene-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
-    text-align: center;
-    pointer-events: none;
-    transition: opacity 1.5s ease-in-out;
-    text-shadow: 0 0 5px #ffffe0, 0 0 10px #ffffe0, 0 0 20px #ffeb3b,
-                0 0 30px #ffeb3b, 0 0 40px #ffd700, 0 0 50px #ffd700,
-                0 0 75px #ffd700;
-    display: inline-block;
-    animation: fadeInSlide 0.5s ease-in-out forwards;
+.hidden {
+    opacity: 0;
+    transform: translateY(20px); /* 下にオフセット */
 }
 
-@keyframes fadeInSlide {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+.fade-slide {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlide 1s ease forwards;
 }
+
+@keyframes fadeSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
