@@ -1,13 +1,13 @@
 import React, { useRef, useEffect } from "react";
 import * as THREE from "three";
 import "./App.css";
-import { useTextAnimation } from "./changeText";
+// import { useTextAnimation } from "./changeText";
 
 function App() {
   const sceneRef = useRef(null);
 
   // カスタムフックでテキストアニメーションを制御
-  const animatedText = useTextAnimation("portfolio", "web engineer Tetsuya Kishi", 2000, 100);
+  // const animatedText = useTextAnimation("portfolio", "web engineer Tetsuya Kishi", 2000, 100);
 
   useEffect(() => {
     if (!sceneRef.current) return;
