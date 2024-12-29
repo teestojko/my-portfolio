@@ -59,8 +59,18 @@ function DistortedCircle() {
       for (let i = 0; i < positions.length; i += 3) {
         const x = positions[i];
         const y = positions[i + 1];
-        const angle = Math.atan2(y, x); // 点の角度を計算
-        const radius = 1 + Math.sin(progress + angle) * 0; // 半径を動的に変更
+          const angle = Math.atan2(y, x); // 点の角度を計算
+
+
+          // const radius = 1 + Math.sin(progress + angle) * 0; // 半径を動的に変更
+
+        // 上半分だけ歪ませる条件を追加 (y座標が正の場合)
+        if (y > 0) {
+        radius += Math.sin(progress + angle) * 0.3; // 上部分だけ歪ませる
+        }
+
+
+
         positions[i] = Math.cos(angle) * radius; // 新しい x 座標
         positions[i + 1] = Math.sin(angle) * radius; // 新しい y 座標
       }
