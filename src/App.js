@@ -5,6 +5,7 @@ import { useTextAnimation } from "./changeText";
 
 function App() {
   const sceneRef = useRef(null);
+  const backgroundRef = useRef(null);
 
   // カスタムフックでテキストアニメーションを制御
   const animatedText = useTextAnimation("portfolio", "web engineer Tetsuya Kishi", 2000, 100);
@@ -101,14 +102,53 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollPosition = window.scrollY;
+      const background = backgroundRef.current;
+
+      if (scrollPosition > window.innerHeight * 0.8) {
+        background.style.opacity = 1;
+        background.style.transform = "translateY(0)";
+      } else {
+        background.style.opacity = 0;
+        background.style.transform = "translateY(50px)";
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
+  // return (
+  //   <div className="scene-container">
+  //     <div ref={sceneRef} className="scene" />
+  //       <div className="scene-text">
+  //         {animatedText}
+  //       </div>
+  //   </div>
+  // );
   return (
-    <div className="scene-container">
-      <div ref={sceneRef} className="scene" />
-        <div className="scene-text">
-          {animatedText}
-        </div>
-    </div>
+    <>
+      <div className="scene-container">
+        <div ref={sceneRef} className="scene" />
+        <div className="scene-text">{animatedText}</div>
+      </div>
+      <div ref={backgroundRef} className="custom-background">
+        <div className="light-effect"></div>
+        <div className="more-light-effect"></div>
+      </div>
+      <div className="content">
+        <p>Scroll down to see the custom background!</p>
+        <p>Here is your content...</p>
+      </div>
+    </>
   );
 }
 
 export default App;
+
+
