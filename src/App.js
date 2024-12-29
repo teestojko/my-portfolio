@@ -74,7 +74,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    randomizeLights(); // ランダムな光のエフェクトを初期化
+    // randomizeLights(); // ランダムな光のエフェクトを初期化
 
     const onScroll = () => {
       const scrollPosition = window.scrollY;
