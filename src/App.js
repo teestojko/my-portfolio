@@ -91,6 +91,9 @@ function App() {
 
     window.addEventListener("scroll", onScroll);
 
+    // 初期化時にも実行
+    onScroll();
+
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
@@ -114,3 +117,6 @@ function App() {
 }
 
 export default App;
+
+
+
