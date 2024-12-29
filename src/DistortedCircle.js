@@ -55,28 +55,31 @@ function DistortedCircle() {
 
     // 形状を歪ませる関数
     const distortShape = (progress) => {
-      const positions = geometry.attributes.position.array; // 頂点の位置配列
-      for (let i = 0; i < positions.length; i += 3) {
-        const x = positions[i];
-        const y = positions[i + 1];
-          const angle = Math.atan2(y, x); // 点の角度を計算
+  const positions = geometry.attributes.position.array;
+  for (let i = 0; i < positions.length; i += 3) {
+    const x = positions[i];
+    const y = positions[i + 1];
+    const angle = Math.atan2(y, x);
+    const radius = 1 + Math.sin(progress + angle) * 0; // 円の半径はそのまま
+    
+    // 上部 (y >= 0.9) は右に歪ませる (xを増加)
+    if (y >= 0.9) {
+      positions[i] = Math.cos(angle) * radius + 0.1;  // xを増加させる
+    }
+    // 下部 (y <= 0.9) は左に歪ませる (xを減少)
+    else if (y <= -0.9) {
+      positions[i] = Math.cos(angle) * radius - 0.1;  // xを減少させる
+    } else {
+      // 上下以外の部分はそのまま
+      positions[i] = Math.cos(angle) * radius;
+    }
 
+    // y座標はそのまま維持
+    positions[i + 1] = Math.sin(angle) * radius;
+  }
+  geometry.attributes.position.needsUpdate = true;
+};
 
-        //   const radius = 1 + Math.sin(progress + angle) * 0; // 半径を動的に変更
-        let radius = 1;
-
-        // 上半分だけ歪ませる条件を追加 (y座標が正の場合)
-        if (y > 0) {
-        radius += Math.sin(progress + angle) * 0.3; // 上部分だけ歪ませる
-        }
-
-
-
-        positions[i] = Math.cos(angle) * radius; // 新しい x 座標
-        positions[i + 1] = Math.sin(angle) * radius; // 新しい y 座標
-      }
-      geometry.attributes.position.needsUpdate = true; // ジオメトリの更新を通知
-    };
 
     // アニメーションの進行度を保持
     let progress = 0;
