@@ -40,16 +40,6 @@
   background: #121212;
 }
 
-.more-light-effect {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle, rgba(255, 223, 70, 0.5), transparent);
-    border-radius: 50%;
-    opacity: 0.6;
-    animation: float 4s infinite ease-in-out;
-}
-
 @keyframes float {
     0%, 100% {
         transform: translateY(0);

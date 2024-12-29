@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import * as THREE from "three";
 import "./App.css";
 import { useTextAnimation } from "./changeText";
+import { randomizeLights } from "./lightEffect";
 
 function App() {
   const sceneRef = useRef(null);
@@ -56,53 +57,25 @@ function App() {
     const ambientLight = new THREE.AmbientLight(0xffffff, 3.0);
     scene.add(ambientLight);
 
-    let targetRotationX = 0;
-    let targetRotationY = 0;
-
-    const onMouseMove = (event) => {
-      const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-      const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
-      targetRotationX = mouseY * 0.9;
-      targetRotationY = mouseX * 0.9;
-    };
-
-    window.addEventListener("mousemove", onMouseMove);
-
     const animate = () => {
       requestAnimationFrame(animate);
-
-      cubes.forEach((cube) => {
+      cubes.forEach(cube => {
         cube.rotation.x += cube.rotationSpeed.x;
         cube.rotation.y += cube.rotationSpeed.y;
         cube.rotation.z += cube.rotationSpeed.z;
         cube.position.x += cube.movementSpeed.x;
         cube.position.y += cube.movementSpeed.y;
         cube.position.z += cube.movementSpeed.z;
-        const boundary = 50;
-        if (Math.abs(cube.position.x) > boundary) cube.movementSpeed.x *= -1;
-        if (Math.abs(cube.position.y) > boundary) cube.movementSpeed.y *= -1;
-        if (Math.abs(cube.position.z) > boundary) cube.movementSpeed.z *= -1;
       });
-
-      const rotationSpeed = 0.04;
-      const currentRotation = new THREE.Euler(
-        camera.rotation.x + (targetRotationX - camera.rotation.x) * rotationSpeed,
-        camera.rotation.y + (targetRotationY - camera.rotation.y) * rotationSpeed,
-        0
-      );
-      camera.quaternion.setFromEuler(currentRotation);
-
       renderer.render(scene, camera);
     };
 
     animate();
-
-    return () => {
-      window.removeEventListener("mousemove", onMouseMove);
-    };
   }, []);
 
   useEffect(() => {
+    randomizeLights(); // ランダムな光のエフェクトを初期化
+
     const onScroll = () => {
       const scrollPosition = window.scrollY;
       const background = backgroundRef.current;
@@ -123,14 +96,6 @@ function App() {
     };
   }, []);
 
-  // return (
-  //   <div className="scene-container">
-  //     <div ref={sceneRef} className="scene" />
-  //       <div className="scene-text">
-  //         {animatedText}
-  //       </div>
-  //   </div>
-  // );
   return (
     <>
       <div className="scene-container">
@@ -139,16 +104,13 @@ function App() {
       </div>
       <div ref={backgroundRef} className="custom-background">
         <div className="light-effect"></div>
-        <div className="more-light-effect"></div>
-      </div>
-      <div className="content">
-        <p>Scroll down to see the custom background!</p>
-        <p>Here is your content...</p>
+        <div className="light-effect"></div>
+        <div className="light-effect"></div>
+        <div className="light-effect"></div>
+        <div className="light-effect"></div>
       </div>
     </>
   );
 }
 
 export default App;
-
-
