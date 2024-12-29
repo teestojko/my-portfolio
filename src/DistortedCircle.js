@@ -1,42 +1,47 @@
-import * as THREE from 'three';
-import { useEffect } from 'react';
+import * as THREE from "three";
+import { useEffect, useRef } from "react";
 
 function DistortedCircle() {
+  const containerRef = useRef();
+
   useEffect(() => {
-    // シーンのセットアップ
+    const container = containerRef.current;
+
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      container.clientWidth / container.clientHeight,
+      0.1,
+      1000
+    );
     const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    container.appendChild(renderer.domElement);
 
-    camera.position.z = 5;
+    camera.position.set(0, 0, 5);
+    camera.lookAt(0, 0, 0);
 
-    // 円形のジオメトリを作成
     const circleCurve = new THREE.EllipseCurve(0, 0, 1, 1, 0, 2 * Math.PI, false, 0);
     const points = circleCurve.getPoints(100);
     const geometry = new THREE.BufferGeometry().setFromPoints(points);
-    geometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(points.flat()), 3));
 
     const material = new THREE.LineBasicMaterial({ color: 0xff0000 });
     const line = new THREE.Line(geometry, material);
     scene.add(line);
 
-    // 形状の変形
     const distortShape = (progress) => {
       const positions = geometry.attributes.position.array;
       for (let i = 0; i < positions.length; i += 3) {
         const x = positions[i];
         const y = positions[i + 1];
         const angle = Math.atan2(y, x);
-        const radius = 1 + Math.sin(progress + angle) * 0.5; // 半径を変化させる
+        const radius = 1 + Math.sin(progress + angle) * 0.5;
         positions[i] = Math.cos(angle) * radius;
         positions[i + 1] = Math.sin(angle) * radius;
       }
       geometry.attributes.position.needsUpdate = true;
     };
 
-    // アニメーションの設定
     let progress = 0;
     const animate = () => {
       progress += 0.02;
@@ -48,11 +53,11 @@ function DistortedCircle() {
     animate();
 
     return () => {
-      document.body.removeChild(renderer.domElement);
+      container.removeChild(renderer.domElement);
     };
   }, []);
 
-  return null;
+  return <div ref={containerRef} style={{ width: "100%", height: "100%" }} />;
 }
 
 export default DistortedCircle;
