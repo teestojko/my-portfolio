@@ -74,20 +74,41 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // randomizeLights(); // ランダムな光のエフェクトを初期化
+    randomizeLights(); // ランダムな光のエフェクトを初期化
 
-    const onScroll = () => {
-      const scrollPosition = window.scrollY;
-      const background = backgroundRef.current;
+    // const onScroll = () => {
+    //   const scrollPosition = window.scrollY;
+    //   const background = backgroundRef.current;
 
-      if (scrollPosition > window.innerHeight * 0.8) {
-        background.style.opacity = 1;
-        background.style.transform = "translateY(0)";
-      } else {
-        background.style.opacity = 0;
-        background.style.transform = "translateY(50px)";
-      }
-    };
+    //   if (scrollPosition > window.innerHeight * 0.8) {
+    //     background.style.opacity = 1;
+    //     background.style.transform = "translateY(0)";
+    //   } else {
+    //     background.style.opacity = 0;
+    //     background.style.transform = "translateY(50px)";
+    //   }
+    // };
+
+
+const onScroll = () => {
+  console.log("Scroll position:", window.scrollY);
+  console.log("Window height * 0.8:", window.innerHeight * 0.8);
+  console.log("Background element:", backgroundRef.current);
+
+  const scrollPosition = window.scrollY;
+  const background = backgroundRef.current;
+
+  if (scrollPosition > window.innerHeight * 0.8) {
+    background.style.opacity = 1;
+    background.style.transform = "translateY(0)";
+  } else {
+    background.style.opacity = 0;
+    background.style.transform = "translateY(50px)";
+  }
+};
+
+
+
 
     window.addEventListener("scroll", onScroll);
 
