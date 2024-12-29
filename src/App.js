@@ -80,7 +80,7 @@ function App() {
       const scrollPosition = window.scrollY;
       const background = backgroundRef.current;
 
-      if (scrollPosition > window.innerHeight * 0.1)//表示までのスクロール幅
+      if (scrollPosition > window.innerHeight * 0)//表示までのスクロール幅
       {
         background.style.opacity = 1;
         background.style.transform = "translateY(0)";
