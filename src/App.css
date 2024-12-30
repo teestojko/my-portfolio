@@ -77,11 +77,11 @@
     overflow: hidden;
 }
 
-.work-container-inner {
+/* .work-container-inner {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
+} */
 
 .work-container-title {
   font-family: 'Poppins', sans-serif; /* 好みのフォントに変更 */
