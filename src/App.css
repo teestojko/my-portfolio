@@ -24,7 +24,7 @@
     width: 100%;
     min-height: 100vh;
     margin: 0;
-    background: linear-gradient(0deg, #290037, #0c030f, #140d18, #0c0a0d, #000000);;
+    background: linear-gradient(0deg, #fbeeff, #df7eff, #3b005c, #370052, #000);
 }
 
 @keyframes float {
