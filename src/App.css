@@ -69,3 +69,17 @@
     white-space: pre-line;
 }
 
+.background-image-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-image-container img {
+  width: 30%;
+  height: 30%;
+  object-fit: cover; /* 画像が縦横比を保ちながら背景に収まる */
+}
+
+

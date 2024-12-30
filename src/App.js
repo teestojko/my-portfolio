@@ -118,6 +118,10 @@ function App() {
         <div className="light-effect"></div>
         <div className="light-effect"></div>
       </div>
+      <div className="background-image-container">
+        <img src="/images/rese.png" alt="rese" />
+        <img src="/images/furimna.png" alt="furima" />
+      </div>
     </>
   );
 }
