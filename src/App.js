@@ -82,6 +82,8 @@ function App() {
 
 
 
+
+  
 useEffect(() => {
   if (!sceneRef.current) return;
 
@@ -149,6 +151,17 @@ useEffect(() => {
   const animate = () => {
     requestAnimationFrame(animate);
     cubes.forEach(cube => {
+      // キューブの位置が視界外に出ないようにリセット
+      if (cube.position.x > 50 || cube.position.x < -50) {
+        cube.position.x = (Math.random() - 0.5) * 100;  // ランダムにリセット
+      }
+      if (cube.position.y > 50 || cube.position.y < -50) {
+        cube.position.y = (Math.random() - 0.5) * 100;  // ランダムにリセット
+      }
+      if (cube.position.z > 50 || cube.position.z < -50) {
+        cube.position.z = (Math.random() - 0.5) * 100;  // ランダムにリセット
+      }
+
       cube.rotation.x += cube.rotationSpeed.x;
       cube.rotation.y += cube.rotationSpeed.y;
       cube.rotation.z += cube.rotationSpeed.z;
@@ -161,6 +174,8 @@ useEffect(() => {
 
   animate();
 }, []);
+
+
 
 
 
