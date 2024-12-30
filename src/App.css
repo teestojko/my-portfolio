@@ -88,12 +88,13 @@
 
 .work-container-img-all{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
 .work-container-img {
     width: 30vw;
-    height: 30vh;
+    height: 40vh;
 }
 
 
