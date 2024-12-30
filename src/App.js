@@ -120,7 +120,7 @@ function App() {
       </div>
       <div className="background-image-container">
         <img src="/images/rese.png" alt="rese" />
-        <img src="/images/furimna.png" alt="furima" />
+        <img src="/images/furima.png" alt="furima" />
       </div>
     </>
   );
