@@ -102,29 +102,32 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          workTitleRef.current.style.opacity = 1;
-          workTitleRef.current.style.transform = "translateY(0)";
-        } else {
-          workTitleRef.current.style.opacity = 0;
-          workTitleRef.current.style.transform = "translateY(20px)";
-        }
-      },
-      { threshold: 0.5 } // 要素が50%可視になったときに発火
-    );
+  const currentRef = workTitleRef.current; // ローカル変数にコピー
 
-    if (workTitleRef.current) {
-      observer.observe(workTitleRef.current);
-    }
-
-    return () => {
-      if (workTitleRef.current) {
-        observer.unobserve(workTitleRef.current);
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        currentRef.style.opacity = 1;
+        currentRef.style.transform = "translateY(0)";
+      } else {
+        currentRef.style.opacity = 0;
+        currentRef.style.transform = "translateY(20px)";
       }
-    };
-  }, []);
+    },
+    { threshold: 0 }
+  );
+
+  if (currentRef) {
+    observer.observe(currentRef);
+  }
+
+  return () => {
+    if (currentRef) {
+      observer.unobserve(currentRef);
+    }
+  };
+}, []);
+
 
 
 
