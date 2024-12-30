@@ -163,7 +163,7 @@ function App() {
 
           <h1 className="work-container-title">
             {["w", "o", "r", "k"].map((char, index) => (
-              <span key={index} style={{ animationDelay: `${index * 0.2}s` }}>
+              <span className="title-animation" key={index} style={{ animationDelay: `${index * 0.2}s` }}>
                 {char}
               </span>
             ))}

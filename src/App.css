@@ -109,7 +109,7 @@
   width: 100%; /* ホバー時に下線アニメーション */
 }
 
-.work-container-title span {
+.title-animation {
   display: inline-block;
   animation: fadeInUp 1s ease-in-out forwards;
 }
