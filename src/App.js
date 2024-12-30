@@ -7,6 +7,7 @@ import { randomizeLights } from "./lightEffect";
 function App() {
   const sceneRef = useRef(null);
   const backgroundRef = useRef(null);
+  const workTitleRef = useRef(null);
 
   // カスタムフックでテキストアニメーションを制御
   const animatedText = useTextAnimation("portfolio", "web engineer\nTetsuya Kishi", 4000, 100);
