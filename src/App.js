@@ -108,10 +108,11 @@ function App() {
     ([entry]) => {
       if (entry.isIntersecting) {
         currentRef.style.opacity = 1;
-        currentRef.style.transform = "translateY(0)";
+        currentRef.style.transform = "translateX(0)";
+        currentRef.style.transition = "opacity 0.5s ease-out, transform 0.5s ease-out";
       } else {
         currentRef.style.opacity = 0;
-        currentRef.style.transform = "translateY(20px)";
+        currentRef.style.transform = "translateX(50px)"; // 初期位置を右側に設定
       }
     },
     { threshold: 0 }
@@ -127,6 +128,7 @@ function App() {
     }
   };
 }, []);
+
 
 
 
