@@ -75,8 +75,8 @@ function App() {
 
 
         if (cube.position.z < -100) {
-          cube.position.x = (Math.random() - 0.5) * 200; // -100 ~ 100 の範囲
-          cube.position.y = (Math.random() - 0.5) * 200; // -100 ~ 100 の範囲
+          cube.position.x = Math.random() * 100 - 50;// -100 ~ 100 の範囲
+          cube.position.y = Math.random() * 100 - 50; // -100 ~ 100 の範囲
           cube.position.z = Math.random() * 100;         // 0 ~ 100 の範囲
 }
 
