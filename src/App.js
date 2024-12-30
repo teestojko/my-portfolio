@@ -7,7 +7,7 @@ import { randomizeLights } from "./lightEffect";
 function App() {
   const sceneRef = useRef(null);
   const backgroundRef = useRef(null);
-  // const workTitleRef = useRef(null);
+  const workTitleRef = useRef(null);
 
   // カスタムフックでテキストアニメーションを制御
   const animatedText = useTextAnimation("portfolio", "web engineer\nTetsuya Kishi", 4000, 100);
@@ -106,33 +106,33 @@ function App() {
     };
   }, []);
 
-//   useEffect(() => {
-//   const currentRef = workTitleRef.current; // ローカル変数にコピー
+  useEffect(() => {
+  const currentRef = workTitleRef.current; // ローカル変数にコピー
 
-//   const observer = new IntersectionObserver(
-//     ([entry]) => {
-//       if (entry.isIntersecting) {
-//         currentRef.style.opacity = 1;
-//         currentRef.style.transform = "translateX(0)";
-//         currentRef.style.transition = "opacity 1s ease-out, transform 1s ease-out";//スライド時間
-//       } else {
-//         currentRef.style.opacity = 0;
-//         currentRef.style.transform = "translateX(500px)";//スライド距離
-//       }
-//     },
-//     { threshold: 0 }
-//   );
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        currentRef.style.opacity = 1;
+        currentRef.style.transform = "translateX(0)";
+        currentRef.style.transition = "opacity 1s ease-out, transform 1s ease-out";//スライド時間
+      } else {
+        currentRef.style.opacity = 0;
+        currentRef.style.transform = "translateX(500px)";//スライド距離
+      }
+    },
+    { threshold: 0 }
+  );
 
-//   if (currentRef) {
-//     observer.observe(currentRef);
-//   }
+  if (currentRef) {
+    observer.observe(currentRef);
+  }
 
-//   return () => {
-//     if (currentRef) {
-//       observer.unobserve(currentRef);
-//     }
-//   };
-// }, []);
+  return () => {
+    if (currentRef) {
+      observer.unobserve(currentRef);
+    }
+  };
+}, []);
 
 
 
@@ -157,7 +157,7 @@ function App() {
         <div className="light-effect"></div>
       </div>
       <div className="background-work-container">
-        {/* <div ref={workTitleRef} className="work-container-inner"> */}
+        <div ref={workTitleRef} className="work-container-inner">
 
 
 
@@ -175,7 +175,7 @@ function App() {
             <img className="work-container-img" src="/images/rese.png" alt="rese" />
             <img className="work-container-img" src="/images/furima.png" alt="furima" />
           </div>
-        {/* </div> */}
+        </div>
       </div>
     </>
   );
