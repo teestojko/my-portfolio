@@ -69,8 +69,8 @@ function App() {
         cube.position.z += cube.movementSpeed.z;
 
         // 奥行きが視界外に出ないように位置をリセット
-        if (cube.position.x > 50 || cube.position.x < -50) cube.position.x = Math.random() * 100 - 50;
-        if (cube.position.y > 50 || cube.position.y < -50) cube.position.y = Math.random() * 100 - 50;
+        // if (cube.position.x > 50 || cube.position.x < -50) cube.position.x = Math.random() * 100 - 50;
+        // if (cube.position.y > 50 || cube.position.y < -50) cube.position.y = Math.random() * 100 - 50;
         if (cube.position.z > 50 || cube.position.z < -50) cube.position.z = Math.random() * 100 - 50;
 
       });
