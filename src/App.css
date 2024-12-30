@@ -94,7 +94,6 @@
 .work-container-img {
     width: 700px;
     height: 500px;
-    object-fit: cover; /* 画像が縦横比を保ちながら背景に収まる */
 }
 
 
