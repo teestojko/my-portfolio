@@ -101,6 +101,33 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          workTitleRef.current.style.opacity = 1;
+          workTitleRef.current.style.transform = "translateY(0)";
+        } else {
+          workTitleRef.current.style.opacity = 0;
+          workTitleRef.current.style.transform = "translateY(20px)";
+        }
+      },
+      { threshold: 0.5 } // 要素が50%可視になったときに発火
+    );
+
+    if (workTitleRef.current) {
+      observer.observe(workTitleRef.current);
+    }
+
+    return () => {
+      if (workTitleRef.current) {
+        observer.unobserve(workTitleRef.current);
+      }
+    };
+  }, []);
+
+
+
   return (
     <>
       <div className="scene-container">
