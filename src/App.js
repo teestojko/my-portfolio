@@ -70,7 +70,7 @@ function App() {
 
         // 奥行きが視界外に出ないように位置をリセット
         if (cube.position.z < -100) {
-          cube.position.z = Math.random() * 100;
+          cube.position.z = Math.random() * 200 - 100;
         }
 
       });
