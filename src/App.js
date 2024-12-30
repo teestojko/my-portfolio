@@ -158,7 +158,19 @@ function App() {
       </div>
       <div className="background-work-container">
         <div ref={workTitleRef} className="work-container-inner">
-          <h1 className="work-container-title">work</h1>
+
+
+
+          <h1 className="work-container-title">
+            {["w", "o", "r", "k"].map((char, index) => (
+              <span key={index} style={{ animationDelay: `${index * 0.2}s` }}>
+                {char}
+              </span>
+            ))}
+          </h1>
+
+          
+
           <div className="work-container-img-all">
             <img className="work-container-img" src="/images/rese.png" alt="rese" />
             <img className="work-container-img" src="/images/furima.png" alt="furima" />

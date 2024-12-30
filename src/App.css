@@ -83,10 +83,47 @@
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.work-container-title{
-    text-align: center;
-    margin: 10%;
+.work-container-title {
+  font-family: 'Poppins', sans-serif; /* 好みのフォントに変更 */
+  font-size: 3rem;
+  color: #ffffff;
+  text-transform: uppercase; /* すべて大文字に */
+  letter-spacing: 0.5rem; /* 文字間隔を広く */
+  position: relative;
+  overflow: hidden;
 }
+
+.work-container-title::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00f, #0ff, #0f0);
+  transition: width 0.5s ease-out;
+}
+
+.work-container-title:hover::before {
+  width: 100%; /* ホバー時に下線アニメーション */
+}
+
+.work-container-title span {
+  display: inline-block;
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .work-container-img-all{
     display: flex;
