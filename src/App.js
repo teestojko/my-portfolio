@@ -107,7 +107,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-  const currentRef = workTitleRef.current; // ローカル変数にコピー
+  // const currentRef = workTitleRef.current; // ローカル変数にコピー
 
   const observer = new IntersectionObserver(
     ([entry]) => {
