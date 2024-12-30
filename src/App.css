@@ -82,8 +82,15 @@
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
+.work-container-title{
+    text-align: center;
+}
 
-.background-work-container img {
+.work-container-img-all{
+    display: flex;
+}
+
+.work-container-img {
   width: 30%;
   height: 30%;
   object-fit: cover; /* 画像が縦横比を保ちながら背景に収まる */
