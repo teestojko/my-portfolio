@@ -109,10 +109,10 @@ function App() {
       if (entry.isIntersecting) {
         currentRef.style.opacity = 1;
         currentRef.style.transform = "translateX(0)";
-        currentRef.style.transition = "opacity 0.5s ease-out, transform 0.5s ease-out";
+        currentRef.style.transition = "opacity 1s ease-out, transform 1s ease-out";//スライド時間
       } else {
         currentRef.style.opacity = 0;
-        currentRef.style.transform = "translateX(500px)"; // 初期位置を右側に設定
+        currentRef.style.transform = "translateX(500px)";//スライド距離
       }
     },
     { threshold: 0 }
