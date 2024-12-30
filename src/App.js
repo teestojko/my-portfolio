@@ -119,14 +119,11 @@ function App() {
         <div className="light-effect"></div>
       </div>
       <div className="background-work-container">
-        <div className="work-container-inner">
-          <h1 className="work-container-title">
-            work
-          </h1>
+        <div ref={workTitleRef} className="work-container-inner">
+          <h1 className="work-container-title">work</h1>
           <img src="/images/rese.png" alt="rese" />
           <img src="/images/furima.png" alt="furima" />
         </div>
-          
       </div>
     </>
   );
