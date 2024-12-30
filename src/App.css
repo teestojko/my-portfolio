@@ -88,7 +88,7 @@
 
 .work-container-img-all{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .work-container-img {
