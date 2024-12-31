@@ -246,7 +246,7 @@ function App() {
         </div>
       </div>
       <div ref={profileRef} className="section profile-section">
-        <Wave />
+        {/* <Wave /> */}
       </div>
       <div ref={contactRef} className="section contact-section">
         {/* Contact セクションの内容 */}
