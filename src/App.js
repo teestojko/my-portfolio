@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import * as THREE from "three";
 import "./App.css";
-// import Wave from "./Wave";
+import Wave from "./Wave";
 import { useTextAnimation } from "./changeText";
 import { randomizeLights } from "./lightEffect";
 
@@ -246,7 +246,7 @@ function App() {
         </div>
       </div>
       <div ref={profileRef} className="section profile-section">
-        {/* <Wave /> */}
+        <Wave />
       </div>
       <div ref={contactRef} className="section contact-section">
         {/* Contact セクションの内容 */}
