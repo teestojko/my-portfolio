@@ -8,7 +8,20 @@ function App() {
   const sceneRef = useRef(null);
   const backgroundRef = useRef(null);
   const workTitleRef = useRef(null);
+  const worksRef = useRef(null);
+  const profileRef = useRef(null);
+  const contactRef = useRef(null);
 
+  // スムーズスクロールを実現する関数
+  const scrollToSection = (ref) => {
+    if (ref && ref.current) {
+      window.scrollTo({
+        top: ref.current.offsetTop,
+        behavior: "smooth", // スムーズスクロールを有効化
+      });
+    }
+  };
+  
   // カスタムフックでテキストアニメーションを制御
   const animatedText = useTextAnimation("portfolio", "web engineer\nTetsuya Kishi", 4000, 100);
 
@@ -140,6 +153,13 @@ function App() {
 
   return (
     <>
+      <nav className="fixed-menu">
+        <ul>
+          <li onClick={() => scrollToSection(worksRef)}>Works</li>
+          <li onClick={() => scrollToSection(profileRef)}>Profile</li>
+          <li onClick={() => scrollToSection(contactRef)}>Contact</li>
+        </ul>
+      </nav>
       <div className="scene-container">
         <div ref={sceneRef} className="scene" />
         <div className="scene-text">{animatedText}</div>
