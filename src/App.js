@@ -127,23 +127,6 @@ function App() {
         if (cube.position.z > 50 || cube.position.z < -50) cube.position.z = Math.random() * 100 - 50;
       });
 
-            waves.forEach(wave => {
-        wave.rotation.x += wave.movementSpeed.x;
-        wave.rotation.y += wave.movementSpeed.y;
-        wave.rotation.z += wave.movementSpeed.z;
-
-        wave.position.x += wave.movementSpeed.x;
-        wave.position.y += wave.movementSpeed.y;
-        wave.position.z += wave.movementSpeed.z;
-
-        // 奥行きが視界外に出ないように位置をリセット
-        if (wave.position.x > 50 || wave.position.x < -50) wave.position.x = Math.random() * 100 - 50;
-        if (wave.position.y > 50 || wave.position.y < -50) wave.position.y = Math.random() * 100 - 50;
-        if (wave.position.z > 50 || wave.position.z < -50) wave.position.z = Math.random() * 100 - 50;
-      });
-
-
-
       renderer.render(scene, camera);
     };
 
