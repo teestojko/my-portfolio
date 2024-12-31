@@ -27,6 +27,7 @@ const Wave = () => {
     // マテリアルを作成（ランダムな色、ワイヤーフレームモード）
     const waveMaterial = new THREE.MeshBasicMaterial({
       color: Math.random() * 0xffffff, // ランダムな色を設定
+      wireframe: true, // ワイヤーフレーム表示を有効化
     });
 
     // 平面ジオメトリとマテリアルを組み合わせてメッシュを作成
