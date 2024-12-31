@@ -170,7 +170,7 @@ function App() {
         <div className="light-effect"></div>
         <div className="light-effect"></div>
       </div>
-      <div ref={worksRef} className="section profile-section">
+      <div ref={worksRef} className="section work-section">
         <div ref={workTitleRef} className="work-container-inner">
           <h1 className="work-container-title">
             {["w", "o", "r", "k", "s"].map((char, index) => (
@@ -186,12 +186,7 @@ function App() {
         </div>
       </div>
       <div ref={profileRef} className="section profile-section">
-        <div className="profile-content">
-          <h2>Profile</h2>
-          <p>
-            Welcome to my profile! I'm a web engineer specializing in creating modern and visually appealing web applications.
-          </p>
-        </div>
+        {/* Profile セクションの内容 */}
       </div>
       <div ref={contactRef} className="section contact-section">
         {/* Contact セクションの内容 */}
