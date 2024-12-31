@@ -186,7 +186,12 @@ function App() {
         </div>
       </div>
       <div ref={profileRef} className="section profile-section">
-        {/* Profile セクションの内容 */}
+        <div className="profile-content">
+          <h2>Profile</h2>
+          <p>
+            Welcome to my profile! I'm a web engineer specializing in creating modern and visually appealing web applications.
+          </p>
+        </div>
       </div>
       <div ref={contactRef} className="section contact-section">
         {/* Contact セクションの内容 */}
