@@ -24,12 +24,18 @@ const Wave = () => {
     const wave = new THREE.Mesh(waveGeometry, waveMaterial);
     scene.add(wave);
 
+    const positionAttribute = wave.geometry.attributes.position;
+
     const animateWave = () => {
       const time = Date.now() * 0.001;
-      wave.geometry.vertices.forEach((vertex) => {
-        vertex.z = Math.sin(vertex.x * 2 + time) * Math.cos(vertex.y * 2 + time) * 0.5;
-      });
-      wave.geometry.verticesNeedUpdate = true;
+
+      for (let i = 0; i < positionAttribute.count; i++) {
+        const x = positionAttribute.getX(i);
+        const y = positionAttribute.getY(i);
+        const z = Math.sin(x * 2 + time) * Math.cos(y * 2 + time) * 0.5;
+        positionAttribute.setZ(i, z);
+      }
+      positionAttribute.needsUpdate = true;
 
       renderer.render(scene, camera);
       requestAnimationFrame(animateWave);
