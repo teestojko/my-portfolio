@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import * as THREE from "three";
 import "./App.css";
-import Wave from "./Wave";
+// import Wave from "./Wave";
 import { useTextAnimation } from "./changeText";
 import { randomizeLights } from "./lightEffect";
 
