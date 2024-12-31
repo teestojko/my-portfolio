@@ -12,7 +12,7 @@ function App() {
   const worksRef = useRef(null);
   const profileRef = useRef(null);
   const contactRef = useRef(null);
-  const showWave = useState(true);
+  const showWave = useRef(null);
 
   // スムーズスクロールを実現する関数
   const scrollToSection = (ref) => {
