@@ -38,44 +38,6 @@ function App() {
     sceneRef.current.appendChild(renderer.domElement);
 
     const cubes = [];
-    const waves = [];
-
-    // ランダムな波の作成
-    for (let i = 0; i < 5; i++) {  // 5つの波を作成
-      const waveGeometry = new THREE.PlaneGeometry(20, 20, 32, 32);
-      const waveMaterial = new THREE.MeshStandardMaterial({
-        color: Math.random() * 0xffffff,
-        wireframe: true,  // 波を可視化するためにワイヤーフレームを使用
-        opacity: 0.5,
-        transparent: true,
-      });
-      const wave = new THREE.Mesh(waveGeometry, waveMaterial);
-
-      // ランダムな位置、回転を設定
-      wave.position.set(
-        (Math.random() - 0.5) * 100,
-        (Math.random() - 0.5) * 100,
-        (Math.random() - 0.5) * 100
-      );
-      wave.rotation.set(
-        Math.random() * Math.PI,
-        Math.random() * Math.PI,
-        Math.random() * Math.PI
-      );
-
-      // ランダムな動きの速度を設定
-      wave.movementSpeed = {
-        x: Math.random() * 0.05 - 0.025,
-        y: Math.random() * 0.05 - 0.025,
-        z: Math.random() * 0.05 - 0.025,
-      };
-
-      // ランダムなz-indexを設定
-      wave.renderOrder = Math.random(); 
-
-      waves.push(wave);
-      scene.add(wave);
-    }
 
     for (let i = 0; i < 200; i++) {
       const geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
@@ -186,7 +148,67 @@ function App() {
   };
   }, []);
   
-  
+  // 新しいuseEffectでwaveの処理を追加
+  useEffect(() => {
+    if (!sceneRef.current || !showWave) return;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 15;
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    sceneRef.current.appendChild(renderer.domElement);
+
+    const waves = [];
+
+    // ランダムな波の作成
+    for (let i = 0; i < 5; i++) {
+      const waveGeometry = new THREE.PlaneGeometry(20, 20, 32, 32);
+      const waveMaterial = new THREE.MeshStandardMaterial({
+        color: Math.random() * 0xffffff,
+        opacity: 0.5,
+        transparent: true,
+      });
+      const wave = new THREE.Mesh(waveGeometry, waveMaterial);
+      wave.position.set(
+        (Math.random() - 0.5) * 100,
+        (Math.random() - 0.5) * 100,
+        (Math.random() - 0.5) * 100
+      );
+      wave.rotation.set(
+        Math.random() * Math.PI,
+        Math.random() * Math.PI,
+        Math.random() * Math.PI
+      );
+      wave.movementSpeed = {
+        x: Math.random() * 0.05 - 0.025,
+        y: Math.random() * 0.05 - 0.025,
+        z: Math.random() * 0.05 - 0.025,
+      };
+      waves.push(wave);
+      scene.add(wave);
+    }
+
+    const animateWaves = () => {
+      requestAnimationFrame(animateWaves);
+      waves.forEach(wave => {
+        wave.rotation.x += wave.movementSpeed.x;
+        wave.rotation.y += wave.movementSpeed.y;
+        wave.rotation.z += wave.movementSpeed.z;
+        wave.position.x += wave.movementSpeed.x;
+        wave.position.y += wave.movementSpeed.y;
+        wave.position.z += wave.movementSpeed.z;
+
+        if (wave.position.x > 50 || wave.position.x < -50) wave.position.x = Math.random() * 100 - 50;
+        if (wave.position.y > 50 || wave.position.y < -50) wave.position.y = Math.random() * 100 - 50;
+        if (wave.position.z > 50 || wave.position.z < -50) wave.position.z = Math.random() * 100 - 50;
+      });
+
+      renderer.render(scene, camera);
+    };
+
+    animateWaves();
+  }, [showWave]);
 
   return (
     <>
