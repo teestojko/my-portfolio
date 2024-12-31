@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import * as THREE from "three";
 import "./App.css";
+import Wave from "./Wave";
 import { useTextAnimation } from "./changeText";
 import { randomizeLights } from "./lightEffect";
 
@@ -37,6 +38,45 @@ function App() {
     sceneRef.current.appendChild(renderer.domElement);
 
     const cubes = [];
+    const waves = [];
+
+    // ランダムな波の作成
+    for (let i = 0; i < 5; i++) {  // 5つの波を作成
+      const waveGeometry = new THREE.PlaneGeometry(20, 20, 32, 32);
+      const waveMaterial = new THREE.MeshStandardMaterial({
+        color: Math.random() * 0xffffff,
+        wireframe: true,  // 波を可視化するためにワイヤーフレームを使用
+        opacity: 0.5,
+        transparent: true,
+      });
+      const wave = new THREE.Mesh(waveGeometry, waveMaterial);
+
+      // ランダムな位置、回転を設定
+      wave.position.set(
+        (Math.random() - 0.5) * 100,
+        (Math.random() - 0.5) * 100,
+        (Math.random() - 0.5) * 100
+      );
+      wave.rotation.set(
+        Math.random() * Math.PI,
+        Math.random() * Math.PI,
+        Math.random() * Math.PI
+      );
+
+      // ランダムな動きの速度を設定
+      wave.movementSpeed = {
+        x: Math.random() * 0.05 - 0.025,
+        y: Math.random() * 0.05 - 0.025,
+        z: Math.random() * 0.05 - 0.025,
+      };
+
+      // ランダムなz-indexを設定
+      wave.renderOrder = Math.random(); 
+
+      waves.push(wave);
+      scene.add(wave);
+    }
+
     for (let i = 0; i < 200; i++) {
       const geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
       const material = new THREE.MeshStandardMaterial({
@@ -86,6 +126,24 @@ function App() {
         if (cube.position.y > 50 || cube.position.y < -50) cube.position.y = Math.random() * 100 - 50;
         if (cube.position.z > 50 || cube.position.z < -50) cube.position.z = Math.random() * 100 - 50;
       });
+
+            waves.forEach(wave => {
+        wave.rotation.x += wave.movementSpeed.x;
+        wave.rotation.y += wave.movementSpeed.y;
+        wave.rotation.z += wave.movementSpeed.z;
+
+        wave.position.x += wave.movementSpeed.x;
+        wave.position.y += wave.movementSpeed.y;
+        wave.position.z += wave.movementSpeed.z;
+
+        // 奥行きが視界外に出ないように位置をリセット
+        if (wave.position.x > 50 || wave.position.x < -50) wave.position.x = Math.random() * 100 - 50;
+        if (wave.position.y > 50 || wave.position.y < -50) wave.position.y = Math.random() * 100 - 50;
+        if (wave.position.z > 50 || wave.position.z < -50) wave.position.z = Math.random() * 100 - 50;
+      });
+
+
+
       renderer.render(scene, camera);
     };
 
@@ -143,7 +201,9 @@ function App() {
       observer.unobserve(currentRef);
     }
   };
-}, []);
+  }, []);
+  
+  
 
   return (
     <>
@@ -186,7 +246,7 @@ function App() {
         </div>
       </div>
       <div ref={profileRef} className="section profile-section">
-        {/* Profile セクションの内容 */}
+        <Wave />
       </div>
       <div ref={contactRef} className="section contact-section">
         {/* Contact セクションの内容 */}
