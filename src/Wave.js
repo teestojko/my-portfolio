@@ -30,9 +30,9 @@ const Wave = () => {
       wireframe: true, // ワイヤーフレーム表示を有効化
     });
 
-    // // 平面ジオメトリとマテリアルを組み合わせてメッシュを作成
-    // const wave = new THREE.Mesh(waveGeometry, waveMaterial);
-    // scene.add(wave); // メッシュをシーンに追加
+    // 平面ジオメトリとマテリアルを組み合わせてメッシュを作成
+    const wave = new THREE.Mesh(waveGeometry, waveMaterial);
+    scene.add(wave); // メッシュをシーンに追加
 
     // 頂点の位置データを取得
     const positionAttribute = wave.geometry.attributes.position;
