@@ -21,7 +21,7 @@ function App() {
       });
     }
   };
-  
+
   // カスタムフックでテキストアニメーションを制御
   const animatedText = useTextAnimation("portfolio", "web engineer\nTetsuya Kishi", 4000, 100);
 
@@ -135,21 +135,15 @@ function App() {
     },
     { threshold: 0 }
   );
-
   if (currentRef) {
     observer.observe(currentRef);
   }
-
   return () => {
     if (currentRef) {
       observer.unobserve(currentRef);
     }
   };
 }, []);
-
-
-
-
 
   return (
     <>
@@ -176,11 +170,8 @@ function App() {
         <div className="light-effect"></div>
         <div className="light-effect"></div>
       </div>
-      <div className="background-work-container">
+      <div ref={worksRef} className="section profile-section">
         <div ref={workTitleRef} className="work-container-inner">
-
-
-
           <h1 className="work-container-title">
             {["w", "o", "r", "k"].map((char, index) => (
               <span className="title-animation" key={index} style={{ animationDelay: `${index * 0.2}s` }}>
@@ -188,14 +179,17 @@ function App() {
               </span>
             ))}
           </h1>
-
-
-
           <div className="work-container-img-all">
             <img className="work-container-img" src="/images/rese.png" alt="rese" />
             <img className="work-container-img" src="/images/furima.png" alt="furima" />
           </div>
         </div>
+      </div>
+      <div ref={profileRef} className="section profile-section">
+        {/* Profile セクションの内容 */}
+      </div>
+      <div ref={contactRef} className="section contact-section">
+        {/* Contact セクションの内容 */}
       </div>
     </>
   );
