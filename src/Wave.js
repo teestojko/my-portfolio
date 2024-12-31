@@ -21,20 +21,12 @@ const Wave = () => {
     renderer.setSize(window.innerWidth, window.innerHeight); // レンダラーのサイズを設定
     waveRef.current.appendChild(renderer.domElement); // レンダラーのDOM要素を追加
 
-    // ライトを追加
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // 環境光
-    scene.add(ambientLight);
-
-    const pointLight = new THREE.PointLight(0xffffff, 1); // 点光源
-    pointLight.position.set(5, 5, 5); // ライトの位置
-    scene.add(pointLight);
-
-    // 平面ジオメトリとマテリアルを作成
+    // 平面ジオメトリを作成（20x20の大きさ、100x100の分割数）
     const waveGeometry = new THREE.PlaneGeometry(20, 20, 100, 100);
-    const waveMaterial = new THREE.MeshStandardMaterial({
-      color: Math.random() * 0xffffff,
-      metalness: 0.5, // 金属感の調整
-      roughness: 0.5, // 粗さの調整（0に近いほど光沢が強い）
+
+    // マテリアルを作成（ランダムな色、ワイヤーフレームモード）
+    const waveMaterial = new THREE.MeshBasicMaterial({
+      color: Math.random() * 0xffffff, // ランダムな色を設定
     });
 
     // 平面ジオメトリとマテリアルを組み合わせてメッシュを作成
