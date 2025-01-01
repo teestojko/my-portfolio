@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import "./App.css";
 import { useTextAnimation } from "./changeText";
 import MovingCube from "./movingCube";
-import { randomizeLights } from "./randomizeLights";
+import { randomizeLights } from "./lightEffect";
 
 function App() {
   const backgroundRef = useRef(null);
