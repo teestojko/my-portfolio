@@ -28,9 +28,11 @@ const Wave = () => {
     // 平面ジオメトリを作成（20x20の大きさ、100x100の分割数）
     const waveGeometry = new THREE.PlaneGeometry(20, 20, 100, 100);
 
-    // マテリアルを作成（ランダムな色）
-    const waveMaterial = new THREE.MeshBasicMaterial({
-      color: Math.random() * 0xffffff, // ランダムな色を設定
+    // マテリアルを作成（光の影響を受けるマテリアル）
+    const waveMaterial = new THREE.MeshStandardMaterial({
+      color: 0x00ff00, // 明るい緑色に設定
+      roughness: 0.5, // 表面の粗さ
+      metalness: 0.5, // 金属感
     });
 
     // 平面ジオメトリとマテリアルを組み合わせてメッシュを作成
@@ -39,6 +41,15 @@ const Wave = () => {
 
     // 頂点の位置データを取得
     const positionAttribute = wave.geometry.attributes.position;
+
+    // 環境光を追加（全体を明るくする）
+    const ambientLight = new THREE.AmbientLight(0x404040, 1); // 明るさ0.4の環境光
+    scene.add(ambientLight);
+
+    // 点光源を追加（波を強調する光）
+    const pointLight = new THREE.PointLight(0xffffff, 1, 100);
+    pointLight.position.set(10, 10, 10); // 点光源の位置
+    scene.add(pointLight);
 
     // アニメーション関数を定義
     const animateWave = () => {
