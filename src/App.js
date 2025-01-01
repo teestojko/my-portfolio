@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import "./App.css";
 import { useTextAnimation } from "./changeText";
 import MovingCube from "./movingCube";
+import { randomizeLights } from "./randomizeLights";
 
 function App() {
   const backgroundRef = useRef(null);
@@ -22,6 +23,12 @@ function App() {
 
   // カスタムフックでテキストアニメーションを制御
   const animatedText = useTextAnimation("portfolio", "web engineer\nTetsuya Kishi", 4000, 100);
+
+
+  useEffect(() => {
+    // 光のエフェクトを初期化
+    randomizeLights();
+  }, []);
 
   useEffect(() => {
 
@@ -89,16 +96,9 @@ function App() {
         <div className="scene-text">{animatedText}</div>
       </div>
       <div ref={backgroundRef} className="custom-background">
-        <div className="light-effect"></div>
-        <div className="light-effect"></div>
-        <div className="light-effect"></div>
-        <div className="light-effect"></div>
-        <div className="light-effect"></div>
-        <div className="light-effect"></div>
-        <div className="light-effect"></div>
-        <div className="light-effect"></div>
-        <div className="light-effect"></div>
-        <div className="light-effect"></div>
+        {Array.from({ length: 20 }).map((_, index) => (
+          <div key={index} className="light-effect"></div>
+        ))}
       </div>
       <div ref={worksRef} className="section profile-section">
         <div ref={workTitleRef} className="work-container-inner">
