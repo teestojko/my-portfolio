@@ -1,12 +1,10 @@
 import React, { useRef, useEffect } from "react";
-import * as THREE from "three";
 import "./App.css";
 import { useTextAnimation } from "./changeText";
 import { randomizeLights } from "./lightEffect";
 import MovingCube from "./movingCube";
 
 function App() {
-  const sceneRef = useRef(null);
   const backgroundRef = useRef(null);
   const workTitleRef = useRef(null);
   const worksRef = useRef(null);
