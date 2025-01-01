@@ -19,15 +19,18 @@ const Wave = () => {
     // WebGLレンダラーを作成し、透明背景を有効化
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight); // レンダラーのサイズを設定
+
+    // 背景色を設定（ここでは黒色を指定）
+    renderer.setClearColor(0x000000, 1); // 0x000000 は黒色
+
     waveRef.current.appendChild(renderer.domElement); // レンダラーのDOM要素を追加
 
     // 平面ジオメトリを作成（20x20の大きさ、100x100の分割数）
     const waveGeometry = new THREE.PlaneGeometry(20, 20, 100, 100);
 
-    // マテリアルを作成（ランダムな色、ワイヤーフレームモード）
+    // マテリアルを作成（ランダムな色）
     const waveMaterial = new THREE.MeshBasicMaterial({
       color: Math.random() * 0xffffff, // ランダムな色を設定
-      wireframe: true, // ワイヤーフレーム表示を有効化
     });
 
     // 平面ジオメトリとマテリアルを組み合わせてメッシュを作成
