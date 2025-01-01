@@ -167,19 +167,5 @@
     color: #ffeb3b; /* ホバー時の色変更 */
 }
 
-.profile-section {
-  position: relative;
-  overflow: hidden; /* 波がセクション外に表示されないように */
-  height: 100vh; /* セクションの高さを調整 */
-}
-
-.profile-section .wave-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
 
 
