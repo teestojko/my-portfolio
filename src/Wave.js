@@ -9,6 +9,15 @@ const Wave = () => {
     // waveRefが存在しない場合は何もしない
     if (!waveRef.current) return;
 
+    // 背景にCSSのグラデーションを適用
+    waveRef.current.style.background = "linear-gradient(to bottom, white, #cccccc)";
+    waveRef.current.style.position = "absolute";
+    waveRef.current.style.top = 0;
+    waveRef.current.style.left = 0;
+    waveRef.current.style.width = "100%";
+    waveRef.current.style.height = "100%";
+    waveRef.current.style.zIndex = -1; // シーンの後ろに配置
+
     // THREE.jsのシーンを作成
     const scene = new THREE.Scene();
 
@@ -20,10 +29,8 @@ const Wave = () => {
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight); // レンダラーのサイズを設定
 
-    // 背景色を設定（ここでは黒色を指定）
-    renderer.setClearColor(0x000000, 1); // 0x000000 は黒色
-
-    waveRef.current.appendChild(renderer.domElement); // レンダラーのDOM要素を追加
+    // waveRefにレンダラーのDOM要素を追加
+    waveRef.current.appendChild(renderer.domElement); 
 
     // 平面ジオメトリを作成（20x20の大きさ、100x100の分割数）
     const waveGeometry = new THREE.PlaneGeometry(20, 20, 100, 100);
