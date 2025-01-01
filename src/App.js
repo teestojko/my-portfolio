@@ -4,6 +4,7 @@ import { useTextAnimation } from "./changeText";
 import MovingCube from "./movingCube";
 import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
+import useMoveWorks from "./moveWorks";
 
 function App() {
   const backgroundRef = useRef(null);
@@ -33,31 +34,7 @@ function App() {
 
   useScrollEffect(backgroundRef);
 
-  useEffect(() => {
-  const currentRef = workTitleRef.current; // ローカル変数にコピー
-
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        currentRef.style.opacity = 1;
-        currentRef.style.transform = "translateX(0)";
-        currentRef.style.transition = "opacity 1s ease-out, transform 1s ease-out";//スライド時間
-      } else {
-        currentRef.style.opacity = 0;
-        currentRef.style.transform = "translateX(500px)";//スライド距離
-      }
-    },
-    { threshold: 0 }
-  );
-  if (currentRef) {
-    observer.observe(currentRef);
-  }
-  return () => {
-    if (currentRef) {
-      observer.unobserve(currentRef);
-    }
-  };
-}, []);
+  useMoveWorks(workTitleRef);
 
   return (
     <>
