@@ -11,12 +11,9 @@ const Wave = () => {
 
     // 背景にCSSのグラデーションを適用
     waveRef.current.style.background = "linear-gradient(to bottom, white, #cccccc)";
-    waveRef.current.style.position = "absolute";
-    waveRef.current.style.top = 0;
-    waveRef.current.style.left = 0;
-    waveRef.current.style.width = "100%";
-    waveRef.current.style.height = "100%";
-    waveRef.current.style.zIndex = -1; // シーンの後ろに配置
+    waveRef.current.style.position = "relative"; // これでWaveの位置が親要素に相対的に配置される
+    waveRef.current.style.width = "100%"; // 親要素に合わせて幅を100%に設定
+    waveRef.current.style.height = "100%"; // 親要素に合わせて高さを100%に設定
 
     // THREE.jsのシーンを作成
     const scene = new THREE.Scene();
