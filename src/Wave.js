@@ -69,7 +69,7 @@ const Wave = () => {
   }, []);
 
   // 全画面表示のスタイルを適用したコンテナを返す
-  return <div ref={waveRef} style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 0 }} />;
+  return <div ref={waveRef} />;
 };
 
 export default Wave;
