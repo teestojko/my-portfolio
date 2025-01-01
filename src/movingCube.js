@@ -8,13 +8,14 @@ const MovingCube = () => {
     if (!sceneRef.current) return;
 
     // シーン、カメラ、レンダラーのセットアップ
+    const currentSceneRef = sceneRef.current; // ローカル変数にコピー
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 15;
 
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    sceneRef.current.appendChild(renderer.domElement);
+    currentSceneRef.appendChild(renderer.domElement);
 
     const cubes = [];
     for (let i = 0; i < 200; i++) {
@@ -73,7 +74,8 @@ const MovingCube = () => {
 
     return () => {
       // Cleanup
-      sceneRef.current.removeChild(renderer.domElement);
+      currentSceneRef.removeChild(renderer.domElement); // currentSceneRef を使用
+      renderer.dispose(); // リソースの解放を追加
     };
   }, []);
 
