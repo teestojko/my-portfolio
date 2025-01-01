@@ -28,28 +28,19 @@ const Wave = () => {
     // 平面ジオメトリを作成（20x20の大きさ、100x100の分割数）
     const waveGeometry = new THREE.PlaneGeometry(20, 20, 100, 100);
 
-    // マテリアルを作成（光の影響を受けるマテリアル）
-    const waveMaterial = new THREE.MeshStandardMaterial({
-      color: 0x00ff00, // 明るい緑色に設定
-      roughness: 0.5, // 表面の粗さ
-      metalness: 0.5, // 金属感
+    // 頂点の位置データを取得
+    const positionAttribute = waveGeometry.attributes.position;
+    const colorAttribute = new THREE.BufferAttribute(new Float32Array(positionAttribute.count * 3), 3);
+    waveGeometry.setAttribute('color', colorAttribute);
+
+    // マテリアルを作成（色のグラデーションを使用）
+    const waveMaterial = new THREE.MeshBasicMaterial({
+      vertexColors: true, // 頂点ごとの色を使用
     });
 
     // 平面ジオメトリとマテリアルを組み合わせてメッシュを作成
     const wave = new THREE.Mesh(waveGeometry, waveMaterial);
     scene.add(wave); // メッシュをシーンに追加
-
-    // 頂点の位置データを取得
-    const positionAttribute = wave.geometry.attributes.position;
-
-    // 環境光を追加（全体を明るくする）
-    const ambientLight = new THREE.AmbientLight(0x404040, 1); // 明るさ0.4の環境光
-    scene.add(ambientLight);
-
-    // 点光源を追加（波を強調する光）
-    const pointLight = new THREE.PointLight(0xffffff, 1, 100);
-    pointLight.position.set(10, 10, 10); // 点光源の位置
-    scene.add(pointLight);
 
     // アニメーション関数を定義
     const animateWave = () => {
@@ -61,10 +52,17 @@ const Wave = () => {
         const y = positionAttribute.getY(i); // 頂点のY座標
         const z = Math.sin(x * 2 + time) * Math.cos(y * 2 + time) * 0.5; // 新しいZ座標を計算
         positionAttribute.setZ(i, z); // Z座標を更新
+
+        // 色の計算 (高さに基づいて色を変更)
+        const color = new THREE.Color();
+        const colorValue = Math.abs(Math.sin(z)); // Z座標（高さ）に基づいて色を変化
+        color.setHSL(colorValue, 1, 0.5); // 色相（HSL）を設定
+        colorAttribute.setXYZ(i, color.r, color.g, color.b); // 頂点ごとに色を設定
       }
 
       // ジオメトリが更新されたことを通知
       positionAttribute.needsUpdate = true;
+      colorAttribute.needsUpdate = true;
 
       // シーンとカメラをレンダリング
       renderer.render(scene, camera);
