@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import * as THREE from "three";
 
-const movingCube = () => {
+const MovingCube = () => {
   const sceneRef = useRef(null);
 
   useEffect(() => {
@@ -80,4 +80,4 @@ const movingCube = () => {
   return <div ref={sceneRef} className="scene" />;
 };
 
-export default movingCube;
+export default MovingCube;

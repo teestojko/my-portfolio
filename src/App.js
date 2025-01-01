@@ -3,7 +3,7 @@ import * as THREE from "three";
 import "./App.css";
 import { useTextAnimation } from "./changeText";
 import { randomizeLights } from "./lightEffect";
-import movingCube from "./movingCube";
+import MovingCube from "./movingCube";
 
 function App() {
   const sceneRef = useRef(null);
@@ -156,7 +156,7 @@ function App() {
         </ul>
       </nav>
       <div className="scene-container">
-        <movingCube />
+        <MovingCube />
         <div className="scene-text">{animatedText}</div>
       </div>
       <div ref={backgroundRef} className="custom-background">
