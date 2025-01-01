@@ -5,6 +5,7 @@ import MovingCube from "./movingCube";
 import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
 import useMoveWorks from "./moveWorks";
+import Wave from "./Wave";
 
 function App() {
   const backgroundRef = useRef(null);
@@ -70,7 +71,7 @@ function App() {
         </div>
       </div>
       <div ref={profileRef} className="section profile-section">
-        {/* Profile セクションの内容 */}
+        <Wave />
       </div>
       <div ref={contactRef} className="section contact-section">
         {/* Contact セクションの内容 */}
