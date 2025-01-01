@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import "./App.css";
 import { useTextAnimation } from "./changeText";
-import { randomizeLights } from "./lightEffect";
 import MovingCube from "./movingCube";
 
 function App() {
