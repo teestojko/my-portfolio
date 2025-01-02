@@ -30,7 +30,7 @@ const Wave = () => {
     waveRef.current.appendChild(renderer.domElement); 
 
     // 平面ジオメトリを作成（20x20の大きさ、100x100の分割数）
-    const waveGeometry = new THREE.PlaneGeometry(20, 20, 100, 100);
+    const waveGeometry = new THREE.PlaneGeometry(200, 200, 10, 10);
 
     // 頂点の位置データを取得
     const positionAttribute = waveGeometry.attributes.position;
