@@ -85,7 +85,7 @@ const Wave = () => {
     };
   }, []);
 
-  return <div ref={waveRef} style={{ width: "100%", height: "100vh" }} />;
+  return <div ref={waveRef}/>;
 };
 
 export default Wave;
