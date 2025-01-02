@@ -21,7 +21,7 @@ const Wave = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     waveElement.appendChild(renderer.domElement);
 
-    const waveGeometry = new THREE.PlaneGeometry(20, 20, 10, 10);
+    const waveGeometry = new THREE.PlaneGeometry(20, 20, 20, 20); // 分割数を増やして滑らかに
     const positionAttribute = waveGeometry.attributes.position;
     const colorAttribute = new THREE.BufferAttribute(new Float32Array(positionAttribute.count * 3), 3);
     waveGeometry.setAttribute("color", colorAttribute);
@@ -33,34 +33,35 @@ const Wave = () => {
     const randomOffsets = Array.from({ length: positionAttribute.count }, () => Math.random() * Math.PI * 2);
 
     const animateWave = () => {
-      const time = Date.now() * 0.001;
+      const time = Date.now() * 0.001; // 時間による変化
       let minZ = Infinity;
       let maxZ = -Infinity;
 
       for (let i = 0; i < positionAttribute.count; i++) {
-        // 既存のX, Yを取得
+        // 既存のX, Y座標を取得
         let x = positionAttribute.getX(i);
         let y = positionAttribute.getY(i);
 
-        // X軸とY軸をランダムに移動
-        const xOffset = Math.sin(time + randomOffsets[i]) * 0.1; // ±0.1の範囲で移動
-        const yOffset = Math.cos(time + randomOffsets[i]) * 0.1; // ±0.1の範囲で移動
+        // 曲線の動きを追加（例: サイン波を利用した曲線）
+        const curveOffsetX = Math.sin(y * 2 + time + randomOffsets[i]) * 0.3; // X方向のカーブ
+        const curveOffsetY = Math.cos(x * 2 + time + randomOffsets[i]) * 0.3; // Y方向のカーブ
 
-        x += xOffset; // 新しいX位置
-        y += yOffset; // 新しいY位置
+        x += curveOffsetX; // 曲線によるX移動
+        y += curveOffsetY; // 曲線によるY移動
 
         positionAttribute.setX(i, x);
         positionAttribute.setY(i, y);
 
-        // Z座標を既存の計算式で更新
+        // Z座標にランダムで波を発生させる
         const z = Math.sin(x * 2 + time + randomOffsets[i]) * Math.cos(y * 2 + time + randomOffsets[i]) * 0.5;
         positionAttribute.setZ(i, z);
 
-        // Z座標の最小値と最大値を更新
+        // Z座標の最小値と最大値を追跡
         if (z < minZ) minZ = z;
         if (z > maxZ) maxZ = z;
       }
 
+      // 頂点の色をZ座標の高さに応じて変更
       for (let i = 0; i < positionAttribute.count; i++) {
         const z = positionAttribute.getZ(i);
         const color = new THREE.Color();
