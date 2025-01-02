@@ -75,7 +75,12 @@ function App() {
         <Wave />
       </div>
       <div ref={contactRef} className="section contact-section">
-        <OceanWave />
+        <OceanWave /> {/* 追加 */}
+        <div className="contact-content">
+          {/* Contact セクションの内容 */}
+          <h2>Contact Me</h2>
+          <p>Email: your_email@example.com</p>
+        </div>
       </div>
     </>
   );
