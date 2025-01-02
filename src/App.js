@@ -5,7 +5,6 @@ import MovingCube from "./movingCube";
 import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
 import useMoveWorks from "./moveWorks";
-import Wave from "./Wave";
 
 function App() {
   const backgroundRef = useRef(null);
