@@ -29,7 +29,6 @@ const Wave = () => {
     const wave = new THREE.Mesh(waveGeometry, waveMaterial);
     scene.add(wave);
 
-    const randomOffsets = Array.from({ length: positionAttribute.count }, () => Math.random() * Math.PI * 2);
 
     const animateWave = () => {
       const time = Date.now() * 0.001;
