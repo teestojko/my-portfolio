@@ -63,7 +63,7 @@ const OceanWave = () => {
     };
   }, []);
 
-  return <div ref={waveRef} style={{ position: "absolute", width: "100%", height: "100%" }} />;
+  return <div ref={waveRef} />;
 };
 
 export default OceanWave;
