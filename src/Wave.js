@@ -50,17 +50,33 @@ const Wave = () => {
     const animateWave = () => {
       const time = Date.now() * 0.001; // 現在の時間（秒単位）
 
-      // 各頂点の位置を更新
+      // 最大Z座標（頂点の高さ）と最小Z座標（最も低い部分）を初期化
+      let minZ = Infinity;
+      let maxZ = -Infinity;
+
+      // 各頂点の位置を更新し、最小Z座標と最大Z座標を計算
       for (let i = 0; i < positionAttribute.count; i++) {
         const x = positionAttribute.getX(i); // 頂点のX座標
         const y = positionAttribute.getY(i); // 頂点のY座標
         const z = Math.sin(x * 2 + time) * Math.cos(y * 2 + time) * 0.5; // 新しいZ座標を計算
         positionAttribute.setZ(i, z); // Z座標を更新
 
-        // 色の計算 (高さに基づいて色を変更)
+        // Z座標の最小値と最大値を取得
+        if (z < minZ) minZ = z;
+        if (z > maxZ) maxZ = z;
+      }
+
+      // 各頂点の色をZ座標に基づいて設定
+      for (let i = 0; i < positionAttribute.count; i++) {
+        const z = positionAttribute.getZ(i); // 頂点のZ座標
+
+        // 頂点が最も高い部分（白）と最も低い部分（灰色）を決定
         const color = new THREE.Color();
-        const colorValue = Math.abs(Math.sin(z)); // Z座標（高さ）に基づいて色を変化
-        color.setHSL(colorValue, 1, 0.5); // 色相（HSL）を設定
+        const normalizedHeight = (z - minZ) / (maxZ - minZ); // 0〜1に正規化
+
+        // Z座標に基づいて色を設定（最も高い部分を白、最も低い部分を灰色）
+        color.setRGB(1 - normalizedHeight, 1 - normalizedHeight, 1 - normalizedHeight); // 高さに応じて色を変化
+
         colorAttribute.setXYZ(i, color.r, color.g, color.b); // 頂点ごとに色を設定
       }
 
