@@ -46,6 +46,9 @@ const Wave = () => {
     const wave = new THREE.Mesh(waveGeometry, waveMaterial);
     scene.add(wave); // メッシュをシーンに追加
 
+    // ランダムな位相を生成
+    const randomOffsets = Array.from({ length: positionAttribute.count }, () => Math.random() * Math.PI * 2);
+
     // アニメーション関数を定義
     const animateWave = () => {
       const time = Date.now() * 0.001; // 現在の時間（秒単位）
