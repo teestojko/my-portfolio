@@ -5,7 +5,6 @@ const Wave = () => {
   const waveRef = useRef(null);
 
   useEffect(() => {
-    // ローカル変数にwaveRef.currentを保存
     const waveElement = waveRef.current;
     if (!waveElement) return;
 
@@ -39,10 +38,25 @@ const Wave = () => {
       let maxZ = -Infinity;
 
       for (let i = 0; i < positionAttribute.count; i++) {
-        const x = positionAttribute.getX(i);
-        const y = positionAttribute.getY(i);
+        // 既存のX, Yを取得
+        let x = positionAttribute.getX(i);
+        let y = positionAttribute.getY(i);
+
+        // X軸とY軸をランダムに移動
+        const xOffset = Math.sin(time + randomOffsets[i]) * 0.1; // ±0.1の範囲で移動
+        const yOffset = Math.cos(time + randomOffsets[i]) * 0.1; // ±0.1の範囲で移動
+
+        x += xOffset; // 新しいX位置
+        y += yOffset; // 新しいY位置
+
+        positionAttribute.setX(i, x);
+        positionAttribute.setY(i, y);
+
+        // Z座標を既存の計算式で更新
         const z = Math.sin(x * 2 + time + randomOffsets[i]) * Math.cos(y * 2 + time + randomOffsets[i]) * 0.5;
         positionAttribute.setZ(i, z);
+
+        // Z座標の最小値と最大値を更新
         if (z < minZ) minZ = z;
         if (z > maxZ) maxZ = z;
       }
@@ -65,7 +79,6 @@ const Wave = () => {
     animateWave();
 
     return () => {
-      // waveElementを使うことでクリーンアップ関数内の参照を固定
       renderer.dispose();
       if (waveElement) waveElement.removeChild(renderer.domElement);
     };
