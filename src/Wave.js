@@ -110,3 +110,4 @@ const Wave = () => {
 };
 
 export default Wave;
+
