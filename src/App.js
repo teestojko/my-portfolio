@@ -6,7 +6,6 @@ import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
 import useMoveWorks from "./moveWorks";
 import Wave from "./Wave";
-import OceanWave from "./OceanWave";
 
 function App() {
   const backgroundRef = useRef(null);
