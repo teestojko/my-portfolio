@@ -57,17 +57,19 @@ const Wave = () => {
       let minZ = Infinity;
       let maxZ = -Infinity;
 
-      // 各頂点の位置を更新し、最小Z座標と最大Z座標を計算
+      // 各頂点の位置をランダムに動かす
       for (let i = 0; i < positionAttribute.count; i++) {
-        const x = positionAttribute.getX(i); // 頂点のX座標
-        const y = positionAttribute.getY(i); // 頂点のY座標
-        const z = Math.sin(x * 2 + time) * Math.cos(y * 2 + time) * 0.5; // 新しいZ座標を計算
-        positionAttribute.setZ(i, z); // Z座標を更新
+        const x = positionAttribute.getX(i);
+        const y = positionAttribute.getY(i);
 
-        // Z座標の最小値と最大値を取得
+        // ランダムな位相を使用してZ座標を変化させる
+        const z = Math.sin(x * 2 + time + randomOffsets[i]) * Math.cos(y * 2 + time + randomOffsets[i]) * 0.5;
+        positionAttribute.setZ(i, z);
+
         if (z < minZ) minZ = z;
         if (z > maxZ) maxZ = z;
       }
+
 
       // 各頂点の色をZ座標に基づいて設定
       for (let i = 0; i < positionAttribute.count; i++) {
