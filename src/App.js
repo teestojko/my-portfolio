@@ -71,7 +71,7 @@ function App() {
         </div>
       </div>
       <div ref={profileRef} className="section profile-section">
-        <Wave />
+        
       </div>
       <div ref={contactRef} className="section contact-section">
         
