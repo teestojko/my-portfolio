@@ -73,7 +73,10 @@ function App() {
         
       </div>
       <div ref={contactRef} className="section contact-section">
-        
+        <div className="contact-content">
+          <h2>Contact Me</h2>
+          <p>Email: your_email@example.com</p>
+        </div>
       </div>
     </>
   );
