@@ -10,8 +10,7 @@ function App() {
   const backgroundRef = useRef(null);
   const workTitleRef = useRef(null);
   const worksRef = useRef(null);
-  const skillsRef = useRef(null);
-  const profileRef = useRef(null);
+  const skillRef = useRef(null);
   const contactRef = useRef(null);
 
   // スムーズスクロールを実現する関数
@@ -41,8 +40,9 @@ function App() {
     <>
       <nav className="fixed-menu">
         <ul>
+          <li onClick={() => scrollToSection(backgroundRef)}>Profile</li>
           <li onClick={() => scrollToSection(worksRef)}>Works</li>
-          <li onClick={() => scrollToSection(profileRef)}>Profile</li>
+          <li onClick={() => scrollToSection(skillRef)}>Skill</li>
           <li onClick={() => scrollToSection(contactRef)}>Contact</li>
         </ul>
       </nav>
@@ -76,7 +76,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div ref={skillsRef} className="section skill-section">
+      <div ref={skillRef} className="section skill-section">
         <div className="skill-content">
           <h1 className="">
             SKILL
@@ -84,13 +84,10 @@ function App() {
 
         </div>
       </div>
-      <div ref={profileRef} className="section profile-section">
-        
-      </div>
       <div ref={contactRef} className="section contact-section">
-        <h2>
-          Contact Me
-        </h2>
+        <h1>
+          Contact
+        </h1>
         <p>
           Email: 7195.teesu.1031@gmail.com
         </p>
