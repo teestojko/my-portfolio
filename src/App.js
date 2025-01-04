@@ -71,16 +71,16 @@ function App() {
         </div>
       </div>
       <div ref={skillsRef} className="section skill-section">
-        
+        <div className="skill-content">
+          
+        </div>
       </div>
       <div ref={profileRef} className="section profile-section">
         
       </div>
       <div ref={contactRef} className="section contact-section">
-        <div className="contact-content">
-          <h2>Contact Me</h2>
-          <p>Email: your_email@example.com</p>
-        </div>
+        <h2>Contact Me</h2>
+          <p>Email: 7195.teesu.1031@gmail.com</p>
       </div>
     </>
   );
