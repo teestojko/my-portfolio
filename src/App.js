@@ -10,6 +10,7 @@ function App() {
   const backgroundRef = useRef(null);
   const workTitleRef = useRef(null);
   const worksRef = useRef(null);
+  const skillsRef = useRef(null);
   const profileRef = useRef(null);
   const contactRef = useRef(null);
 
@@ -68,6 +69,9 @@ function App() {
             <img className="work-container-img" src="/images/furima.png" alt="furima" />
           </div>
         </div>
+      </div>
+      <div ref={skillsRef} className="section skill-section">
+        
       </div>
       <div ref={profileRef} className="section profile-section">
         
