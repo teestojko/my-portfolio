@@ -1,5 +1,7 @@
-* {
+.portfolio {
     box-sizing: border-box;
+    width: 100vw;
+    min-height: 100vh;
 }
 
 .light-effect {
@@ -47,7 +49,7 @@
     border-radius: 10px;
     margin: 0 auto;
     width: 50%;
-    height: 50%;
+    height: 50vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
