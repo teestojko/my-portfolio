@@ -13,15 +13,15 @@ function App() {
   const skillRef = useRef(null);
   const contactRef = useRef(null);
 
-  // // スムーズスクロールを実現する関数
-  // const scrollToSection = (ref) => {
-  //   if (ref && ref.current) {
-  //     window.scrollTo({
-  //       top: ref.current.offsetTop,
-  //       behavior: "smooth", // スムーズスクロールを有効化
-  //     });
-  //   }
-  // };
+  // スムーズスクロールを実現する関数
+  const scrollToSection = (ref) => {
+    if (ref && ref.current) {
+      window.scrollTo({
+        top: ref.current.offsetTop,
+        behavior: "smooth", // スムーズスクロールを有効化
+      });
+    }
+  };
 
   // カスタムフックでテキストアニメーションを制御
   const animatedText = useTextAnimation("portfolio", "web engineer\nTetsuya Kishi", 4000, 100);
@@ -39,14 +39,14 @@ function App() {
   return (
     <>
       <div className="portfolio">
-        {/* <nav className="fixed-menu">
+        <nav className="fixed-menu">
           <ul>
             <li onClick={() => scrollToSection(backgroundRef)}>Profile</li>
             <li onClick={() => scrollToSection(worksRef)}>Works</li>
             <li onClick={() => scrollToSection(skillRef)}>Skill</li>
             <li onClick={() => scrollToSection(contactRef)}>Contact</li>
           </ul>
-        </nav> */}
+        </nav>
         <div className="scene-container">
           <MovingCube />
           <div className="scene-text">{animatedText}</div>
