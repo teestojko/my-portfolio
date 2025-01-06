@@ -9,7 +9,7 @@ import useMoveWorks from "./moveWorks";
 function App() {
   const backgroundRef = useRef(null);
   const workTitleRef = useRef(null);
-  const worksRef = useRef(null);
+  // const worksRef = useRef(null);
   const skillRef = useRef(null);
   const contactRef = useRef(null);
 
@@ -34,7 +34,7 @@ function App() {
 
   useScrollEffect(backgroundRef);
 
-  useMoveWorks(workTitleRef);
+  // useMoveWorks(workTitleRef);
 
   return (
     <>
@@ -42,7 +42,7 @@ function App() {
         <nav className="fixed-menu">
           <ul>
             <li onClick={() => scrollToSection(backgroundRef)}>Profile</li>
-            <li onClick={() => scrollToSection(worksRef)}>Works</li>
+            {/* <li onClick={() => scrollToSection(worksRef)}>Works</li> */}
             <li onClick={() => scrollToSection(skillRef)}>Skill</li>
             <li onClick={() => scrollToSection(contactRef)}>Contact</li>
           </ul>
@@ -51,7 +51,7 @@ function App() {
           <MovingCube />
           <div className="scene-text">{animatedText}</div>
         </div>
-        {/* <div ref={backgroundRef} className="custom-background">
+        <div ref={backgroundRef} className="custom-background">
           <div className="profile-container">
           <h1>profile</h1>
           <p>
@@ -61,8 +61,8 @@ function App() {
           {Array.from({ length: 20 }).map((_, index) => (
             <div key={index} className="light-effect"></div>
           ))}
-        </div> */}
-        <div ref={worksRef} className="section profile-section">
+        </div>
+        {/* <div ref={worksRef} className="section profile-section">
           <div ref={workTitleRef} className="work-container-inner">
             <h1 className="work-container-title">
               {["w", "o", "r", "k", "s"].map((char, index) => (
@@ -76,7 +76,7 @@ function App() {
               <img className="work-container-img" src="/images/furima.png" alt="furima" />
             </div>
           </div>
-        </div>
+        </div> */}
         <div ref={skillRef} className="section skill-section">
           <div className="skill-content">
             <h1 className="">
