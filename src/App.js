@@ -7,7 +7,7 @@ import { useScrollEffect } from "./scroll";
 import useMoveWorks from "./moveWorks";
 
 function App() {
-  // const backgroundRef = useRef(null);
+  const backgroundRef = useRef(null);
   const workTitleRef = useRef(null);
   const worksRef = useRef(null);
   const skillRef = useRef(null);
