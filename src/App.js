@@ -4,11 +4,11 @@ import { useTextAnimation } from "./changeText";
 import MovingCube from "./movingCube";
 import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
-import useMoveWorks from "./moveWorks";
+// import useMoveWorks from "./moveWorks";
 
 function App() {
   const backgroundRef = useRef(null);
-  const workTitleRef = useRef(null);
+  // const workTitleRef = useRef(null);
   // const worksRef = useRef(null);
   const skillRef = useRef(null);
   const contactRef = useRef(null);
