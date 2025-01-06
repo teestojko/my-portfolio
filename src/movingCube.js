@@ -1,109 +1,89 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import * as THREE from "three";
+import "./App.css";
 
-const MovingCube = () => {
-    const sceneRef = useRef(null);
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+function MovingCube() {
+  const sceneRef = useRef(null);
 
-    useEffect(() => {
-        if (!sceneRef.current) return;
+  useEffect(() => {
+    if (!sceneRef.current) return;
 
-        const currentSceneRef = sceneRef.current;
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 15;
+    // シーン、カメラ、レンダラーのセットアップ
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xffffff); // 背景を白に設定
 
-        const renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        currentSceneRef.appendChild(renderer.domElement);
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 10; // 初期位置
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    sceneRef.current.appendChild(renderer.domElement);
 
-        const cubes = [];
-        for (let i = 0; i < 200; i++) {
-            const geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
-            const material = new THREE.MeshStandardMaterial({
-                color: Math.random() * 0xffffff,
-                metalness: 0.5,
-                roughness: 0.2,
-            });
-            const cube = new THREE.Mesh(geometry, material);
-            cube.position.set(
-                (Math.random() - 0.5) * 100,
-                (Math.random() - 0.5) * 100,
-                (Math.random() - 0.5) * 100
-            );
-            cube.rotationSpeed = {
-                x: Math.random() * 0.02 - 0.01,
-                y: Math.random() * 0.02 - 0.01,
-                z: Math.random() * 0.02 - 0.01,
-            };
-            cube.movementSpeed = {
-                x: Math.random() * 0.1 - 0.05,
-                y: Math.random() * 0.1 - 0.05,
-                z: Math.random() * 0.1 - 0.05,
-            };
-            cubes.push(cube);
-            scene.add(cube);
-        }
+    // 3Dキューブの作成
+    for (let i = 0; i < 50; i++) {
+      const geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+      const material = new THREE.MeshStandardMaterial({
+        color: Math.random() * 0xffffff,
+        metalness: 0.5,
+        roughness: 0.2,
+      });
+      const cube = new THREE.Mesh(geometry, material);
 
-        const light = new THREE.PointLight(0xffffff, 2.0);
-        light.position.set(50, 50, 50);
-        scene.add(light);
+      // ランダムな位置に配置
+      cube.position.x = (Math.random() - 0.5) * 10;
+      cube.position.y = (Math.random() - 0.5) * 10;
+      cube.position.z = (Math.random() - 0.5) * 10;
 
-        const ambientLight = new THREE.AmbientLight(0xffffff, 3.0);
-        scene.add(ambientLight);
+      scene.add(cube);
+    }
 
-        let targetRotationX = 0; // マウス位置に基づいた目標の回転角度
-        let targetRotationY = 0;
-        const smoothFactor = 0.05; // 回転がどれくらいのスピードで補間されるか
+    // ライトの追加
+    const light = new THREE.PointLight(0xffffff, 2.0); // 強いポイントライト
+    light.position.set(5, 5, 5);
+    scene.add(light);
 
-        const animate = () => {
-            requestAnimationFrame(animate);
-            cubes.forEach((cube) => {
-                cube.rotation.x += cube.rotationSpeed.x;
-                cube.rotation.y += cube.rotationSpeed.y;
-                cube.rotation.z += cube.rotationSpeed.z;
-                cube.position.x += cube.movementSpeed.x;
-                cube.position.y += cube.movementSpeed.y;
-                cube.position.z += cube.movementSpeed.z;
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.0); // 明るい環境光
+    scene.add(ambientLight);
 
-                // 奥行きが視界外に出ないように位置をリセット
-                if (cube.position.x > 50 || cube.position.x < -50) cube.position.x = Math.random() * 100 - 50;
-                if (cube.position.y > 50 || cube.position.y < -50) cube.position.y = Math.random() * 100 - 50;
-                if (cube.position.z > 50 || cube.position.z < -50) cube.position.z = Math.random() * 100 - 50;
-            });
+    // マウス移動イベント
+    let targetRotationX = 0;
+    let targetRotationY = 0;
 
-            // マウス位置に基づく目標回転角度を更新
-            targetRotationY = mousePosition.x * 0.002;
-            targetRotationX = mousePosition.y * 0.002;
+    const onMouseMove = (event) => {
+      const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+      const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
 
-            // 徐々に回転させる
-            scene.rotation.y += (targetRotationY - scene.rotation.y) * smoothFactor;
-            scene.rotation.x += (targetRotationX - scene.rotation.x) * smoothFactor;
+      targetRotationX = mouseY * 0.9; // 回転角度を制限
+      targetRotationY = mouseX * 0.9; // 回転角度を制限
+    };
 
-            renderer.render(scene, camera);
-        };
+    window.addEventListener("mousemove", onMouseMove);
 
-        animate();
+    // アニメーションループ
+    const animate = () => {
+      requestAnimationFrame(animate);
 
-        // マウスの位置を追跡する
-        const handleMouseMove = (event) => {
-            // ウィンドウの幅と高さに基づいてマウスの位置を正規化
-            const x = (event.clientX / window.innerWidth) * 2 - 1;
-            const y = -(event.clientY / window.innerHeight) * 2 + 1;
+      // カメラのスムーズな回転をクォータニオンで反映
+      const rotationSpeed = 0.1; // 補間速度
+      const currentRotation = new THREE.Euler(
+        camera.rotation.x + (targetRotationX - camera.rotation.x) * rotationSpeed,
+        camera.rotation.y + (targetRotationY - camera.rotation.y) * rotationSpeed,
+        0
+      );
+      camera.quaternion.setFromEuler(currentRotation);
 
-            setMousePosition({ x, y }); // マウスの位置を状態に保存
-        };
+      // シーンのレンダリング
+      renderer.render(scene, camera);
+    };
 
-        window.addEventListener('mousemove', handleMouseMove);
+    animate();
 
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove); // クリーンアップ
-            currentSceneRef.removeChild(renderer.domElement);
-            renderer.dispose();
-        };
-    }, [mousePosition]);
+    // クリーンアップ
+    return () => {
+      window.removeEventListener("mousemove", onMouseMove);
+    };
+  }, []);
 
-    return <div ref={sceneRef} className="scene" />;
-};
+  return <div ref={sceneRef} style={{ width: "100%", height: "100vh" }} />;
+}
 
 export default MovingCube;
