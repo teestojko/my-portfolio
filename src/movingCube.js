@@ -52,6 +52,10 @@ const MovingCube = () => {
         const ambientLight = new THREE.AmbientLight(0xffffff, 3.0);
         scene.add(ambientLight);
 
+        let targetRotationX = 0; // マウス位置に基づいた目標の回転角度
+        let targetRotationY = 0;
+        const smoothFactor = 0.05; // 回転がどれくらいのスピードで補間されるか
+
         const animate = () => {
             requestAnimationFrame(animate);
             cubes.forEach((cube) => {
@@ -68,9 +72,13 @@ const MovingCube = () => {
                 if (cube.position.z > 50 || cube.position.z < -50) cube.position.z = Math.random() * 100 - 50;
             });
 
-            // マウスの位置に基づいてシーンを回転させる
-            scene.rotation.y = mousePosition.x * 0.002; // マウスのX座標に基づいて回転
-            scene.rotation.x = mousePosition.y * 0.002; // マウスのY座標に基づいて回転
+            // マウス位置に基づく目標回転角度を更新
+            targetRotationY = mousePosition.x * 0.002;
+            targetRotationX = mousePosition.y * 0.002;
+
+            // 徐々に回転させる
+            scene.rotation.y += (targetRotationY - scene.rotation.y) * smoothFactor;
+            scene.rotation.x += (targetRotationX - scene.rotation.x) * smoothFactor;
 
             renderer.render(scene, camera);
         };
