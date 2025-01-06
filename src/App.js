@@ -58,9 +58,9 @@ function App() {
             Hi, I'm Tetsuya Kishi, a web engineer specializing in creating interactive and visually stunning web applications. My goal is to blend creativity with functionality to deliver excellent user experiences.
           </p>
         </div>
-          {Array.from({ length: 20 }).map((_, index) => (
+          {/* {Array.from({ length: 20 }).map((_, index) => (
             <div key={index} className="light-effect"></div>
-          ))}
+          ))} */}
         </div>
         <div ref={worksRef} className="section profile-section">
           <div ref={workTitleRef} className="work-container-inner">
