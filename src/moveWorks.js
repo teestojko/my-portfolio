@@ -8,7 +8,7 @@ const useMoveWorks = (workTitleRef) => {
         ([entry]) => {
             if (entry.isIntersecting) {
             currentRef.style.opacity = 1;
-            currentRef.style.transform = "translateX(0)";
+            currentRef.style.transform = "translateZ(0)";
             currentRef.style.transition = "opacity 1s ease-out, transform 1s ease-out"; // スライド時間
             } else {
             currentRef.style.opacity = 0;
