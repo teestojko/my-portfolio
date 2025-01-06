@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import "./App.css";
-import { useTextAnimation } from "./changeText";
+// import { useTextAnimation } from "./changeText";
 import MovingCube from "./movingCube";
 import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
