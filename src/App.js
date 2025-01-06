@@ -24,7 +24,7 @@ function App() {
   };
 
   // カスタムフックでテキストアニメーションを制御
-  const animatedText = useTextAnimation("portfolio", "web engineer\nTetsuya Kishi", 4000, 100);
+  // const animatedText = useTextAnimation("portfolio", "web engineer\nTetsuya Kishi", 4000, 100);
 
 
   useEffect(() => {
@@ -49,7 +49,7 @@ function App() {
         </nav>
         <div className="scene-container">
           <MovingCube />
-          <div className="scene-text">{animatedText}</div>
+          {/* <div className="scene-text">{animatedText}</div> */}
         </div>
         <div ref={backgroundRef} className="custom-background">
           <div className="profile-container">
