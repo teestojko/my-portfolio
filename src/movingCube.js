@@ -3,7 +3,7 @@ import * as THREE from "three";
 
 const MovingCube = () => {
     const sceneRef = useRef(null);
-    const [scrollX, setScrollX] = useState(0); // スクロール位置の状態
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
         if (!sceneRef.current) return;
@@ -68,32 +68,34 @@ const MovingCube = () => {
                 if (cube.position.z > 50 || cube.position.z < -50) cube.position.z = Math.random() * 100 - 50;
             });
 
-            // スクロール位置に基づいてシーンを回転させる
-            scene.rotation.y = scrollX * 0.002; // スクロール位置に応じて回転量を調整
+            // マウスの位置に基づいてシーンを回転させる
+            scene.rotation.y = mousePosition.x * 0.002; // マウスのX座標に基づいて回転
+            scene.rotation.x = mousePosition.y * 0.002; // マウスのY座標に基づいて回転
 
             renderer.render(scene, camera);
         };
 
         animate();
 
-        // スクロールイベントの設定
-        const handleScroll = () => {
-            setScrollX(window.scrollX); // スクロール位置を状態に保存
+        // マウスの位置を追跡する
+        const handleMouseMove = (event) => {
+            // ウィンドウの幅と高さに基づいてマウスの位置を正規化
+            const x = (event.clientX / window.innerWidth) * 2 - 1;
+            const y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+            setMousePosition({ x, y }); // マウスの位置を状態に保存
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('mousemove', handleMouseMove);
 
         return () => {
-            window.removeEventListener('scroll', handleScroll); // クリーンアップ
+            window.removeEventListener('mousemove', handleMouseMove); // クリーンアップ
             currentSceneRef.removeChild(renderer.domElement);
             renderer.dispose();
         };
-    }, [scrollX]);
+    }, [mousePosition]);
 
     return <div ref={sceneRef} className="scene" />;
 };
 
 export default MovingCube;
-
-
-
