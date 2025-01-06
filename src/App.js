@@ -7,7 +7,7 @@ import { useScrollEffect } from "./scroll";
 import useMoveWorks from "./moveWorks";
 
 function App() {
-  const backgroundRef = useRef(null);
+  // const backgroundRef = useRef(null);
   const workTitleRef = useRef(null);
   const worksRef = useRef(null);
   const skillRef = useRef(null);
@@ -51,7 +51,7 @@ function App() {
           <MovingCube />
           <div className="scene-text">{animatedText}</div>
         </div>
-        <div ref={backgroundRef} className="custom-background">
+        {/* <div ref={backgroundRef} className="custom-background">
           <div className="profile-container">
           <h1>profile</h1>
           <p>
@@ -61,7 +61,7 @@ function App() {
           {Array.from({ length: 20 }).map((_, index) => (
             <div key={index} className="light-effect"></div>
           ))}
-        </div>
+        </div> */}
         <div ref={worksRef} className="section profile-section">
           <div ref={workTitleRef} className="work-container-inner">
             <h1 className="work-container-title">
