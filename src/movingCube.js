@@ -89,8 +89,8 @@ const MovingCube = () => {
 
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(currentSceneRef.offsetWidth, currentSceneRef.offsetHeight); // 親要素のサイズに基づく設定
-    renderer.domElement.style.width = "100%"; // スタイルで幅を100%に設定
-    renderer.domElement.style.height = "100%"; // スタイルで高さを100%に設定
+    renderer.domElement.style.width = "100vw"; // スタイルで幅を100%に設定
+    renderer.domElement.style.height = "100vh"; // スタイルで高さを100%に設定
     currentSceneRef.appendChild(renderer.domElement); // DOMに追加
 
     const cubes = [];
