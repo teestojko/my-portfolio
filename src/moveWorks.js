@@ -12,7 +12,7 @@ const useMoveWorks = (workTitleRef) => {
             currentRef.style.transition = "opacity 1s ease-out, transform 1s ease-out"; // スライド時間
             } else {
             currentRef.style.opacity = 0;
-            currentRef.style.transform = "translateZ(500px)"; // スライド距離
+            currentRef.style.transform = "translateZ(1000px)"; // スライド距離
             }
         },
         { threshold: 0.1 }
