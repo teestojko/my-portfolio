@@ -39,7 +39,7 @@ function App() {
   useMoveWorks(workTitleRef);
 
   return (
-    <Router>
+    <BrowserRouter>
       <div className="portfolio">
         <nav className="fixed-menu">
           <ul>
@@ -97,7 +97,7 @@ function App() {
         <Route path="/rese" element={<ResePage />} />
         <Route path="/furima" element={<FurimaPage />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
