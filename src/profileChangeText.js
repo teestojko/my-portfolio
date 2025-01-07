@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
 const ProfileChangeText = () => {
-  const [textIndex, setTextIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const profileTexts = [
     "Hi, I'm Tetsuya Kishi, a web engineer specializing in creating interactive and visually stunning web applications.",
@@ -34,22 +33,16 @@ const ProfileChangeText = () => {
     };
   }, []);
 
-  useEffect(() => {
-    if (isVisible && textIndex < profileTexts.length) {
-      const timer = setTimeout(() => {
-        setTextIndex((prevIndex) => prevIndex + 1);
-      }, 2000); // 2秒間隔で次のテキストを表示
-      return () => clearTimeout(timer);
-    }
-  }, [textIndex, profileTexts.length, isVisible]);
-
   return (
     <p ref={textRef} className="profile-detail">
-      {profileTexts.slice(0, textIndex + 1).map((text, index) => (
+      {profileTexts.map((text, index) => (
         <span
           key={index}
           className={`fade-in-text ${isVisible ? "visible" : ""}`}
-          style={{ display: "block" }}
+          style={{
+            display: "block",
+            transitionDelay: `${index * 2}s`, // 各行に2秒ずつ遅らせてフェードイン
+          }}
         >
           {text}
         </span>
