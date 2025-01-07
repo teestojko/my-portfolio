@@ -58,10 +58,10 @@
     z-index: 10; /* 光のエフェクトの上に表示 */
     background-color: rgba(181, 181, 181, 0.6); /* 半透明背景 */
     color: white;
-    padding: 20%;
+    padding: 15%;
     border-radius: 10px;
     margin: 0 auto;
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
