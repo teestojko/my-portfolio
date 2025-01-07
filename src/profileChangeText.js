@@ -15,7 +15,7 @@ const ProfileChangeText = () => {
       }, 2000); // 2秒間隔で次のテキストを表示
       return () => clearTimeout(timer);
     }
-  }, [textIndex]);
+  }, [textIndex, profileTexts.length]);
 
   return (
     <p className="profile-detail">
