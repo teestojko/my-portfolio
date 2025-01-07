@@ -15,19 +15,21 @@ const ProfileChangeText = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true); // 要素が表示されたら開始
+          setIsVisible(true);
         }
       },
-      { threshold: 0.5 } // 50%以上表示されたときにトリガー
+      { threshold: 0.5 }
     );
 
-    if (textRef.current) {
-      observer.observe(textRef.current);
+    const currentRef = textRef.current; // 修正: textRef.current をローカル変数に保存
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (textRef.current) {
-        observer.unobserve(textRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef); // 修正: 保存したローカル変数を使用
       }
     };
   }, []);
@@ -36,7 +38,7 @@ const ProfileChangeText = () => {
     if (isVisible && textIndex < profileTexts.length) {
       const timer = setTimeout(() => {
         setTextIndex((prevIndex) => prevIndex + 1);
-      }, 2000); // 2秒間隔で次のテキストを表示
+      }, 2000);
       return () => clearTimeout(timer);
     }
   }, [textIndex, profileTexts.length, isVisible]);
