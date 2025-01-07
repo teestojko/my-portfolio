@@ -7,8 +7,8 @@ import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
 import useMoveWorks from "./moveWorks";
 import ProfileChangeText from "./profileChangeText";
-import ResePage from "./pages/ResePage";  // ResePageコンポーネントを作成してインポート
-import FurimaPage from "./pages/FurimaPage";  // FurimaPageコンポーネントを作成してインポート
+import ResePage from "./ResePage";  // ResePageコンポーネントを作成してインポート
+import FurimaPage from "./FurimaPage";  // FurimaPageコンポーネントを作成してインポート
 
 function App() {
   const backgroundRef = useRef(null);
@@ -73,10 +73,10 @@ function App() {
             </h1>
             <div className="work-container-img-all">
               <Link to="/rese">
-                <img className="work-container-img" src="/rese.png" alt="rese" />
+                <img className="work-container-img" src="/images/rese.png" alt="rese" />
               </Link>
               <Link to="/furima">
-                <img className="work-container-img" src="/furima.png" alt="furima" />
+                <img className="work-container-img" src="/images/furima.png" alt="furima" />
               </Link>
             </div>
           </div>
