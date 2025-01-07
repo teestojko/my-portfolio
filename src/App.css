@@ -56,7 +56,7 @@
 
 .profile-container {
     z-index: 10; /* 光のエフェクトの上に表示 */
-    background-color: rgba(0, 0, 0, 0.6); /* 半透明背景 */
+    background-color: rgba(181, 181, 181, 0.6); /* 半透明背景 */
     color: white;
     padding: 20%;
     border-radius: 10px;
@@ -202,7 +202,7 @@
     width: 100%;
     height: 100vh; /* 全画面表示 */
     overflow: hidden;
-    background: linear-gradient(135deg, #fff787, coral, #feffda);
+    background: linear-gradient(135deg, #fff787, rgb(255, 199, 179), #feffda);
     background-size: 300% 300%;
     animation: gradientShift 6s ease infinite; /* アニメーションを適用 */
 }
