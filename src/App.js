@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 import { useTextAnimation } from "./changeText";
 import MovingCube from "./movingCube";
@@ -6,6 +7,8 @@ import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
 import useMoveWorks from "./moveWorks";
 import ProfileChangeText from "./profileChangeText";
+import ResePage from "./pages/ResePage";  // ResePageコンポーネントを作成してインポート
+import FurimaPage from "./pages/FurimaPage";  // FurimaPageコンポーネントを作成してインポート
 
 function App() {
   const backgroundRef = useRef(null);
@@ -27,18 +30,16 @@ function App() {
   // カスタムフックでテキストアニメーションを制御
   const animatedText = useTextAnimation("portfolio", "web engineer\nTetsuya Kishi", 4000, 100);
 
-
   useEffect(() => {
     // 光のエフェクトを初期化
     randomizeLights();
   }, []);
 
   useScrollEffect(backgroundRef);
-
   useMoveWorks(workTitleRef);
 
   return (
-    <>
+    <Router>
       <div className="portfolio">
         <nav className="fixed-menu">
           <ul>
@@ -54,9 +55,9 @@ function App() {
         </div>
         <div ref={backgroundRef} className="custom-background">
           <div className="profile-container">
-          <h1>profile</h1>
-          <ProfileChangeText />
-        </div>
+            <h1>profile</h1>
+            <ProfileChangeText />
+          </div>
           {Array.from({ length: 20 }).map((_, index) => (
             <div key={index} className="light-effect"></div>
           ))}
@@ -71,33 +72,33 @@ function App() {
               ))}
             </h1>
             <div className="work-container-img-all">
-              <img className="work-container-img" src="/images/rese.png" alt="rese" />
-              <img className="work-container-img" src="/images/furima.png" alt="furima" />
+              <Link to="/rese">
+                <img className="work-container-img" src="/images/rese.png" alt="rese" />
+              </Link>
+              <Link to="/furima">
+                <img className="work-container-img" src="/images/furima.png" alt="furima" />
+              </Link>
             </div>
           </div>
         </div>
         <div ref={skillRef} className="section skill-section">
           <div className="skill-content">
-            <h1 className="">
-              SKILL
-            </h1>
-
+            <h1>SKILL</h1>
           </div>
         </div>
         <div ref={contactRef} className="section contact-section">
-          <h1>
-            Contact
-          </h1>
-          <p>
-            Email: 7195.teesu.1031@gmail.com
-          </p>
+          <h1>Contact</h1>
+          <p>Email: 7195.teesu.1031@gmail.com</p>
         </div>
       </div>
-      
-    </>
+
+      {/* ルート定義 */}
+      <Routes>
+        <Route path="/rese" element={<ResePage />} />
+        <Route path="/furima" element={<FurimaPage />} />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
-
-
