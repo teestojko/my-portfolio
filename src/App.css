@@ -56,7 +56,6 @@
 
 .profile-container {
     z-index: 10; /* 光のエフェクトの上に表示 */
-    background-color: rgba(181, 181, 181, 0.6); /* 半透明背景 */
     color: white;
     padding: 15%;
     border-radius: 10px;
