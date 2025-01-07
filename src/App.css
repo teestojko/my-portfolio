@@ -58,7 +58,7 @@
     z-index: 10; /* 光のエフェクトの上に表示 */
     background-color: rgba(0, 0, 0, 0.6); /* 半透明背景 */
     color: white;
-    padding: 20px;
+    padding: 20%;
     border-radius: 10px;
     margin: 0 auto;
     width: 50%;

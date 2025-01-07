@@ -5,6 +5,7 @@ import MovingCube from "./movingCube";
 import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
 import useMoveWorks from "./moveWorks";
+import ProfileChangeText from "./profileChangeText";
 
 function App() {
   const backgroundRef = useRef(null);
@@ -54,9 +55,7 @@ function App() {
         <div ref={backgroundRef} className="custom-background">
           <div className="profile-container">
           <h1>profile</h1>
-          <p>
-            Hi, I'm Tetsuya Kishi, a web engineer specializing in creating interactive and visually stunning web applications. My goal is to blend creativity with functionality to deliver excellent user experiences.
-          </p>
+          <ProfileChangeText />
         </div>
           {Array.from({ length: 20 }).map((_, index) => (
             <div key={index} className="light-effect"></div>
