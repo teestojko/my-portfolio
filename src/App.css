@@ -62,7 +62,6 @@
     border-radius: 10px;
     margin: 0 auto;
     width: 50%;
-    height: 50vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -241,7 +240,8 @@
 
 .profile-detail{
     margin: 0;
-    line-height: 4rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
 }
 
 
