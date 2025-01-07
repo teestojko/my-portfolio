@@ -41,7 +41,7 @@ const ProfileChangeText = () => {
           className={`fade-in-text ${isVisible ? "visible" : ""}`}
           style={{
             display: "block",
-            transitionDelay: `${index * 2}s`, // 各行に2秒ずつ遅らせてフェードイン
+            transitionDelay: `${index * 3}s`, // 各行に2秒ずつ遅らせてフェードイン
           }}
         >
           {text}
