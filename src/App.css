@@ -239,5 +239,9 @@
   transform: translateY(0); /* 元の位置に戻る */
 }
 
+.profile-detail{
+    margin: 0;
+    line-height: 4rem;
+}
 
 
