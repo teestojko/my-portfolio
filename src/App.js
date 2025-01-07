@@ -7,8 +7,8 @@ import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
 import useMoveWorks from "./moveWorks";
 import ProfileChangeText from "./profileChangeText";
-import ResePage from "./ResePage";  // ResePageコンポーネントを作成してインポート
-import FurimaPage from "./FurimaPage";  // FurimaPageコンポーネントを作成してインポート
+import ResePage from "./ResePage";
+import FurimaPage from "./FurimaPage";
 
 function App() {
   const backgroundRef = useRef(null);
@@ -94,6 +94,7 @@ function App() {
 
       {/* ルート定義 */}
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/rese" element={<ResePage />} />
         <Route path="/furima" element={<FurimaPage />} />
       </Routes>
