@@ -21,7 +21,7 @@ const ProfileChangeText = () => {
       { threshold: 0.5 }
     );
 
-    const currentRef = textRef.current; // 修正: textRef.current をローカル変数に保存
+    const currentRef = textRef.current;
 
     if (currentRef) {
       observer.observe(currentRef);
@@ -29,7 +29,7 @@ const ProfileChangeText = () => {
 
     return () => {
       if (currentRef) {
-        observer.unobserve(currentRef); // 修正: 保存したローカル変数を使用
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -38,7 +38,7 @@ const ProfileChangeText = () => {
     if (isVisible && textIndex < profileTexts.length) {
       const timer = setTimeout(() => {
         setTextIndex((prevIndex) => prevIndex + 1);
-      }, 2000);
+      }, 2000); // 2秒間隔で次のテキストを表示
       return () => clearTimeout(timer);
     }
   }, [textIndex, profileTexts.length, isVisible]);
@@ -46,7 +46,11 @@ const ProfileChangeText = () => {
   return (
     <p ref={textRef} className="profile-detail">
       {profileTexts.slice(0, textIndex + 1).map((text, index) => (
-        <span key={index} style={{ display: "block", transition: "opacity 0.5s" }}>
+        <span
+          key={index}
+          className={`fade-in-text ${isVisible ? "visible" : ""}`}
+          style={{ display: "block" }}
+        >
           {text}
         </span>
       ))}
