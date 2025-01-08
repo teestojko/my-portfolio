@@ -22,6 +22,8 @@ function ResePage() {
           <li className="rese-text-page">
             店舗代表者用ページ
           </li>
+          <li className="rese-text-page-none">
+          </li>
           <li className="rese-text">
             fortifyのメール認証を使用したログイン機能
           </li>
