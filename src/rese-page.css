@@ -1,0 +1,9 @@
+.rese-img-all{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rese-img{
+    height: 30vh;
+    width: 30vw;
+}
