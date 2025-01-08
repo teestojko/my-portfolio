@@ -13,6 +13,12 @@ function ResePage() {
           <li className="rese-text">
             fortifyのメール認証を使用したログイン機能
           </li>
+          <li className="rese-text-page">
+            飲食店一覧、詳細、レビューページ &マイページ
+          </li>
+          <li className="rese-text">
+            飲食店予約機能
+          </li>
           <li className="rese-text">
             レビュー画面で店舗評価機能
           </li>
@@ -23,25 +29,19 @@ function ResePage() {
             レビュー評価順に並べ替え機能
           </li>
           <li className="rese-text">
+            お気に入り店舗を追加機能
+          </li>
+          <li className="rese-text-page">
+            管理者用ページ
+          </li>
+          <li className="rese-text">
+            店舗代表者作成機能
+          </li>
+          <li className="rese-text">
+            ユーザーにメール送信機能
+          </li>
+          <li className="rese-text">
             
-          </li>
-          <li className="rese-text">
-
-          </li>
-          <li className="rese-text">
-
-          </li>
-          <li className="rese-text">
-
-          </li>
-          <li className="rese-text">
-
-          </li>
-          <li className="rese-text">
-
-          </li>
-          <li className="rese-text">
-
           </li>
           <li className="rese-text">
 

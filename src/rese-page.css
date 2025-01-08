@@ -35,7 +35,12 @@ ul {
     font-size: 1.3rem;
     background: #ffeeee;
     padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 5px;
+    border: none;
+}
+
+.rese-text-page{
+    font-size: 1.8rem;
+    background: #ffeeee;
     border: none;
 }
