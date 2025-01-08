@@ -1,9 +1,18 @@
+.rese{
+    height: 100vh;
+    width: 100vw;
+}
+
 .rese-img-all{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 20vh;
+    min-width: 100%;
 }
 
 .rese-img{
-    height: 30vh;
-    width: 30vw;
+    height: 200px;
+    width: 300px;
 }
