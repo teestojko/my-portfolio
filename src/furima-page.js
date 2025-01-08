@@ -4,6 +4,9 @@ import "./furima-page.css";
 function FurimaPage() {
   return (
     <div className="furima">
+      <div className="furima-title">
+        ネットショッピングアプリ
+      </div>
       <div className="furima-img-all">
         <img className="furima-img" src="/images/furima-detail.png" alt="furima-detail" />
         <img className="furima-img" src="/images/furima-search.png" alt="furima-search" />
