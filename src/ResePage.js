@@ -14,7 +14,7 @@ function ResePage() {
             fortifyのメール認証を使用したログイン機能
           </li>
           <li className="rese-text">
-            
+
           </li>
           <li className="rese-text">
 

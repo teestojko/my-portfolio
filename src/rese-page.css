@@ -1,4 +1,5 @@
 .rese{
+    margin: 0;
     height: 100vh;
     width: 100vw;
 }
@@ -8,11 +9,15 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    height: 20vh;
+    height: 40vh;
     min-width: 100%;
 }
 
 .rese-img{
     height: 200px;
     width: 300px;
+}
+
+.rese-text{
+
 }
