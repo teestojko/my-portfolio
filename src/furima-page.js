@@ -10,11 +10,14 @@ function FurimaPage() {
       </div>
       <div className="furima-text-all">
         <ul className="furima-ul">
-          <li className="furima-text">
-            fortifyのメール認証を使用したログイン機能
-          </li>
           <li className="furima-text-page">
             出品商品一覧、詳細、出品、プロフィール、カート、レビューページ &マイページ
+          </li>
+          <li className="furima-text-page">
+            管理者用ページ
+          </li>
+          <li className="furima-text">
+            fortifyのメール認証を使用したログイン機能
           </li>
           <li className="furima-text">
             購入履歴、販売履歴表示
@@ -42,9 +45,6 @@ function FurimaPage() {
           </li>
           <li className="furima-text">
             AWSのEC2,RDS,S3を使用した、アプリのデプロイ
-          </li>
-          <li className="furima-text-page">
-            管理者用ページ
           </li>
           <li className="furima-text">
             クーポン作成機能

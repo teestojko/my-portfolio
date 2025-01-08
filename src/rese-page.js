@@ -16,6 +16,9 @@ function ResePage() {
           <li className="rese-text-page">
             管理者用ページ
           </li>
+          <li className="rese-text-page">
+            店舗代表者用ページ
+          </li>
           <li className="rese-text">
             fortifyのメール認証を使用したログイン機能
           </li>
@@ -54,9 +57,6 @@ function ResePage() {
           </li>
           <li className="rese-text">
             ユーザーにメール送信機能
-          </li>
-          <li className="rese-text-page">
-            店舗代表者用ページ
           </li>
           <li className="rese-text">
             店舗作成機能
