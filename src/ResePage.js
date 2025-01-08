@@ -14,10 +14,10 @@ function ResePage() {
             fortifyのメール認証を使用したログイン機能
           </li>
           <li className="rese-text">
-
+            レビュー画面で店舗評価機能
           </li>
           <li className="rese-text">
-
+            エリア、ジャンル、名前検索 レビュー評価順に並べ替え機能
           </li>
           <li className="rese-text">
 
