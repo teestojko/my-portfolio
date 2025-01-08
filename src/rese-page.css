@@ -32,7 +32,7 @@ ul {
 }
 
 .rese-text{
-    font-size: 1.3rem;
+    font-size: 1rem;
     background: #ffeeee;
     padding: 10px;
     border-radius: 5px;
@@ -40,7 +40,8 @@ ul {
 }
 
 .rese-text-page{
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    font-weight: bold;
     background: #ffeeee;
     border: none;
 }
