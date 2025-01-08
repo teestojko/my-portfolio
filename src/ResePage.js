@@ -31,6 +31,21 @@ function ResePage() {
           <li className="rese-text">
             お気に入り店舗を追加機能
           </li>
+          <li className="rese-text">
+            画像をストレージに保存機能
+          </li>
+          <li className="rese-text">
+            予約当日の朝に、予約情報のリマインダー送信機能
+          </li>
+          <li className="rese-text">
+            店舗照合用のQRコードの表示機能
+          </li>
+          <li className="rese-text">
+            Stripe決済機能
+          </li>
+          <li className="rese-text">
+            AWSのEC2,RDS,S3を使用した、アプリのデプロイ
+          </li>
           <li className="rese-text-page">
             管理者用ページ
           </li>
