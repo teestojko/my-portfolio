@@ -23,6 +23,17 @@
     justify-content: center;
 }
 
+ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2列 */
+    gap: 10px; /* 各アイテム間のスペース */
+    padding: 0;
+}
+
 .rese-text{
     font-size: 1.3rem;
+    background: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }

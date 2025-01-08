@@ -17,13 +17,13 @@ function ResePage() {
             レビュー画面で店舗評価機能
           </li>
           <li className="rese-text">
-            エリア、ジャンル、名前検索 レビュー評価順に並べ替え機能
+            エリア、ジャンル、名前検索
           </li>
           <li className="rese-text">
-
+            レビュー評価順に並べ替え機能
           </li>
           <li className="rese-text">
-
+            
           </li>
           <li className="rese-text">
 
