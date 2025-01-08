@@ -4,8 +4,8 @@ import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ResePage from './ResePage';
-import FurimaPage from './FurimaPage';
+import ResePage from './rese-page';
+import FurimaPage from './furima-page';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,4 +1,5 @@
 import React from "react";
+import "./furima-page.css";
 
 function FurimaPage() {
   return (
@@ -8,7 +9,7 @@ function FurimaPage() {
         <img className="furima-img" src="/images/furima-search.png" alt="furima-search" />
       </div>
       <div className="furima-text-all">
-        <ul>
+        <ul className="furima-ul">
           <li className="furima-text">
             fortifyのメール認証を使用したログイン機能
           </li>

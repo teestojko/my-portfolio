@@ -9,7 +9,7 @@ function ResePage() {
         <img className="rese-img" src="/images/my-page.png" alt="my-page" />
       </div>
       <div className="rese-text-all">
-        <ul>
+        <ul className="rese-ul">
           <li className="rese-text">
             fortifyのメール認証を使用したログイン機能
           </li>
