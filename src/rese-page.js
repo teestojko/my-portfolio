@@ -10,11 +10,14 @@ function ResePage() {
       </div>
       <div className="rese-text-all">
         <ul className="rese-ul">
-          <li className="rese-text">
-            fortifyのメール認証を使用したログイン機能
-          </li>
           <li className="rese-text-page">
             飲食店一覧、詳細、レビューページ &マイページ
+          </li>
+          <li className="rese-text-page">
+            管理者用ページ
+          </li>
+          <li className="rese-text">
+            fortifyのメール認証を使用したログイン機能
           </li>
           <li className="rese-text">
             飲食店予約機能
@@ -45,9 +48,6 @@ function ResePage() {
           </li>
           <li className="rese-text">
             AWSのEC2,RDS,S3を使用した、アプリのデプロイ
-          </li>
-          <li className="rese-text-page">
-            管理者用ページ
           </li>
           <li className="rese-text">
             店舗代表者作成機能
