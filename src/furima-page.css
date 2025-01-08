@@ -42,7 +42,6 @@
 .furima-text{
     font-size: 1rem;
     background: #ffeeee;
-    padding: 10px;
     border-radius: 5px;
     border: none;
 }
@@ -52,4 +51,5 @@
     font-weight: bold;
     background: #ffeeee;
     border: none;
+    padding: 10px;
 }
