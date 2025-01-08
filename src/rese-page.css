@@ -28,12 +28,14 @@ ul {
     grid-template-columns: 1fr 1fr; /* 2列 */
     gap: 10px; /* 各アイテム間のスペース */
     padding: 0;
+    list-style: none;
 }
 
 .rese-text{
     font-size: 1.3rem;
-    background: #f0f0f0;
+    background: #ffeeee;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    border: none;
 }
