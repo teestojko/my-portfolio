@@ -18,6 +18,12 @@
     width: 300px;
 }
 
-.rese-text{
+.rese-text-all{
+    display: flex;
+    justify-content: center;
+}
 
+.rese-text{
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
 }
