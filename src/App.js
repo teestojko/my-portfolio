@@ -59,7 +59,7 @@ function App() {
           <div key={index} className="light-effect"></div>
         ))}
       </div>
-      <div ref={worksRef} className="section profile-section">
+      {/* <div ref={worksRef} className="section profile-section">
         <div ref={workTitleRef} className="work-container-inner">
           <h1 className="work-container-title">
             {["w", "o", "r", "k", "s"].map((char, index) => (
@@ -77,7 +77,75 @@ function App() {
             </Link>
           </div>
         </div>
+      </div> */}
+
+
+      <div ref={worksRef} className="section profile-section">
+        <div ref={workTitleRef} className="work-container-inner">
+          <h1 className="work-container-title">
+            {["w", "o", "r", "k", "s"].map((char, index) => (
+              <span
+                className="title-animation"
+                key={index}
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                {char}
+              </span>
+            ))}
+          </h1>
+          <div className="work-container-img-all">
+            <Link to="/rese">
+              <img className="work-container-img" src="/images/rese.png" alt="rese" />
+            </Link>
+            <Link to="/furima">
+              <img className="work-container-img" src="/images/furima.png" alt="furima" />
+            </Link>
+          </div>
+          {/* SVGの追加 */}
+          <div className="svg-container">
+            <svg
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+              width="100%"
+              height="100%"
+            >
+              <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop
+                    offset="0%"
+                    style={{ stopColor: "rgb(255,154,158)", stopOpacity: 1 }}
+                  />
+                  <stop
+                    offset="100%"
+                    style={{ stopColor: "rgb(250,208,196)", stopOpacity: 1 }}
+                  />
+                </linearGradient>
+                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop
+                    offset="0%"
+                    style={{ stopColor: "rgb(251,194,235)", stopOpacity: 1 }}
+                  />
+                  <stop
+                    offset="100%"
+                    style={{ stopColor: "rgb(166,193,238)", stopOpacity: 1 }}
+                  />
+                </linearGradient>
+              </defs>
+              <path
+                d="M50 10 Q65 30, 50 50 Q35 30, 50 10"
+                fill="url(#grad1)"
+              />
+              <path
+                d="M50 10 Q35 30, 50 50 Q65 30, 50 10"
+                fill="url(#grad2)"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
+
+
+
       <div ref={skillRef} className="section skill-section">
         <div className="skill-content">
           <h1>SKILL</h1>
