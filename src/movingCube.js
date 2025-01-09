@@ -11,12 +11,7 @@ const MovingCube = () => {
         const currentSceneRef = sceneRef.current; // ローカル変数にコピー
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        // camera.position.z = 15;
-
-
-        // カメラの位置を調整して、シーンの中心を上にずらす
-        camera.position.set(0, 2.5, 15);
-
+        camera.position.z = 15;
 
         const renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -33,7 +28,7 @@ const MovingCube = () => {
         const cube = new THREE.Mesh(geometry, material);
         cube.position.set(
             (Math.random() - 0.5) * 100,
-            (Math.random() - 0.5) * 100 - 5,
+            (Math.random() - 0.5) * 100,
             (Math.random() - 0.5) * 100
         );
         cube.rotationSpeed = {
@@ -69,7 +64,7 @@ const MovingCube = () => {
 
             // 奥行きが視界外に出ないように位置をリセット
             if (cube.position.x > 60 || cube.position.x < -60) cube.position.x = Math.random() * 100 - 50;
-            if (cube.position.y > 60 || cube.position.y < -60) cube.position.y = Math.random() * 100 - 50 - 5;
+            if (cube.position.y > 60 || cube.position.y < -60) cube.position.y = Math.random() * 100 - 50;
             if (cube.position.z > 50 || cube.position.z < -50) cube.position.z = Math.random() * 100 - 50;
         });
         renderer.render(scene, camera);
