@@ -96,7 +96,7 @@ function App() {
                 <linearGradient id="petalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop
                     offset="0%"
-                    style={{ stopColor: "rgb(255,211,0)", stopOpacity: 1 }}
+                    style={{ stopColor: "rgb(255, 234, 130)", stopOpacity: 1 }}
                   />
                   <stop
                     offset="100%"
@@ -106,8 +106,8 @@ function App() {
 
                 {/* 種の部分用グラデーション */}
                 <radialGradient id="seedGrad" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" style={{ stopColor: "rgb(139,69,19)", stopOpacity: 1 }} />
-                  <stop offset="100%" style={{ stopColor: "rgb(85,53,30)", stopOpacity: 1 }} />
+                  <stop offset="0%" style={{ stopColor: "rgb(240, 133, 56)", stopOpacity: 1 }} />
+                  <stop offset="100%" style={{ stopColor: "rgb(209, 135, 83)", stopOpacity: 1 }} />
                 </radialGradient>
 
                 {/* ぼやけ効果のフィルター */}
@@ -152,10 +152,10 @@ function App() {
             ))}
           </h1>
           <div className="work-container-img-all">
-            <Link to="/rese">
+            <Link className="link rese-link" to="/rese">
               <img className="work-container-img" src="/images/rese.png" alt="rese" />
             </Link>
-            <Link to="/furima">
+            <Link className="link furima-link" to="/furima">
               <img className="work-container-img" src="/images/furima.png" alt="furima" />
             </Link>
           </div>
