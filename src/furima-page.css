@@ -24,6 +24,14 @@
 .furima-img{
     height: 200px;
     width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px; /* 任意の角丸 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 初期の影 */
+}
+
+.furima-img:hover {
+    transform: translateY(-10px); /* 上に浮き上がる効果 */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* ホバー時の影 */
 }
 
 .furima-text-all{
