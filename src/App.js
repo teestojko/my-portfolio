@@ -92,6 +92,7 @@ function App() {
               height="100%"
             >
               <defs>
+                {/* 花びら用グラデーション */}
                 <linearGradient id="petalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop
                     offset="0%"
@@ -102,28 +103,39 @@ function App() {
                     style={{ stopColor: "rgb(255,165,0)", stopOpacity: 1 }}
                   />
                 </linearGradient>
+
+                {/* 種の部分用グラデーション */}
                 <radialGradient id="seedGrad" cx="50%" cy="50%" r="50%">
                   <stop offset="0%" style={{ stopColor: "rgb(139,69,19)", stopOpacity: 1 }} />
                   <stop offset="100%" style={{ stopColor: "rgb(85,53,30)", stopOpacity: 1 }} />
                 </radialGradient>
+
+                {/* ぼやけ効果のフィルター */}
+                <filter id="blurFilter" x="0" y="0" width="200%" height="200%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+                </filter>
               </defs>
 
-              {/* 花びら */}
-              <g transform="translate(50,50)">
-                {Array.from({ length: 24 }).map((_, i) => (
-                  <path
-                    key={i}
-                    d="M0,-30 Q5,-15 0,0 Q-5,-15 0,-30"
-                    fill="url(#petalGrad)"
-                    transform={`rotate(${i * 15})`}
-                  />
-                ))}
-              </g>
+              {/* 全体にぼやけ効果を適用 */}
+              <g filter="url(#blurFilter)">
+                {/* 花びら */}
+                <g transform="translate(50,50)">
+                  {Array.from({ length: 24 }).map((_, i) => (
+                    <path
+                      key={i}
+                      d="M0,-30 Q5,-15 0,0 Q-5,-15 0,-30"
+                      fill="url(#petalGrad)"
+                      transform={`rotate(${i * 15})`}
+                    />
+                  ))}
+                </g>
 
-              {/* 種の部分 */}
-              <circle cx="50" cy="50" r="10" fill="url(#seedGrad)" />
+                {/* 種の部分 */}
+                <circle cx="50" cy="50" r="10" fill="url(#seedGrad)" />
+              </g>
             </svg>
           </div>
+
 
 
 
