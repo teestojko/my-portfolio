@@ -84,7 +84,6 @@ function App() {
         <div ref={workTitleRef} className="work-container-inner">
 
 
-          {/* SVGの追加 */}
           <div className="svg-container">
             <svg
               viewBox="0 0 100 100"
@@ -93,37 +92,39 @@ function App() {
               height="100%"
             >
               <defs>
-                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <linearGradient id="petalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop
                     offset="0%"
-                    style={{ stopColor: "rgb(255,154,158)", stopOpacity: 1 }}
+                    style={{ stopColor: "rgb(255,211,0)", stopOpacity: 1 }}
                   />
                   <stop
                     offset="100%"
-                    style={{ stopColor: "rgb(250,208,196)", stopOpacity: 1 }}
+                    style={{ stopColor: "rgb(255,165,0)", stopOpacity: 1 }}
                   />
                 </linearGradient>
-                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop
-                    offset="0%"
-                    style={{ stopColor: "rgb(251,194,235)", stopOpacity: 1 }}
-                  />
-                  <stop
-                    offset="100%"
-                    style={{ stopColor: "rgb(166,193,238)", stopOpacity: 1 }}
-                  />
-                </linearGradient>
+                <radialGradient id="seedGrad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" style={{ stopColor: "rgb(139,69,19)", stopOpacity: 1 }} />
+                  <stop offset="100%" style={{ stopColor: "rgb(85,53,30)", stopOpacity: 1 }} />
+                </radialGradient>
               </defs>
-              <path
-                d="M50 10 Q65 30, 50 50 Q35 30, 50 10"
-                fill="url(#grad1)"
-              />
-              <path
-                d="M50 10 Q35 30, 50 50 Q65 30, 50 10"
-                fill="url(#grad2)"
-              />
+
+              {/* 花びら */}
+              <g transform="translate(50,50)">
+                {Array.from({ length: 24 }).map((_, i) => (
+                  <path
+                    key={i}
+                    d="M0,-30 Q5,-15 0,0 Q-5,-15 0,-30"
+                    fill="url(#petalGrad)"
+                    transform={`rotate(${i * 15})`}
+                  />
+                ))}
+              </g>
+
+              {/* 種の部分 */}
+              <circle cx="50" cy="50" r="10" fill="url(#seedGrad)" />
             </svg>
           </div>
+
 
 
 
