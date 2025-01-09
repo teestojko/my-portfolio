@@ -112,7 +112,7 @@ function App() {
 
                 {/* ぼやけ効果のフィルター */}
                 <filter id="blurFilter" x="0" y="0" width="200%" height="200%">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="1" />
                 </filter>
               </defs>
 
