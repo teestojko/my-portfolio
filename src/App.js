@@ -128,7 +128,7 @@ function App() {
                 x="48"
                 y="60"
                 width="4"
-                height="70"
+                height="40"
                 fill="url(#stemGrad)"
                 rx="2"
               />
