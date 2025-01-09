@@ -114,11 +114,11 @@ function App() {
                 <linearGradient id="stemGrad" x1="0%" y1="0%" x2="0%" y2="100%">
                   <stop
                     offset="0%"
-                    style={{ stopColor: "rgb(0,128,0)", stopOpacity: 1 }}
+                    style={{ stopColor: "rgb(54, 219, 54)", stopOpacity: 1 }}
                   />
                   <stop
                     offset="100%"
-                    style={{ stopColor: "rgb(34,139,34)", stopOpacity: 1 }}
+                    style={{ stopColor: "rgb(0, 81, 0)", stopOpacity: 1 }}
                   />
                 </linearGradient>
               </defs>
