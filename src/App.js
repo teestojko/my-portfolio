@@ -118,7 +118,7 @@ function App() {
                   />
                   <stop
                     offset="100%"
-                    style={{ stopColor: "rgb(0, 81, 0)", stopOpacity: 1 }}
+                    style={{ stopColor: "rgb(19, 122, 19)", stopOpacity: 1 }}
                   />
                 </linearGradient>
               </defs>
@@ -128,7 +128,7 @@ function App() {
                 x="48"
                 y="60"
                 width="4"
-                height="40"
+                height="50"
                 fill="url(#stemGrad)"
                 rx="2"
               />
