@@ -82,25 +82,8 @@ function App() {
 
       <div ref={worksRef} className="section profile-section">
         <div ref={workTitleRef} className="work-container-inner">
-          <h1 className="work-container-title">
-            {["w", "o", "r", "k", "s"].map((char, index) => (
-              <span
-                className="title-animation"
-                key={index}
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                {char}
-              </span>
-            ))}
-          </h1>
-          <div className="work-container-img-all">
-            <Link to="/rese">
-              <img className="work-container-img" src="/images/rese.png" alt="rese" />
-            </Link>
-            <Link to="/furima">
-              <img className="work-container-img" src="/images/furima.png" alt="furima" />
-            </Link>
-          </div>
+
+
           {/* SVGの追加 */}
           <div className="svg-container">
             <svg
@@ -140,6 +123,28 @@ function App() {
                 fill="url(#grad2)"
               />
             </svg>
+          </div>
+
+
+
+          <h1 className="work-container-title">
+            {["w", "o", "r", "k", "s"].map((char, index) => (
+              <span
+                className="title-animation"
+                key={index}
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                {char}
+              </span>
+            ))}
+          </h1>
+          <div className="work-container-img-all">
+            <Link to="/rese">
+              <img className="work-container-img" src="/images/rese.png" alt="rese" />
+            </Link>
+            <Link to="/furima">
+              <img className="work-container-img" src="/images/furima.png" alt="furima" />
+            </Link>
           </div>
         </div>
       </div>
