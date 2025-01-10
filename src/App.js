@@ -60,25 +60,6 @@ function App() {
           <div key={index} className="light-effect"></div>
         ))}
       </div>
-      {/* <div ref={worksRef} className="section profile-section">
-        <div ref={workTitleRef} className="work-container-inner">
-          <h1 className="work-container-title">
-            {["w", "o", "r", "k", "s"].map((char, index) => (
-              <span className="title-animation" key={index} style={{ animationDelay: `${index * 0.2}s` }}>
-                {char}
-              </span>
-            ))}
-          </h1>
-          <div className="work-container-img-all">
-            <Link to="/rese">
-              <img className="work-container-img" src="/images/rese.png" alt="rese" />
-            </Link>
-            <Link to="/furima">
-              <img className="work-container-img" src="/images/furima.png" alt="furima" />
-            </Link>
-          </div>
-        </div>
-      </div> */}
 
 
       <div ref={worksRef} className="section profile-section">
