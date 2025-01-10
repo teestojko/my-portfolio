@@ -261,4 +261,14 @@
 
 .profile-section{
     background: linear-gradient(0deg, #d7faff, #9dfcff);
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.5);
+    }
+    to {
+        box-shadow: 0 0 60px 20px rgba(255, 255, 255, 0.8);
+    }
 }
