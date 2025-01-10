@@ -40,7 +40,7 @@
     min-height: 100vh;
     margin: 0;
     position: relative;
-    background: linear-gradient(0deg, #e3feff, #8baaff, #010dc1, #000452, #000);
+    background: linear-gradient(0deg, #9dfcff, #81dbff, #015ec1, #00449d, #000);
 }
 
 @keyframes float {
@@ -260,5 +260,5 @@
 }
 
 .profile-section{
-    background: linear-gradient(0deg, #ffffff, #e3feff);
+    background: linear-gradient(0deg, #ffffff, #9dfcff);
 }
