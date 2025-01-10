@@ -40,7 +40,7 @@
     min-height: 100vh;
     margin: 0;
     position: relative;
-    background: linear-gradient(0deg, #fff, #8b8bff, #010dc1, #000452, #000);
+    background: linear-gradient(0deg, #e3feff, #8baaff, #010dc1, #000452, #000);
 }
 
 @keyframes float {
@@ -115,6 +115,7 @@
 }
 
 .work-container-title {
+    margin: 0;
     font-family: 'Poppins', sans-serif; /* 好みのフォントに変更 */
     font-size: 3rem;
     color: #4e4e4e;
