@@ -7,6 +7,7 @@ import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
 import useMoveWorks from "./moveWorks";
 import ProfileChangeText from "./profileChangeText";
+import WorkLight from "./workLight";
 
 function App() {
   const backgroundRef = useRef(null);
@@ -82,7 +83,7 @@ function App() {
 
       <div ref={worksRef} className="section profile-section">
         <div ref={workTitleRef} className="work-container-inner">
-
+          <WorkLight />
 
           <div className="svg-container">
             <svg
