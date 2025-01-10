@@ -8,33 +8,41 @@ const WorkLight = () => {
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
 
-    // 粒のプロパティ（追加：opacityChangeで透明度の変化速度を管理）
+    const handleResize = () => {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    };
+    handleResize();
+
+    // 粒のプロパティ
     const particles = Array.from({ length: 100 }).map(() => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      radius: Math.random() * 3,
-      opacity: Math.random(),
-      opacityChange: (Math.random() * 0.02) - 0.01, // -0.01 〜 0.01 の範囲
+      radius: Math.random() * 3 + 1, // 半径を少し大きめに
+      opacity: Math.random() * 0.8 + 0.2, // 少し明るめの初期透明度
+      opacityChange: (Math.random() * 0.02) - 0.01,
+      glowSize: Math.random() * 10 + 5, // グローの大きさ
     }));
 
     const drawParticles = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+
       particles.forEach((particle) => {
         // 透明度の変更
         particle.opacity += particle.opacityChange;
-
-        // 透明度が0〜1を超えないように調整し、反転
         if (particle.opacity <= 0 || particle.opacity >= 1) {
-          particle.opacityChange *= -1; // 方向を反転
+          particle.opacityChange *= -1;
         }
 
         // 粒の描画
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${particle.opacity})`;
+
+        // 光のぼやけ効果
+        ctx.shadowBlur = particle.glowSize; // グローの大きさ
+        ctx.shadowColor = `rgba(255, 255, 255, ${particle.opacity})`; // グローの色
+        ctx.fillStyle = `rgba(255, 255, 255, ${particle.opacity})`; // 粒の色
         ctx.fill();
       });
 
@@ -43,18 +51,8 @@ const WorkLight = () => {
 
     drawParticles();
 
-    // ウィンドウリサイズ時にキャンバスサイズを調整
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
     window.addEventListener("resize", handleResize);
-
-    // クリーンアップ
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
