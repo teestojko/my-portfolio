@@ -262,6 +262,7 @@
 .profile-section{
     background: linear-gradient(0deg, #d7faff, #9dfcff);
     animation: glow 3s infinite alternate;
+    position: relative;
 }
 
 @keyframes glow {
