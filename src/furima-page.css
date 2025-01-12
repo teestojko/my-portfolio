@@ -78,5 +78,5 @@
 }
 
 .back-button-link:hover {
-    background-color: #45a049;
+    background: linear-gradient(90deg, #f458ff, #ff96c0);
 }
