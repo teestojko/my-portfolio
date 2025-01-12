@@ -10,7 +10,7 @@ import ProfileChangeText from "./profileChangeText";
 import WorkLight from "./workLight";
 import FlowerSvg from './FlowerSvg';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faJs, faLaravel, faPhp, faDocker, faVuejs, faHtml5, faReact } from "@fortawesome/free-brands-svg-icons";
+import { faJs, faLaravel, faPhp, faDocker, faVuejs, faHtml5, faReact, faAws, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 function App() {
   const backgroundRef = useRef(null);
@@ -105,6 +105,8 @@ function App() {
             <FontAwesomeIcon icon={faVuejs} style={{ color: "#41B883" }} />
             <FontAwesomeIcon icon={faHtml5} style={{ color: "#E34F26" }} />
             <FontAwesomeIcon icon={faReact} style={{ color: "#61DAFB" }} />
+            <FontAwesomeIcon icon={faAws} style={{ color: "#4b1aff", }} />
+            <FontAwesomeIcon icon={faGithub} style={{color: "#15003d",}} />
           </div>
         </div>
       </div>
