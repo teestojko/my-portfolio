@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./rese-page.css";
 
 function ResePage() {
+  const navigate = useNavigate();  // navigate関数を使用
+  
+    // 戻るボタンのクリックハンドラー
+    const handleBackButton = () => {
+      navigate(-1);  // 前のページに戻る
+    };
   return (
     <div className="rese">
       <div className="rese-title">
@@ -58,6 +65,11 @@ function ResePage() {
             店舗作成、変更機能
           </li>
         </ul>
+      </div>
+      <div className="back-button">
+        <button onClick={handleBackButton} className="back-button-link">
+          Back
+        </button>
       </div>
     </div>
   );

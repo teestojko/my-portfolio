@@ -65,3 +65,23 @@
 .rese-text-page-none{
     list-style: none;
 }
+
+.back-button{
+    text-align: center;
+}
+
+.back-button-link {
+    background: linear-gradient(45deg, #fcd7ff, #ffbcd7);
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.back-button-link:hover {
+    background: linear-gradient(90deg, #f458ff, #ff96c0);
+    transition: opacity 1.5s ease-in-out;
+}
