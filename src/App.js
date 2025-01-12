@@ -9,6 +9,7 @@ import useMoveWorks from "./moveWorks";
 import ProfileChangeText from "./profileChangeText";
 import WorkLight from "./workLight";
 import FlowerSvg from './FlowerSvg';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function App() {
   const backgroundRef = useRef(null);
@@ -95,6 +96,17 @@ function App() {
       <div ref={skillRef} className="section skill-section">
         <div className="skill-content">
           <h1>SKILL</h1>
+          <div className="icon-all">
+            <FontAwesomeIcon icon="fa-brands fa-js" style={{ color: "#FFD43B", }} />
+            <FontAwesomeIcon icon="fa-brands fa-laravel" style={{ color: "#FFD43B", }} />
+            <FontAwesomeIcon icon="fa-brands fa-php" style={{ color: "#FFD43B", }} />
+            <FontAwesomeIcon icon="fa-brands fa-docker" style={{ color: "#74C0FC", }} />
+            <FontAwesomeIcon icon="fa-brands fa-vuejs" style={{ color: "#63E6BE", }} />
+            <FontAwesomeIcon icon="fa-brands fa-html5" style={{ color: "#B197FC", }} />
+            <FontAwesomeIcon icon="fa-brands fa-react" style={{ color: "#74C0FC", }} />
+            
+          </div>
+            
         </div>
       </div>
       <div ref={contactRef} className="section contact-section">
