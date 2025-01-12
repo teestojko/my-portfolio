@@ -63,7 +63,7 @@
 }
 
 .back-button {
-    background-color: #4CAF50;
+    background-color: linear-gradient(45deg, #fcd7ff, #ffbcd7);
     color: white;
     padding: 10px 20px;
     font-size: 16px;
