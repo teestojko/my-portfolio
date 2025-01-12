@@ -61,3 +61,18 @@
     border: none;
     padding: 10px;
 }
+
+.back-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.back-button:hover {
+    background-color: #45a049;
+}
