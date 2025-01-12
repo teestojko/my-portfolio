@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./furima-page.css";
 
 function FurimaPage() {
+  const navigate = useNavigate();  // navigate関数を使用
+
+  // 戻るボタンのクリックハンドラー
+  const handleBackButton = () => {
+    navigate(-1);  // 前のページに戻る
+  };
   return (
     <div className="furima">
       <div className="furima-title">
@@ -54,6 +61,7 @@ function FurimaPage() {
           </li>
         </ul>
       </div>
+      <button onClick={handleBackButton} className="back-button">Back</button>
     </div>
   );
 }
