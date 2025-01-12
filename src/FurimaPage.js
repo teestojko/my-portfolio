@@ -61,7 +61,11 @@ function FurimaPage() {
           </li>
         </ul>
       </div>
-      <button onClick={handleBackButton} className="back-button">Back</button>
+      <div className="back-button">
+        <button onClick={handleBackButton} className="back-button-link">
+          Back
+        </button>
+      </div>
     </div>
   );
 }

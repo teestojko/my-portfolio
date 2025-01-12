@@ -62,8 +62,12 @@
     padding: 10px;
 }
 
-.back-button {
-    background-color: linear-gradient(45deg, #fcd7ff, #ffbcd7);
+.back-button{
+    text-align: center;
+}
+
+.back-button-link {
+    background: linear-gradient(45deg, #fcd7ff, #ffbcd7);
     color: white;
     padding: 10px 20px;
     font-size: 16px;
@@ -73,6 +77,6 @@
     margin: 20px;
 }
 
-.back-button:hover {
+.back-button-link:hover {
     background-color: #45a049;
 }
