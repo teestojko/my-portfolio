@@ -79,4 +79,5 @@
 
 .back-button-link:hover {
     background: linear-gradient(90deg, #f458ff, #ff96c0);
+    transition: opacity 1.5s ease-in-out;
 }
