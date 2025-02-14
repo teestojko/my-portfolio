@@ -1,5 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import "./furima-page.css";
 
 const FurimaPage: React.FC = () => {
@@ -14,11 +16,14 @@ const FurimaPage: React.FC = () => {
       <div className="furima-title">
         ネットショッピングアプリ
       </div>
+      {/* Swiperで横スクロール */}
       <div className="furima-img-all">
-        <img className="furima-img" src="/images/furima-index.png" alt="furima-index" />
-        <img className="furima-img" src="/images/furima-navi.png" alt="furima-navi" />
-        <img className="furima-img" src="/images/furima-detail.png" alt="furima-detail" />
-        <img className="furima-img" src="/images/furima-search.png" alt="furima-search" />
+        <Swiper spaceBetween={10} slidesPerView={1} pagination={{ clickable: true }}>
+          <SwiperSlide><img className="furima-img" src="/images/furima-index.png" alt="furima-index" /></SwiperSlide>
+          <SwiperSlide><img className="furima-img" src="/images/furima-navi.png" alt="furima-navi" /></SwiperSlide>
+          <SwiperSlide><img className="furima-img" src="/images/furima-detail.png" alt="furima-detail" /></SwiperSlide>
+          <SwiperSlide><img className="furima-img" src="/images/furima-search.png" alt="furima-search" /></SwiperSlide>
+        </Swiper>
       </div>
       <div className="furima-text-all">
         <ul className="furima-ul">
