@@ -16,7 +16,7 @@
     width: 100%;
     max-width: 600px;
     margin: auto;
-    overflow: visible; /* ← 変更 */
+    overflow: hidden; /* ← 変更 */
 }
 
 .furima-img {
