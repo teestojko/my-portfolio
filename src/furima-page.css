@@ -14,20 +14,15 @@
 
 .furima-img-all {
     width: 100%;
-    max-width: 600px; /* 必要に応じて調整 */
+    max-width: 600px;
     margin: auto;
-}
-
-.swiper-container {
-    width: 100%;
-    overflow: hidden;
+    overflow: visible; /* ← 変更 */
 }
 
 .furima-img {
     width: 100%;
     height: auto;
 }
-
 
 .furima-text-all{
     display: flex;
