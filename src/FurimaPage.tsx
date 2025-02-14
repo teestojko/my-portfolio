@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./furima-page.css";
 
-function FurimaPage() {
+const FurimaPage: React.FC = () => {
   const navigate = useNavigate();  // navigate関数を使用
 
   // 戻るボタンのクリックハンドラー

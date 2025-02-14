@@ -1,8 +1,8 @@
 export function randomizeLights() {
-    const lightEffects = document.querySelectorAll('.light-effect');
+    const lightEffects = document.querySelectorAll<HTMLElement>('.light-effect'); // HTMLElement型を指定
 
     function updateLights() {
-        lightEffects.forEach(light => {
+        lightEffects.forEach((light) => {
             // ランダムな位置（0〜100%）
             const randomX = Math.random() * 100;
             const randomY = Math.random() * 100;
@@ -23,7 +23,7 @@ export function randomizeLights() {
             light.style.top = `${randomY}%`;
             light.style.left = `${randomX}%`;
             light.style.transform = `scale(${randomScale})`;
-            light.style.opacity = randomOpacity;
+            light.style.opacity = randomOpacity.toString();
             light.style.background = `radial-gradient(circle, ${randomColor}, transparent)`;
 
             // ランダムな移動を設定
@@ -32,7 +32,7 @@ export function randomizeLights() {
         });
 
         // 再帰的に呼び出してランダムな動きを繰り返す
-        setTimeout(updateLights, 4000); // 5秒ごとに動きを更新
+        setTimeout(updateLights, 4000); // 4秒ごとに動きを更新
     }
 
     updateLights(); // 初回実行

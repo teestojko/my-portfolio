@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
-// テキストアニメーションのカスタムフック
-export function useTextAnimation(initialText, targetText, delay = 4000, speed = 100) {
-    const [text, setText] = useState("");
-    const [index, setIndex] = useState(0);
+// useTextAnimationフックの引数と返り値の型を定義
+export function useTextAnimation(initialText: string, targetText: string, delay: number = 4000, speed: number = 100): string {
+    const [text, setText] = useState<string>("");  // textの型をstringとして定義
+    const [index, setIndex] = useState<number>(0); // indexの型をnumberとして定義
 
     useEffect(() => {
         // 初期テキスト（portfolio）を徐々に表示
@@ -46,5 +46,3 @@ export function useTextAnimation(initialText, targetText, delay = 4000, speed = 
 
     return text; // 現在のテキストを返す
 }
-
-

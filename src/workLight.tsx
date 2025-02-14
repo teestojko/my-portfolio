@@ -1,13 +1,14 @@
 import React, { useRef, useEffect } from "react";
 
-const WorkLight = () => {
-  const canvasRef = useRef(null);
+const WorkLight: React.FC = () => {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
+    if (!ctx) return; // `getContext` が失敗する可能性を考慮
 
     const handleResize = () => {
       canvas.width = canvas.offsetWidth;

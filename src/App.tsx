@@ -8,20 +8,24 @@ import { useScrollEffect } from "./scroll";
 import useMoveWorks from "./moveWorks";
 import ProfileChangeText from "./profileChangeText";
 import WorkLight from "./workLight";
-import FlowerSvg from './FlowerSvg';
+import FlowerSvg from "./FlowerSvg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faJs, faLaravel, faPhp, faDocker, faVuejs, faHtml5, faReact, faAws, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { 
+  faJs, faLaravel, faPhp, faDocker, 
+  faVuejs, faHtml5, faReact, faAws, faGithub 
+} from "@fortawesome/free-brands-svg-icons";
 
-function App() {
-  const backgroundRef = useRef(null);
-  const workTitleRef = useRef(null);
-  const worksRef = useRef(null);
-  const skillRef = useRef(null);
-  const contactRef = useRef(null);
+const App: React.FC = () => {
+  // useRef に型を指定
+  const backgroundRef = useRef<HTMLDivElement | null>(null);
+  const workTitleRef = useRef<HTMLDivElement | null>(null);
+  const worksRef = useRef<HTMLDivElement | null>(null);
+  const skillRef = useRef<HTMLDivElement | null>(null);
+  const contactRef = useRef<HTMLDivElement | null>(null);
 
   // スムーズスクロールを実現する関数
-  const scrollToSection = (ref) => {
-    if (ref && ref.current) {
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
+    if (ref.current) {
       window.scrollTo({
         top: ref.current.offsetTop,
         behavior: "smooth", // スムーズスクロールを有効化
@@ -30,7 +34,7 @@ function App() {
   };
 
   // カスタムフックでテキストアニメーションを制御
-  const animatedText = useTextAnimation("portfolio", "web engineer\nTetsuya Kishi", 4000, 100);
+  const animatedText: string = useTextAnimation("portfolio", "web engineer\nTetsuya Kishi", 4000, 100);
 
   useEffect(() => {
     // 光のエフェクトを初期化
@@ -63,7 +67,6 @@ function App() {
           <div key={index} className="light-effect"></div>
         ))}
       </div>
-
 
       <div ref={worksRef} className="section profile-section">
         <div ref={workTitleRef} className="work-container-inner">
@@ -105,17 +108,18 @@ function App() {
             <FontAwesomeIcon icon={faVuejs} style={{ color: "#41B883" }} />
             <FontAwesomeIcon icon={faHtml5} style={{ color: "#E34F26" }} />
             <FontAwesomeIcon icon={faReact} style={{ color: "#61DAFB" }} />
-            <FontAwesomeIcon icon={faAws} style={{ color: "#4b1aff", }} />
-            <FontAwesomeIcon icon={faGithub} style={{color: "#15003d",}} />
+            <FontAwesomeIcon icon={faAws} style={{ color: "#4b1aff" }} />
+            <FontAwesomeIcon icon={faGithub} style={{ color: "#15003d" }} />
           </div>
         </div>
       </div>
+
       <div ref={contactRef} className="section contact-section">
         <h1>Contact</h1>
         <p>Email: **************@gmail.com</p>
       </div>
     </div>
   );
-}
+};
 
 export default App;

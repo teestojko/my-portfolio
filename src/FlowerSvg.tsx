@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FlowerSvg = () => (
+const FlowerSvg: React.FC  = () => (
     <div className="svg-container">
         <svg
         viewBox="0 0 100 100"
