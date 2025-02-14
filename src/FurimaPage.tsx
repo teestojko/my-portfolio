@@ -26,7 +26,7 @@ const FurimaPage: React.FC = () => {
           slidesPerView={1}
           pagination={{ clickable: true }}
           navigation={true}
-          modules={[Pagination]} // ← 追加
+          modules={[Pagination, Navigation]}
         >
 
           <SwiperSlide><img className="furima-img" src="/images/furima-index.png" alt="furima-index" /></SwiperSlide>
