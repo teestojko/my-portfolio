@@ -2,8 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
-import "swiper/css";
 
+import "swiper/css";
 import "./furima-page.css";
 import "swiper/css/pagination";
 
@@ -21,10 +21,10 @@ const FurimaPage: React.FC = () => {
       </div>
       {/* Swiperで横スクロール */}
       <div className="furima-img-all">
-        <Swiper 
-          spaceBetween={10} 
-          slidesPerView={1} 
-          pagination={{ clickable: true }} 
+        <Swiper
+          spaceBetween={10}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
           modules={[Pagination]} // ← 追加
         >
 
