@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "./furima-page.css";
@@ -25,6 +25,7 @@ const FurimaPage: React.FC = () => {
           spaceBetween={10}
           slidesPerView={1}
           pagination={{ clickable: true }}
+          navigation={true}
           modules={[Pagination]} // ← 追加
         >
 
