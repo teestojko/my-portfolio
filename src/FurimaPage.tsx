@@ -16,6 +16,7 @@ const FurimaPage: React.FC = () => {
       </div>
       <div className="furima-img-all">
         <img className="furima-img" src="/images/furima-index.png" alt="furima-index" />
+        <img className="furima-img" src="/images/furima-navi.png" alt="furima-navi" />
         <img className="furima-img" src="/images/furima-detail.png" alt="furima-detail" />
         <img className="furima-img" src="/images/furima-search.png" alt="furima-search" />
       </div>
