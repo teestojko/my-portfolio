@@ -27,6 +27,7 @@ const FurimaPage: React.FC = () => {
           slidesPerView={"auto"}
           pagination={{ clickable: true }}
           navigation={true}
+          grabCursor={true}
           modules={[Pagination, Navigation]}
         >
 
