@@ -101,55 +101,55 @@ const App: React.FC = () => {
         <div className="skill-content">
           <h1>SKILL</h1>
           <div className="icon-all">
-            <div className="skill-section">
+            <div className="skill-detail">
               <div className="skill-name">
                 javascript
               </div>
               <FontAwesomeIcon className="skill-icon" icon={faJs} style={{ color: "#FFD43B" }} />
             </div>
-            <div className="skill-section">
+            <div className="skill-detail">
               <div className="skill-name">
                 
               </div>
               <FontAwesomeIcon className="skill-icon" icon={faLaravel} style={{ color: "#FF2D20" }} />
             </div>
-            <div className="skill-section">
+            <div className="skill-detail">
               <div className="skill-name">
                 
               </div>
               <FontAwesomeIcon className="skill-icon" icon={faPhp} style={{ color: "#8892BF" }} />
             </div>
-            <div className="skill-section">
+            <div className="skill-detail">
               <div className="skill-name">
                 
               </div>
               <FontAwesomeIcon className="skill-icon" icon={faDocker} style={{ color: "#2496ED" }} />
             </div>
-            <div className="skill-section">
+            <div className="skill-detail">
               <div className="skill-name">
                 
               </div>
               <FontAwesomeIcon className="skill-icon" icon={faVuejs} style={{ color: "#41B883" }} />
             </div>
-            <div className="skill-section">
+            <div className="skill-detail">
               <div className="skill-name">
                 
               </div>
               <FontAwesomeIcon className="skill-icon" icon={faHtml5} style={{ color: "#E34F26" }} />
             </div>
-            <div className="skill-section">
+            <div className="skill-detail">
               <div className="skill-name">
                 
               </div>
               <FontAwesomeIcon className="skill-icon" icon={faReact} style={{ color: "#61DAFB" }} />
             </div>
-            <div className="skill-section">
+            <div className="skill-detail">
               <div className="skill-name">
                 
               </div>
               <FontAwesomeIcon className="skill-icon" icon={faAws} style={{ color: "#4b1aff" }} />
             </div>
-            <div className="skill-section">
+            <div className="skill-detail">
               <div className="skill-name">
                 
               </div>
