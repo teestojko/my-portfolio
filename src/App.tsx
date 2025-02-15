@@ -101,57 +101,57 @@ const App: React.FC = () => {
         <div className="skill-content">
           <h1>SKILL</h1>
           <div className="icon-all">
-            <div className="skill-detail">
+            <div className="skill-item">
               <div className="skill-name">
-                javascript
+                Javascript
               </div>
               <FontAwesomeIcon className="skill-icon" icon={faJs} style={{ color: "#FFD43B" }} />
             </div>
-            <div className="skill-detail">
+            <div className="skill-item">
               <div className="skill-name">
-                
+                Laravel
               </div>
               <FontAwesomeIcon className="skill-icon" icon={faLaravel} style={{ color: "#FF2D20" }} />
             </div>
-            <div className="skill-detail">
+            <div className="skill-item">
               <div className="skill-name">
-                
+                php
               </div>
               <FontAwesomeIcon className="skill-icon" icon={faPhp} style={{ color: "#8892BF" }} />
             </div>
-            <div className="skill-detail">
+            <div className="skill-item">
               <div className="skill-name">
-                
+                Docker
               </div>
               <FontAwesomeIcon className="skill-icon" icon={faDocker} style={{ color: "#2496ED" }} />
             </div>
-            <div className="skill-detail">
+            <div className="skill-item">
               <div className="skill-name">
-                
+                Vue.js
               </div>
               <FontAwesomeIcon className="skill-icon" icon={faVuejs} style={{ color: "#41B883" }} />
             </div>
-            <div className="skill-detail">
+            <div className="skill-item">
               <div className="skill-name">
-                
+                HTML/CSS
               </div>
               <FontAwesomeIcon className="skill-icon" icon={faHtml5} style={{ color: "#E34F26" }} />
             </div>
-            <div className="skill-detail">
+            <div className="skill-item">
               <div className="skill-name">
-                
+                React
               </div>
               <FontAwesomeIcon className="skill-icon" icon={faReact} style={{ color: "#61DAFB" }} />
             </div>
-            <div className="skill-detail">
+            <div className="skill-item">
               <div className="skill-name">
-                
+                AWS
               </div>
               <FontAwesomeIcon className="skill-icon" icon={faAws} style={{ color: "#4b1aff" }} />
             </div>
-            <div className="skill-detail">
+            <div className="skill-item">
               <div className="skill-name">
-                
+                Github
               </div>
               <FontAwesomeIcon className="skill-icon" icon={faGithub} style={{ color: "#15003d" }} />
             </div>
