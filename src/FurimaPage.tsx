@@ -6,6 +6,7 @@ import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "./furima-page.css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const FurimaPage: React.FC = () => {
   const navigate = useNavigate();  // navigate関数を使用
@@ -23,7 +24,7 @@ const FurimaPage: React.FC = () => {
       <div className="furima-img-all">
         <Swiper
           spaceBetween={10}
-          slidesPerView={1}
+          slidesPerView={"auto"}
           pagination={{ clickable: true }}
           navigation={true}
           modules={[Pagination, Navigation]}
