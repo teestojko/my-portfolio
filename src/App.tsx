@@ -101,15 +101,15 @@ const App: React.FC = () => {
         <div className="skill-content">
           <h1>SKILL</h1>
           <div className="icon-all">
-            <FontAwesomeIcon icon={faJs} style={{ color: "#FFD43B" }} />
-            <FontAwesomeIcon icon={faLaravel} style={{ color: "#FF2D20" }} />
-            <FontAwesomeIcon icon={faPhp} style={{ color: "#8892BF" }} />
-            <FontAwesomeIcon icon={faDocker} style={{ color: "#2496ED" }} />
-            <FontAwesomeIcon icon={faVuejs} style={{ color: "#41B883" }} />
-            <FontAwesomeIcon icon={faHtml5} style={{ color: "#E34F26" }} />
-            <FontAwesomeIcon icon={faReact} style={{ color: "#61DAFB" }} />
-            <FontAwesomeIcon icon={faAws} style={{ color: "#4b1aff" }} />
-            <FontAwesomeIcon icon={faGithub} style={{ color: "#15003d" }} />
+            <FontAwesomeIcon className="skill-icon" icon={faJs} style={{ color: "#FFD43B" }} />
+            <FontAwesomeIcon className="skill-icon" icon={faLaravel} style={{ color: "#FF2D20" }} />
+            <FontAwesomeIcon className="skill-icon" icon={faPhp} style={{ color: "#8892BF" }} />
+            <FontAwesomeIcon className="skill-icon" icon={faDocker} style={{ color: "#2496ED" }} />
+            <FontAwesomeIcon className="skill-icon" icon={faVuejs} style={{ color: "#41B883" }} />
+            <FontAwesomeIcon className="skill-icon" icon={faHtml5} style={{ color: "#E34F26" }} />
+            <FontAwesomeIcon className="skill-icon" icon={faReact} style={{ color: "#61DAFB" }} />
+            <FontAwesomeIcon className="skill-icon" icon={faAws} style={{ color: "#4b1aff" }} />
+            <FontAwesomeIcon className="skill-icon" icon={faGithub} style={{ color: "#15003d" }} />
           </div>
         </div>
       </div>
