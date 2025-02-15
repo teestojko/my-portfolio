@@ -25,7 +25,7 @@ const FurimaPage: React.FC = () => {
           spaceBetween={10}
           slidesPerView={1}
           pagination={{ clickable: true }}
-          navigation={true}
+          navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }}
           modules={[Pagination, Navigation]}
         >
 
