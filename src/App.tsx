@@ -99,7 +99,7 @@ const App: React.FC = () => {
 
       <div ref={skillRef} className="section skill-section">
         <div className="skill-content">
-          <h1>SKILL</h1>
+          <h1 className="skill-title">SKILL</h1>
           <div className="icon-all">
             <div className="skill-item">
               <div className="skill-name">
