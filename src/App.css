@@ -3,6 +3,7 @@
     box-sizing: border-box;
     width: 100vw;
     min-height: 100vh;
+    overflow: hidden;
     margin: 0;
     padding: 0;
 }
@@ -270,11 +271,19 @@
     height: 50px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .work-container-img {
         width: 80vw;
         height: auto;
     }
+}
+
+@media (max-width: 768px) {
+    
+}
+
+@media (max-width: 480px) {
+    
 }
 
 
