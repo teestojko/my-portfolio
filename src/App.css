@@ -270,3 +270,11 @@
     height: 50px;
 }
 
+@media (max-width: 768px) {
+    .work-container-img {
+        width: 80vw;
+        height: auto;
+    }
+}
+
+
