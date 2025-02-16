@@ -3,9 +3,9 @@ import React, { useState, useEffect, useRef } from "react";
 const ProfileChangeText: React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);
     const profileTexts: string[] = [
-        "Hi, I'm Tetsuya Kishi, a web engineer specializing in creating interactive and visually stunning web applications.",
-        "My goal is to blend creativity with functionality to deliver excellent user experiences.",
         "Let's work together to create something amazing!",
+        "あなたの創りたいを叶えます✨",
+        "webエンジニア 岸 哲也",
     ];
 
     const textRef = useRef<HTMLParagraphElement | null>(null);
