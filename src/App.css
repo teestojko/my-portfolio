@@ -283,7 +283,10 @@
 }
 
 @media (max-width: 480px) {
-    
+    .profile-container {
+    padding: 0;
+    width: 80%;
+}
 }
 
 
