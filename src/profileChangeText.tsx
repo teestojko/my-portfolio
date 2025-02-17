@@ -3,8 +3,8 @@ import React, { useState, useEffect, useRef } from "react";
 const ProfileChangeText: React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);
     const profileTexts: string[] = [
-        "プログラミングスクールにてスキルを磨き、現在webエンジニアとして活動中です。php,laravelを中心としたバックエンド、React,typescriptを組み込んだフロントエンドまで幅広くこなします。",
-        "",
+        "プログラミングスクールにてスキルを磨き、現在webエンジニアとして活動中です。",
+        "php,laravelを中心としたバックエンド、React,typescriptを組み込んだフロントエンドまで幅広くこなします。",
         "✨あなたの創りたいを叶えます✨",
         "webエンジニア 岸 哲也",
     ];

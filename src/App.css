@@ -11,7 +11,7 @@
 .scene {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     margin: 0;
     padding: 0;
     position: relative;
@@ -97,7 +97,7 @@
     margin-top: 20%;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .work-container-inner {
@@ -124,7 +124,7 @@
     text-transform: uppercase; /* すべて大文字に */
     letter-spacing: 0.5rem; /* 文字間隔を広く */
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .work-container-title::before {
@@ -218,7 +218,7 @@
     position: relative;
     width: 100%;
     height: auto;
-    overflow: hidden;
+    /* overflow: hidden; */
     background: linear-gradient(135deg, #fff787, rgb(255, 199, 179), #feffda);
     background-size: 300% 300%;
     animation: gradientShift 6s ease infinite; /* アニメーションを適用 */
