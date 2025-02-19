@@ -73,10 +73,13 @@ const FurimaPage: React.FC = () => {
             クーポン、手数料を含めたStripe決済機能
           </li>
           <li className="furima-text">
-            AWSのEC2,RDS,S3を使用した、アプリのデプロイ
+            クーポン作成機能
           </li>
           <li className="furima-text">
-            クーポン作成機能
+            ポイント機能
+          </li>
+          <li className="furima-text">
+           通報機能
           </li>
         </ul>
       </div>
