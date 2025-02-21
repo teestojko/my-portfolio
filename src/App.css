@@ -292,7 +292,10 @@
 }
 
 @media (max-width: 1024px) {
-    
+    .work-container-img {
+        width: 350px;
+        height: 300px;
+    }
 }
 
 @media (max-width: 768px) {
