@@ -292,13 +292,14 @@
 }
 
 @media (max-width: 1024px) {
-    /* .work-container-img {
-
-    } */
+    
 }
 
 @media (max-width: 768px) {
-    
+    .work-container-img {
+        width: 300px;
+        height: 250px;
+    }
 }
 
 @media (max-width: 480px) {
