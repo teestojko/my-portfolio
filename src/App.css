@@ -292,9 +292,9 @@
 }
 
 @media (max-width: 1024px) {
-    .work-container-img {
-        width: 350px;
-    }
+    /* .work-container-img {
+
+    } */
 }
 
 @media (max-width: 768px) {
