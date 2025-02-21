@@ -306,6 +306,10 @@
 }
 
 @media (max-width: 480px) {
+    .work-container-img {
+        width: 200px;
+        height: 150px;
+    }
     .profile-container {
         padding: 0;
         width: 80%;
