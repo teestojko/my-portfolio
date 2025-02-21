@@ -69,7 +69,7 @@ const App: React.FC = () => {
       </div>
 
       <div ref={worksRef} className="section profile-section">
-        <div ref={workTitleRef} className="work-container-inner">
+        <div ref={workTitleRef} className="work-container">
           <WorkLight />
           <div className="svg-container">
             <FlowerSvg />
