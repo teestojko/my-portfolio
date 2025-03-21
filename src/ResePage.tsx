@@ -15,7 +15,7 @@ const ResePage: React.FC = () => {
       <div className="rese-title">飲食店予約アプリ</div>
       <div className="rese-img-all">
         <img className="rese-img" src="/images/shop-detail.png" alt="Shop Detail" />
-        <img className="rese-img" src="/images/my-page.png" alt="My Page" />
+        <img className="rese-img" src="/images/rese-my-page.png" alt="My Page" />
       </div>
       <div className="rese-text-all">
         <ul className="rese-ul">
