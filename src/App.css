@@ -41,6 +41,7 @@
     margin: 0;
     position: relative;
     background: linear-gradient(0deg, #9dfcff, #81dbff, #015ec1, #00449d, #000);
+    will-change: transform, opacity;
 }
 
 @keyframes float {
