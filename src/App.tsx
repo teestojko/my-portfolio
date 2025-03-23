@@ -10,9 +10,9 @@ import ProfileChangeText from "./profileChangeText";
 import WorkLight from "./workLight";
 import FlowerSvg from "./FlowerSvg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { 
-  faJs, faLaravel, faPhp, faDocker, 
-  faVuejs, faHtml5, faReact, faAws, faGithub 
+import {
+  faJs, faLaravel, faPhp, faDocker,
+  faVuejs, faHtml5, faReact, faAws, faGithub
 } from "@fortawesome/free-brands-svg-icons";
 
 const App: React.FC = () => {
@@ -86,14 +86,14 @@ const App: React.FC = () => {
               </span>
             ))}
           </h1>
-          <div className="work-container-img-all">
+          {/* <div className="work-container-img-all">
             <Link className="link rese-link" to="/rese">
               <img className="work-container-img" src="/images/rese.png" alt="rese" />
             </Link>
             <Link className="link furima-link" to="/furima">
               <img className="work-container-img" src="/images/furima.png" alt="furima" />
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
 

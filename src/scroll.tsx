@@ -46,7 +46,7 @@ export const useScrollEffect = (backgroundRef: React.RefObject<HTMLDivElement | 
     };
 
     // スクロール処理を最適化（50msごとに処理）
-    const optimizedScroll = debounce(onScroll, 100);
+    const optimizedScroll = debounce(onScroll, 50);
     window.addEventListener("scroll", optimizedScroll);
     
     // 初回実行
