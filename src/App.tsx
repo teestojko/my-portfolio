@@ -86,14 +86,14 @@ const App: React.FC = () => {
               </span>
             ))}
           </h1>
-          {/* <div className="work-container-img-all">
+          <div className="work-container-img-all">
             <Link className="link rese-link" to="/rese">
               <img className="work-container-img" src="/images/rese.png" alt="rese" />
             </Link>
             <Link className="link furima-link" to="/furima">
               <img className="work-container-img" src="/images/furima.png" alt="furima" />
             </Link>
-          </div> */}
+          </div>
         </div>
       </div>
 
