@@ -101,7 +101,6 @@ import { Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/lazy";
 import "./furima-page.css";
 
 const FurimaPage: React.FC = () => {
@@ -128,16 +127,16 @@ const FurimaPage: React.FC = () => {
           modules={[Navigation]} // 遅延読み込みを追加
         >
           <SwiperSlide>
-            <img className="furima-img" src="/images/furima-index.png" alt="furima-index" loading="lazy" />
+            <img className="furima-img" src="/images/furima-index.png" alt="furima-index" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className="furima-img" src="/images/furima-navi.png" alt="furima-navi" loading="lazy" />
+            <img className="furima-img" src="/images/furima-navi.png" alt="furima-navi" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className="furima-img" src="/images/furima-detail.png" alt="furima-detail" loading="lazy" />
+            <img className="furima-img" src="/images/furima-detail.png" alt="furima-detail" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className="furima-img" src="/images/furima-search.png" alt="furima-search" loading="lazy" />
+            <img className="furima-img" src="/images/furima-search.png" alt="furima-search" />
           </SwiperSlide>
         </Swiper>
       </div>
