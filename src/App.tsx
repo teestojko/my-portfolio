@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
 import { useTextAnimation } from "./changeText";
-// import MovingCube from "./movingCube";
+import MovingCube from "./movingCube";
 import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
 import useMoveWorks from "./moveWorks";
@@ -55,7 +55,7 @@ const App: React.FC = () => {
         </ul>
       </nav>
       <div className="scene-container">
-        {/* <MovingCube /> */}
+        <MovingCube />
         <div className="scene-text">{animatedText}</div>
       </div>
       <div ref={backgroundRef} className="custom-background">
