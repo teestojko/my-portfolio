@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./App.css";
 import { useTextAnimation } from "./changeText";
 import MovingCube from "./movingCube";
-import { randomizeLights } from "./lightEffect";
+// import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
 import useMoveWorks from "./moveWorks";
 import ProfileChangeText from "./profileChangeText";
@@ -36,10 +36,10 @@ const App: React.FC = () => {
   // カスタムフックでテキストアニメーションを制御
   const animatedText: string = useTextAnimation("portfolio", "web engineer\nTetsuya Kishi", 4000, 100);
 
-  useEffect(() => {
-    // 光のエフェクトを初期化
-    randomizeLights();
-  }, []);
+  // useEffect(() => {
+  //   // 光のエフェクトを初期化
+  //   randomizeLights();
+  // }, []);
 
   useScrollEffect(backgroundRef);
   useMoveWorks(workTitleRef);
