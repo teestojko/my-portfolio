@@ -3,7 +3,7 @@ import React from 'react';
 const FlowerSvg: React.FC  = () => (
     <div className="svg-container">
         <svg
-        viewBox="-50 -40 200 200"
+        viewBox="-50 -40 100 100"
         xmlns="http://www.w3.org/2000/svg"
         width="100%"
         height="100%"
