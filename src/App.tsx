@@ -5,7 +5,7 @@ import { useTextAnimation } from "./changeText";
 import MovingCube from "./movingCube";
 import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
-import useMoveWorks from "./moveWorks";
+// import useMoveWorks from "./moveWorks";
 import ProfileChangeText from "./profileChangeText";
 import WorkLight from "./workLight";
 import FlowerSvg from "./FlowerSvg";
@@ -42,7 +42,7 @@ const App: React.FC = () => {
   }, []);
 
   useScrollEffect(backgroundRef);
-  useMoveWorks(workTitleRef);
+  // useMoveWorks(workTitleRef);
 
   return (
     <div className="portfolio">
