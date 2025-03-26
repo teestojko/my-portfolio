@@ -63,7 +63,7 @@ const App: React.FC = () => {
           <h1>profile</h1>
           <ProfileChangeText />
         </div>
-        {Array.from({ length: 6 }).map((_, index) => (
+        {Array.from({ length: 10 }).map((_, index) => (
           <div key={index} className="light-effect"></div>
         ))}
       </div>
@@ -76,7 +76,8 @@ const App: React.FC = () => {
           </div>
 
           <h1 className="work-container-title">
-            {["w", "o", "r", "k", "s"].map((char, index) => (
+            WORKS
+            {/* {["w", "o", "r", "k", "s"].map((char, index) => (
               <span
                 className="title-animation"
                 key={index}
@@ -84,7 +85,7 @@ const App: React.FC = () => {
               >
                 {char}
               </span>
-            ))}
+            ))} */}
           </h1>
           <div className="work-container-img-all">
             <Link className="link rese-link" to="/rese">
