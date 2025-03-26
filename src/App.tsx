@@ -9,11 +9,11 @@ import useMoveWorks from "./moveWorks";
 import ProfileChangeText from "./profileChangeText";
 import WorkLight from "./workLight";
 import FlowerSvg from "./FlowerSvg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faJs, faLaravel, faPhp, faDocker,
-  faVuejs, faHtml5, faReact, faAws, faGithub
-} from "@fortawesome/free-brands-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faJs, faLaravel, faPhp, faDocker,
+//   faVuejs, faHtml5, faReact, faAws, faGithub
+// } from "@fortawesome/free-brands-svg-icons";
 
 const App: React.FC = () => {
   // useRef に型を指定
@@ -101,7 +101,7 @@ const App: React.FC = () => {
         <div className="skill-content">
           <h1 className="skill-title">SKILL</h1>
           <div className="icon-all">
-            <div className="skill-item">
+            {/* <div className="skill-item">
               <div className="skill-name">
                 Javascript
               </div>
@@ -154,7 +154,7 @@ const App: React.FC = () => {
                 Github
               </div>
               <FontAwesomeIcon className="skill-icon" icon={faGithub} style={{ color: "#15003d" }} />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
