@@ -69,8 +69,8 @@ const App: React.FC = () => {
       </div>
 
       <div ref={worksRef} className="section profile-section">
-        <div ref={workTitleRef} className="work-container">
-          <WorkLight />
+        {/* <div ref={workTitleRef} className="work-container"> */}
+          {/* <WorkLight /> */}
           <div className="svg-container">
             <FlowerSvg />
           </div>
@@ -95,7 +95,7 @@ const App: React.FC = () => {
               <img className="work-container-img" src="/images/furima.png" alt="furima" />
             </Link>
           </div>
-        </div>
+        {/* </div> */}
       </div>
 
       <div ref={skillRef} className="section skill-section">
