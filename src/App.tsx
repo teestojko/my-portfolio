@@ -7,7 +7,7 @@ import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
 // import useMoveWorks from "./moveWorks";
 import ProfileChangeText from "./profileChangeText";
-import WorkLight from "./workLight";
+// import WorkLight from "./workLight";
 import FlowerSvg from "./FlowerSvg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
