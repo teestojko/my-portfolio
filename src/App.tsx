@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./App.css";
 import { useTextAnimation } from "./changeText";
 import MovingCube from "./movingCube";
