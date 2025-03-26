@@ -6,7 +6,6 @@ import MovingCube from "./movingCube";
 import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
 import ProfileChangeText from "./profileChangeText";
-import FlowerSvg from "./FlowerSvg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faJs, faLaravel, faPhp, faDocker,
