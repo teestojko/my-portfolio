@@ -41,8 +41,8 @@ const App: React.FC = () => {
   //   randomizeLights();
   // }, []);
 
-  useScrollEffect(backgroundRef);
-  useMoveWorks(workTitleRef);
+  // useScrollEffect(backgroundRef);
+  // useMoveWorks(workTitleRef);
 
   return (
     <div className="portfolio">
