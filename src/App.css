@@ -47,10 +47,9 @@
     margin: 0;
     position: relative;
     background: linear-gradient(0deg, #9dfcff, #81dbff, #015ec1, #00449d, #000);
-    will-change: transform, opacity;
 }
 
-@keyframes float {
+/* @keyframes float {
     0%, 100% {
         transform: translateY(0);
     }
@@ -59,7 +58,19 @@
         translateX(var(--random-move-x, 500px))
         scale(var(--random-scale, 5));
     }
+} */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(var(--random-move-y, -100px))
+        translateX(var(--random-move-x, 100px))
+        scale(1.2);
+    }
 }
+
 
 .profile-container {
     z-index: 10; /* 光のエフェクトの上に表示 */
@@ -172,8 +183,9 @@
 }
 
 .work-container-img:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    /* transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); */
+    transform: translateY(-10px) scale(1.05);
 }
 
 .link {
