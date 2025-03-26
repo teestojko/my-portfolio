@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
-// import { Link } from "react-router-dom";
+import React, { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./App.css";
 import { useTextAnimation } from "./changeText";
-// import MovingCube from "./movingCube";
-// import { randomizeLights } from "./lightEffect";
+import MovingCube from "./movingCube";
+import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
 import useMoveWorks from "./moveWorks";
 import ProfileChangeText from "./profileChangeText";
@@ -24,38 +24,38 @@ const App: React.FC = () => {
   const contactRef = useRef<HTMLDivElement | null>(null);
 
   // スムーズスクロールを実現する関数
-  // const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
-  //   if (ref.current) {
-  //     window.scrollTo({
-  //       top: ref.current.offsetTop,
-  //       behavior: "smooth", // スムーズスクロールを有効化
-  //     });
-  //   }
-  // };
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
+    if (ref.current) {
+      window.scrollTo({
+        top: ref.current.offsetTop,
+        behavior: "smooth", // スムーズスクロールを有効化
+      });
+    }
+  };
 
   // カスタムフックでテキストアニメーションを制御
   const animatedText: string = useTextAnimation("portfolio", "web engineer\nTetsuya Kishi", 4000, 100);
 
-  // useEffect(() => {
-  //   // 光のエフェクトを初期化
-  //   randomizeLights();
-  // }, []);
+  useEffect(() => {
+    // 光のエフェクトを初期化
+    randomizeLights();
+  }, []);
 
   useScrollEffect(backgroundRef);
   useMoveWorks(workTitleRef);
 
   return (
     <div className="portfolio">
-      {/* <nav className="fixed-menu">
+      <nav className="fixed-menu">
         <ul>
           <li onClick={() => scrollToSection(backgroundRef)}>Profile</li>
           <li onClick={() => scrollToSection(worksRef)}>Works</li>
           <li onClick={() => scrollToSection(skillRef)}>Skill</li>
           <li onClick={() => scrollToSection(contactRef)}>Contact</li>
         </ul>
-      </nav> */}
+      </nav>
       <div className="scene-container">
-        {/* <MovingCube /> */}
+        <MovingCube />
         <div className="scene-text">{animatedText}</div>
       </div>
       <div ref={backgroundRef} className="custom-background">
@@ -63,9 +63,9 @@ const App: React.FC = () => {
           <h1>profile</h1>
           <ProfileChangeText />
         </div>
-        {/* {Array.from({ length: 10 }).map((_, index) => (
+        {Array.from({ length: 10 }).map((_, index) => (
           <div key={index} className="light-effect"></div>
-        ))} */}
+        ))}
       </div>
 
       <div ref={worksRef} className="section profile-section">
@@ -86,14 +86,14 @@ const App: React.FC = () => {
               </span>
             ))}
           </h1>
-          {/* <div className="work-container-img-all">
+          <div className="work-container-img-all">
             <Link className="link rese-link" to="/rese">
               <img className="work-container-img" src="/images/rese.png" alt="rese" />
             </Link>
             <Link className="link furima-link" to="/furima">
               <img className="work-container-img" src="/images/furima.png" alt="furima" />
             </Link>
-          </div> */}
+          </div>
         </div>
       </div>
 
