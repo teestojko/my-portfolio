@@ -5,7 +5,7 @@ import { useTextAnimation } from "./changeText";
 // import MovingCube from "./movingCube";
 // import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
-// import useMoveWorks from "./moveWorks";
+import useMoveWorks from "./moveWorks";
 import ProfileChangeText from "./profileChangeText";
 import WorkLight from "./workLight";
 import FlowerSvg from "./FlowerSvg";
@@ -41,8 +41,8 @@ const App: React.FC = () => {
   //   randomizeLights();
   // }, []);
 
-  // useScrollEffect(backgroundRef);
-  // useMoveWorks(workTitleRef);
+  useScrollEffect(backgroundRef);
+  useMoveWorks(workTitleRef);
 
   return (
     <div className="portfolio">
@@ -63,9 +63,9 @@ const App: React.FC = () => {
           <h1>profile</h1>
           <ProfileChangeText />
         </div>
-        {Array.from({ length: 10 }).map((_, index) => (
+        {/* {Array.from({ length: 10 }).map((_, index) => (
           <div key={index} className="light-effect"></div>
-        ))}
+        ))} */}
       </div>
 
       <div ref={worksRef} className="section profile-section">
