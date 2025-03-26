@@ -5,9 +5,7 @@ import { useTextAnimation } from "./changeText";
 import MovingCube from "./movingCube";
 import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
-// import useMoveWorks from "./moveWorks";
 import ProfileChangeText from "./profileChangeText";
-// import WorkLight from "./workLight";
 import FlowerSvg from "./FlowerSvg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -18,7 +16,6 @@ import {
 const App: React.FC = () => {
   // useRef に型を指定
   const backgroundRef = useRef<HTMLDivElement | null>(null);
-  // const workTitleRef = useRef<HTMLDivElement | null>(null);
   const worksRef = useRef<HTMLDivElement | null>(null);
   const skillRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
@@ -42,7 +39,6 @@ const App: React.FC = () => {
   }, []);
 
   useScrollEffect(backgroundRef);
-  // useMoveWorks(workTitleRef);
 
   return (
     <div className="portfolio">
@@ -69,23 +65,8 @@ const App: React.FC = () => {
       </div>
 
       <div ref={worksRef} className="section profile-section">
-        {/* <div ref={workTitleRef} className="work-container"> */}
-          {/* <WorkLight /> */}
-          <div className="svg-container">
-            <FlowerSvg />
-          </div>
-
           <h1 className="work-container-title">
             WORKS
-            {/* {["w", "o", "r", "k", "s"].map((char, index) => (
-              <span
-                className="title-animation"
-                key={index}
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                {char}
-              </span>
-            ))} */}
           </h1>
           <div className="work-container-img-all">
             <Link className="link rese-link" to="/rese">
@@ -95,7 +76,6 @@ const App: React.FC = () => {
               <img className="work-container-img" src="/images/furima.png" alt="furima" />
             </Link>
           </div>
-        {/* </div> */}
       </div>
 
       <div ref={skillRef} className="section skill-section">
