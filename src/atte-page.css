@@ -1,0 +1,73 @@
+.atte{
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.atte-title{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 2rem;
+    height: 10%;
+    align-content: center;
+}
+
+.atte-img-all {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden; /* ← 変更 */
+}
+
+.atte-img {
+    width: 100%;
+    height: auto;
+}
+
+.atte-text-all{
+    display: flex;
+    justify-content: center;
+}
+
+.atte-ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2列 */
+    gap: 10px; /* 各アイテム間のスペース */
+    padding: 0;
+    list-style: none;
+}
+
+.atte-text{
+    font-size: 1rem;
+    background: #fff8f8;
+    border-radius: 5px;
+    border: none;
+}
+
+.atte-text-page{
+    font-size: 1rem;
+    font-weight: bold;
+    background: #ffeeee;
+    border: none;
+    padding: 10px;
+}
+
+.back-button{
+    text-align: center;
+}
+
+.back-button-link {
+    background: linear-gradient(45deg, #fcd7ff, #ffbcd7);
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.back-button-link:hover {
+    background: linear-gradient(90deg, #f458ff, #ff96c0);
+    transition: opacity 1.5s ease-in-out;
+}
