@@ -381,6 +381,45 @@
     height: 150px;
 }
 
+.contact-section {
+  padding: 50px 20px;
+  background: linear-gradient(to right, #4f5d73, #212a36);
+  color: white;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: 'Arial', sans-serif;
+}
+
+.contact-title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #FFD700;
+}
+
+.contact-mail {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #b0b0b0;
+  letter-spacing: 0.5px;
+}
+
+.contact-section:hover {
+  transform: translateY(-10px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-mail:hover {
+  color: #FFD700;
+  cursor: pointer;
+}
+
+
 @media (max-width: 1024px) {
     .work-container-img {
         width: 350px;

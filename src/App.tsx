@@ -11,7 +11,6 @@ import {
   faJs, faLaravel, faPhp, faDocker,
   faVuejs, faHtml5, faReact, faAws, faGithub
 } from "@fortawesome/free-brands-svg-icons";
-import ContactSection from "./ContactSection";
 
 const App: React.FC = () => {
   // useRef に型を指定
@@ -143,7 +142,10 @@ const App: React.FC = () => {
         </div>
       </div>
 
-      <ContactSection ref={contactRef} />
+      <div ref={contactRef} className="section contact-section">
+        <h1 className="contact-title">Contact</h1>
+        <p className="contact-mail">Email: **************@gmail.com</p>
+      </div>
     </div>
   );
 };
