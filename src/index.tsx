@@ -6,6 +6,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ResePage from "./ResePage";
 import FurimaPage from "./FurimaPage";
+import AttePage from "./AttePage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement // 型アサーションを追加
@@ -16,6 +17,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/atte" element={<AttePage />} />
         <Route path="/rese" element={<ResePage />} />
         <Route path="/furima" element={<FurimaPage />} />
       </Routes>

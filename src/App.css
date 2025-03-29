@@ -49,17 +49,6 @@
     background: linear-gradient(0deg, #9dfcff, #81dbff, #015ec1, #00449d, #000);
 }
 
-/* @keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(var(--random-move-y, -500px))
-        translateX(var(--random-move-x, 500px))
-        scale(var(--random-scale, 5));
-    }
-} */
-
 @keyframes float {
     0%, 100% {
         transform: translateY(0) scale(1);
@@ -183,8 +172,6 @@
 }
 
 .work-container-img:hover {
-    /* transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); */
     transform: translateY(-10px) scale(1.05);
 }
 
@@ -221,7 +208,7 @@
 }
 
 .fixed-menu li:hover {
-    color: #ffeb3b; /* ホバー時の色変更 */
+    color: #ffeb3b;
 }
 
 .skill-section {
@@ -230,7 +217,7 @@
     height: auto;
     background: linear-gradient(135deg, #fff787, rgb(255, 199, 179), #feffda);
     background-size: 300% 300%;
-    animation: gradientShift 6s ease infinite; /* アニメーションを適用 */
+    animation: gradientShift 6s ease infinite;
 }
 
 @keyframes gradientShift {
