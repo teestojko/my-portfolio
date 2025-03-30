@@ -24,9 +24,6 @@ const MovingCube: React.FC = () => {
         );
         camera.position.z = 15;
 
-        // const renderer = new THREE.WebGLRenderer();
-        // renderer.setSize(window.innerWidth, window.innerHeight);
-        // currentSceneRef.appendChild(renderer.domElement);
         const renderer = new THREE.WebGLRenderer({ antialias: true });
             renderer.setSize(currentSceneRef.clientWidth, currentSceneRef.clientHeight); // サイズを parent のサイズに合わせる
             renderer.setPixelRatio(window.devicePixelRatio); // 解像度を最適化
