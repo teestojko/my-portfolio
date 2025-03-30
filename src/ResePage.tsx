@@ -32,7 +32,10 @@ const ResePage: React.FC = () => {
                 modules={[Navigation]} // 遅延読み込みを追加
               >
                 <SwiperSlide>
-                  <img className="rese-img" src="/images/shop-detail.png" alt="Shop Detail" />
+                  <img className="rese-img" src="/images/rese.png" alt="Rese" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img className="rese-img" src="/images/rese-shop-detail.png" alt="Shop Detail" />
                 </SwiperSlide>
                 <SwiperSlide>
                   <img className="rese-img" src="/images/rese-my-page.png" alt="My Page" />
