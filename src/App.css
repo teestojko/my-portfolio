@@ -384,7 +384,8 @@
 }
 
 .contact{
-    background: linear-gradient(45deg, #206f7c 0%, #3390a7 29%, #4f9dd8 66%, #696bff 100%);
+    height: 30vh;
+    background: linear-gradient(45deg, #206f7c 0%, #3390a7 29%, #4f9dd8 66%, #2693f3 100%);
 }
 
 .contact-section {
