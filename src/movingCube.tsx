@@ -59,9 +59,9 @@ const MovingCube: React.FC = () => {
                     z: Math.random() * 0.02 - 0.01,
                 },
                 movementSpeed: {
-                    x: Math.random() * 0.01 - 0.005,
-                    y: Math.random() * 0.01 - 0.005,
-                    z: Math.random() * 0.01 - 0.005,
+                    x: Math.random() * 0.02 - 0.01,
+                    y: Math.random() * 0.02 - 0.01,
+                    z: Math.random() * 0.02 - 0.01,
                 },
             }) as Cube; // `Cube` 型として明示的にキャスト
 
