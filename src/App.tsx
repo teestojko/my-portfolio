@@ -100,13 +100,13 @@ const App: React.FC = () => {
               <div className="skill-name">
                 php
               </div>
-              <FontAwesomeIcon className="skill-icon" icon={faPhp} style={{ color: "#8892BF" }} />
+              <FontAwesomeIcon className="skill-icon" icon={faPhp} style={{ color: "#FFD43B" }} />
             </div>
             <div className="skill-item">
               <div className="skill-name">
                 Docker
               </div>
-              <FontAwesomeIcon className="skill-icon" icon={faDocker} style={{ color: "#2496ED" }} />
+              <FontAwesomeIcon className="skill-icon" icon={faDocker} style={{ color: "#19325d" }} />
             </div>
             <div className="skill-item">
               <div className="skill-name">
