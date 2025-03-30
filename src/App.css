@@ -214,7 +214,7 @@
     overflow: hidden;
     width: 100%;
     height: auto;
-    background: linear-gradient(135deg, #fff787, rgb(255, 199, 179), #feffda);
+    background: linear-gradient(135deg, #206f7c, rgb(177, 243, 255), #53e5ff);
     background-size: 300% 300%;
     animation: gradientShift 6s ease infinite;
 }
