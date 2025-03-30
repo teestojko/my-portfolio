@@ -2,7 +2,7 @@
     position: relative;
     box-sizing: border-box;
     width: 100vw;
-    min-height: 100vh;
+    height: auto;
     overflow: hidden;
     margin: 0;
     padding: 0;
