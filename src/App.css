@@ -256,7 +256,8 @@
     font-size: 1.5rem;
 }
 
-.profile-section{
+.profile-section,
+.skill-section{
     width: 100%;
     min-height: 100vh;
     position: relative;
@@ -276,7 +277,9 @@
 }
 
 .profile-section::before,
-.profile-section::after {
+.profile-section::after,
+.skill-section::before,
+.skill-section::after{
 	content: "";
 	width: 70vmax;
 	height: 70vmax;
@@ -291,7 +294,8 @@
 	pointer-events: none;
 }
 
-.profile-section::after {
+.profile-section::after,
+.skill-section::after {
     width: 70vmin;
     height: 70vmin;
     left: auto;
