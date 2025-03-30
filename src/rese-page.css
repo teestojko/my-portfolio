@@ -12,21 +12,16 @@
     align-content: center;
 }
 
-.rese-img-all{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    height: 40vh;
-    min-width: 100%;
+.rese-img-all {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden; /* ← 変更 */
 }
 
-.rese-img{
-    height: 200px;
-    width: 300px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 8px; /* 任意の角丸 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 初期の影 */
+.rese-img {
+    width: 100%;
+    height: auto;
 }
 
 .rese-img:hover {
