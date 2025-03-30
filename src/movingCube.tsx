@@ -24,9 +24,26 @@ const MovingCube: React.FC = () => {
         );
         camera.position.z = 15;
 
-        const renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        currentSceneRef.appendChild(renderer.domElement);
+        // const renderer = new THREE.WebGLRenderer();
+        // renderer.setSize(window.innerWidth, window.innerHeight);
+        // currentSceneRef.appendChild(renderer.domElement);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(currentSceneRef.clientWidth, currentSceneRef.clientHeight); // サイズを parent のサイズに合わせる
+            renderer.setPixelRatio(window.devicePixelRatio); // 解像度を最適化
+            renderer.domElement.style.position = "absolute"; // シーン内での配置を確実にする
+            renderer.domElement.style.top = "0";
+            renderer.domElement.style.left = "0";
+            renderer.domElement.style.width = "100%";
+            renderer.domElement.style.height = "100%";
+            currentSceneRef.appendChild(renderer.domElement);
+
+            // ウィンドウリサイズ時に再描画するように設定
+            window.addEventListener("resize", () => {
+                renderer.setSize(currentSceneRef.clientWidth, currentSceneRef.clientHeight);
+                camera.aspect = currentSceneRef.clientWidth / currentSceneRef.clientHeight;
+                camera.updateProjectionMatrix();
+            });
+
 
         const cubes: Cube[] = [];
         for (let i = 0; i < 200; i++) {
