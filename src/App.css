@@ -383,6 +383,10 @@
     height: 150px;
 }
 
+.contact{
+    background: linear-gradient(45deg, #206f7c 0%, #3390a7 29%, #4f9dd8 66%, #696bff 100%);
+}
+
 .contact-section {
     padding: 50px 20px;
     background: linear-gradient(to right, #4f5d73, #84888f);

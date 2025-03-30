@@ -142,9 +142,11 @@ const App: React.FC = () => {
         </div>
       </div>
 
-      <div ref={contactRef} className="section contact-section">
-        <h1 className="contact-title">Contact</h1>
-        <p className="contact-mail">Email: **************@gmail.com</p>
+      <div className="contact">
+        <div ref={contactRef} className="section contact-section">
+          <h1 className="contact-title">Contact</h1>
+          <p className="contact-mail">Email: **************@gmail.com</p>
+        </div>
       </div>
     </div>
   );
