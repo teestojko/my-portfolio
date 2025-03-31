@@ -3,14 +3,11 @@ import React, { useState, useEffect, useRef } from "react";
 const ProfileChangeText: React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);
     const profileTexts: string[] = [
-        "プログラミングスクールにてスキルを磨き、現在フルスタックエンジニアとして活動中です。",
+        "プログラミングスクールで培った確かなスキルを活かし、現在フルスタックエンジニアとして活動中です。",
         "バックエンドのPHP・Laravelから、フロントエンドのReact・TypeScriptまで幅広く対応可能です。",
-        "",
-        "",
-        "✨あなたの創りたいを叶えます✨",
-        "",
-        "",
-        "webエンジニア 岸 哲也",
+        "また、Docker・Git・MySQL・AWS を駆使した開発環境の構築やデプロイにも精通しています。",
+        "✨アイデアを形にするお手伝いをいたします✨",
+        "💻 フルスタックエンジニア｜岸 哲也",
     ];
 
     const textRef = useRef<HTMLParagraphElement | null>(null);
@@ -46,6 +43,7 @@ const ProfileChangeText: React.FC = () => {
                     style={{
                         display: "block",
                         transitionDelay: `${index * 3}s`, // 各行に3秒ずつ遅らせてフェードイン
+                        marginBottom: index === 2 ? "2rem" : "0",
                     }}
                 >
                     {text}
