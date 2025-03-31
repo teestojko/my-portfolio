@@ -262,17 +262,14 @@
     width: 100%;
     min-height: 100vh;
     position: relative;
-    /* background: -moz-linear-gradient(45deg, #206f7c 0%, #3390a7 29%, #4f9dd8 66%, #696bff 100%);
+    background: -moz-linear-gradient(45deg, #206f7c 0%, #3390a7 29%, #4f9dd8 66%, #696bff 100%);
     background: -webkit-linear-gradient(45deg, #206f7c 0%,#3390a7 29%, #4f9dd8 66%,#696bff 100%);
     background: linear-gradient(45deg, #206f7c 0%,#3390a7 29%,#4f9dd8 66%,#696bff 100%);
     background-size: 400% 400%;
     -webkit-animation: Gradient 15s ease infinite;
 	-moz-animation: Gradient 15s ease infinite;
-	animation: Gradient 15s ease infinite; */
+	animation: Gradient 15s ease infinite;
 	/*min-height: calc(100vh - 2rem);*/
-    background: linear-gradient(0deg, #206f7c 0%, #3390a7 29%, #4f9dd8 66%, #696bff 100%);
-    background-position: 0% 10%; /* 初期位置を上から10%に設定 */
-    animation: Gradient 15s ease infinite;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
