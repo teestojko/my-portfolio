@@ -5,7 +5,11 @@ const ProfileChangeText: React.FC = () => {
     const profileTexts: string[] = [
         "プログラミングスクールにてスキルを磨き、現在フルスタックエンジニアとして活動中です。",
         "バックエンドのPHP・Laravelから、フロントエンドのReact・TypeScriptまで幅広く対応可能です。",
+        "",
+        "",
         "✨あなたの創りたいを叶えます✨",
+        "",
+        "",
         "webエンジニア 岸 哲也",
     ];
 
