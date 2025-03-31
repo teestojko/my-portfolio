@@ -93,7 +93,7 @@
     min-height: 100vh;
     margin: 0;
     position: relative;
-    background: linear-gradient(0deg, #696bff, #3844ef, #0f0fda, #00109d, #000);
+    background: linear-gradient(0deg, #206f7c, #2671b8, #1b57ff, #00109d, #000);
 }
 
 @keyframes float {
@@ -262,9 +262,9 @@
     width: 100%;
     min-height: 100vh;
     position: relative;
-    background: -moz-linear-gradient(45deg, #206f7c 0%, #3390a7 29%, #4f9dd8 66%, #696bff 100%);
-    background: -webkit-linear-gradient(45deg, #206f7c 0%,#3390a7 29%, #4f9dd8 66%,#696bff 100%);
-    background: linear-gradient(45deg, #206f7c 0%,#3390a7 29%,#4f9dd8 66%,#696bff 100%);
+    background: -moz-linear-gradient(0deg, #206f7c 0%, #3339a7 29%, #3e48ff 66%, #206f7c 100%);
+    background: -webkit-linear-gradient(0deg, #206f7c 0%,#3339a7 29%, #3e48ff 66%,#206f7c 100%);
+    background: linear-gradient(0deg, #206f7c 0%,#3339a7 29%,#3e48ff 66%,#206f7c 100%);
     background-size: 100% 100%;
     -webkit-animation: Gradient 15s ease infinite;
 	-moz-animation: Gradient 15s ease infinite;
@@ -275,16 +275,6 @@
 	align-items: stretch;
 	justify-content: space-evenly;
 	overflow: hidden;
-}
-
-/* キーフレーム定義 */
-@keyframes Gradient {
-    0%, 100% {
-        background-position: 0% 10%;
-    }
-    50% {
-        background-position: 0% 90%;
-    }
 }
 
 .profile-section::before,
