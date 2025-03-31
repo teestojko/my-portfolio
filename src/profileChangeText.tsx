@@ -43,7 +43,7 @@ const ProfileChangeText: React.FC = () => {
                     style={{
                         display: "block",
                         transitionDelay: `${index * 3}s`, // 各行に3秒ずつ遅らせてフェードイン
-                        marginBottom: index === 2 ? "2rem" : "0",
+                        marginBottom: index === 2 ? "4rem" : "0",
                     }}
                 >
                     {text}
