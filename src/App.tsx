@@ -78,7 +78,7 @@ const App: React.FC = () => {
               <img className="work-container-img" src="/images/furima.png" alt="furima" />
             </Link>
             <Link className="link price-link" to="/price">
-              <div>
+              <div className="work-price">
                 単価例
               </div>
             </Link>
