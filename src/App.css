@@ -210,7 +210,25 @@
 }
 
 .work-price {
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px; /* 他の画像サイズに合わせて調整 */
+    height: 200px;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.work-price:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
 }
 
 .skill-section {
