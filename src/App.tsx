@@ -149,9 +149,11 @@ const App: React.FC = () => {
 
       <div className="contact">
         <div ref={contactRef} className="section contact-section">
-          <h1 className="contact-title">Contact</h1>
           <div>
-            Email: <a className="contact-mail" href="mailto:7195.teesu.1031@gmail.com">7195.teesu.1031@gmail.com</a>
+            <h1 className="contact-title">Contact</h1>
+            <div>
+              Email: <a className="contact-mail" href="mailto:7195.teesu.1031@gmail.com">7195.teesu.1031@gmail.com</a>
+            </div>
           </div>
         </div>
       </div>
