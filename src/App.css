@@ -210,6 +210,11 @@
 }
 
 .work-price {
+    width: 100%;
+    
+}
+
+.work-price-link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -226,7 +231,7 @@
     cursor: pointer;
 }
 
-.work-price:hover {
+.work-price-link:hover {
     transform: translateY(-6px) scale(1.05);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
 }

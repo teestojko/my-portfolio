@@ -79,7 +79,9 @@ const App: React.FC = () => {
             </Link>
             <Link className="link price-link" to="/price">
               <div className="work-price">
-                単価例
+                <div className="work-price-link">
+                  単価例
+                </div>
               </div>
             </Link>
           </div>
