@@ -415,7 +415,7 @@
 .skill-icon{
     width: 250px;
     height: 250px;
-    padding: 50px;
+    padding: 50px 50px 50px 0;
 }
 
 .contact{
