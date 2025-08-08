@@ -228,6 +228,7 @@
     height: 100px;
     background: linear-gradient(135deg, #414042, #8e8aa2);
     color: #fff;
+    text-decoration: none;
     font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: 0.05em;
