@@ -394,7 +394,7 @@
 }
 
 .contact-section {
-    /* padding: 50px 20px; */
+    padding: 50px 20px;
     background: linear-gradient(to right, #4f5d73, #84888f);
     color: white;
     text-align: center;
