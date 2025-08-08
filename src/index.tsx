@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import ResePage from "./ResePage";
 import FurimaPage from "./FurimaPage";
 import AttePage from "./AttePage";
+import PricePage from "./PricePage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement // 型アサーションを追加
@@ -20,6 +21,7 @@ root.render(
         <Route path="/atte" element={<AttePage />} />
         <Route path="/rese" element={<ResePage />} />
         <Route path="/furima" element={<FurimaPage />} />
+        <Route path="/price" element={<PricePage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

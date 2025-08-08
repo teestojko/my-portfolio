@@ -1,0 +1,39 @@
+.price-page {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.price-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.price-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.price-card ul {
+  padding-left: 16px;
+}
+
+.option-title {
+  margin-top: 24px;
+  font-size: 1.2rem;
+}
+
+.option-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.option-item {
+  display: flex;
+  justify-content: space-between;
+  background: #f8f8f8;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
