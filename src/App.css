@@ -269,7 +269,7 @@
     z-index: 1; /* 背景より上に配置 */
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 1% 10%;
 }
 
 .fade-in-text {
