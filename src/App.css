@@ -221,6 +221,10 @@
     text-decoration: none;
 }
 
+.price-content {
+    width: 100%;
+}
+
 .price-link {
     margin-top: 7%;
     width: 100%;

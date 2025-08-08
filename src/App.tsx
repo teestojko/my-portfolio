@@ -77,7 +77,7 @@ const App: React.FC = () => {
             <Link className="link furima-link" to="/furima">
               <img className="work-container-img" src="/images/furima.png" alt="furima" />
             </Link>
-            <div>
+            <div className="price-content">
               <Link className="link price-link" to="/price">
                   <div className="work-price-link">
                     単価例
