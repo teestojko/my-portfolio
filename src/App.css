@@ -121,6 +121,12 @@
     align-items: center;
 }
 
+.profile-detail{
+    margin: 0;
+    line-height: 3rem;
+    font-size: 2rem;
+}
+
 .work-section {
     position: relative;
     margin-top: 20%;
@@ -147,7 +153,7 @@
     margin: 0;
     font-family: 'Poppins', sans-serif; /* 好みのフォントに変更 */
     font-size: 4rem;
-    color: #4e4e4e;
+    color: #ffffff;
     text-align: center;
     text-transform: uppercase; /* すべて大文字に */
     letter-spacing: 0.5rem; /* 文字間隔を広く */
@@ -281,12 +287,6 @@
 .fade-in-text.visible {
     opacity: 1;
     transform: translateY(0); /* 元の位置に戻る */
-}
-
-.profile-detail{
-    margin: 0;
-    line-height: 3rem;
-    font-size: 1.5rem;
 }
 
 .profile-section,
