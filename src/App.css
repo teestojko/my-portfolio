@@ -245,13 +245,7 @@
     cursor: pointer;
 }
 
-.work-price {
-    display: flex;
-    justify-content: center;
-    width: 40%;
-}
-
-.work-price-link:hover {
+.price-link:hover {
     transform: translateY(-6px) scale(1.05);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
 }
