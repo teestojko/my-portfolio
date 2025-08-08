@@ -16,24 +16,36 @@ const priceData = {
     crud: [
         {
             title: "一覧表示",
-            desc: "DBからデータ取得＋Bladeテンプレート構成",
+            desc: "DBからデータ取得＋Bladeテンプレート構成(簡易・5項目以下)",
             details: [
                 { hours: "4h", price: "¥8,000" },
+            ],
+        },
+        {
+            title: "一覧表示",
+            desc: "DBからデータ取得＋Bladeテンプレート構成(中規模・10項目前後)",
+            details: [
                 { hours: "6h", price: "¥12,000" },
-                { hours: "8h", price: "¥16,000" },
+            ],
+        },
+        {
+            title: "一覧表示",
+            desc: "DBからデータ取得＋Bladeテンプレート構成(複雑・リレーション含む)",
+            details: [
+                { hours: "4h", price: "16,000" },
             ],
         },
         {
             title: "登録機能",
-            desc: "フォーム表示＋バリデーション＋保存処理",
+            desc: "フォーム表示＋バリデーション＋保存処理()",
             hours: "6h",
             price: "¥12,000",
         },
         {
             title: "編集機能",
             desc: "編集フォーム＋更新処理",
-            hours: "5h",
-            price: "¥10,000",
+            hours: "6h",
+            price: "¥12,000",
         },
         {
             title: "削除機能",
@@ -138,7 +150,7 @@ const PricePage: React.FC = () => {
     return (
         <div className="price-page">
             <h1>単価一覧</h1>
-            
+
             {/* カテゴリボタン */}
             <div className="category-buttons">
                 {categories.map((cat) => (
