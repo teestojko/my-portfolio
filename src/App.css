@@ -107,7 +107,6 @@
     }
 }
 
-
 .profile-container {
     z-index: 10; /* 光のエフェクトの上に表示 */
     color: white;
@@ -119,6 +118,11 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+
+.profile.title {
+    font-size: 4rem;
+    margin-bottom: 3%;
 }
 
 .profile-detail{

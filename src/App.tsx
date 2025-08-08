@@ -55,7 +55,7 @@ const App: React.FC = () => {
       </div>
       <div ref={backgroundRef} className="custom-background">
         <div className="profile-container">
-          <h1>profile</h1>
+          <h1 className="profile-title">profile</h1>
           <ProfileChangeText />
         </div>
         {Array.from({ length: 10 }).map((_, index) => (
