@@ -423,6 +423,7 @@
     align-items: center;
     margin: 0;
     height: 30vh;
+    width: 100%;
     background: linear-gradient(45deg, #206f7c 0%, #3390a7 29%, #4fb1d8 66%, #2287a3 100%);
 }
 
@@ -433,7 +434,7 @@
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     min-width: 600px;
-    height: 70%;
+    height: 180px;
     font-family: 'Arial', sans-serif;
 }
 
