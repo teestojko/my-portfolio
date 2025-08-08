@@ -394,14 +394,13 @@
 }
 
 .contact-section {
-    padding: 50px 20px;
     background: linear-gradient(to right, #4f5d73, #84888f);
     color: white;
     text-align: center;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     min-width: 600px;
-    height: 40%;
+    height: 70%;
     font-family: 'Arial', sans-serif;
 }
 
