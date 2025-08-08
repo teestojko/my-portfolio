@@ -200,6 +200,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 50px;
+    width: 100%;
 }
 
 .work-container-img {
@@ -222,12 +223,15 @@
 
 .price-link {
     margin-top: 7%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .work-price {
     display: flex;
     justify-content: center;
-    width: 100vw;
+    width: 40%;
 }
 
 .work-price-link {
