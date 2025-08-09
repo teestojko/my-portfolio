@@ -48,7 +48,7 @@ const App: React.FC = () => {
           <li onClick={() => scrollToSection(contactRef)}>Contact</li>
         </ul>
       </nav>
-      <div className="section scene-container">
+      <div className="scene-container">
         <MovingCube />
         <div className="scene-text">{animatedText}</div>
       </div>
