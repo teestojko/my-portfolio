@@ -232,10 +232,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 300px; /* 他の画像サイズに合わせて調整 */
+    width: 450px;
     height: 100px;
     background: linear-gradient(135deg, #c7c7c7, #8e8aa2);
-    color: #fff;
+    color: #e2ffdc;
     font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: 0.05em;
