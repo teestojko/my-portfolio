@@ -52,7 +52,7 @@ const FurimaPage: React.FC = () => {
 
   return (
     <div className="furima">
-      <div className="wrapper" ref={wrapperRef}></div>
+      <div className="wrapper" ref={wrapperRef}>
       <div className="furima-title">
         ネットショッピングアプリ
       </div>
@@ -104,7 +104,8 @@ const FurimaPage: React.FC = () => {
         <button onClick={handleBackButton} className="back-button-link">
           Back
         </button>
-      </div>
+        </div>
+        </div>
     </div>
   );
 }
