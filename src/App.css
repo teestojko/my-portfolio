@@ -468,6 +468,26 @@
     cursor: pointer;
 }
 
+.section {
+  /* 他のスタイルはそのままにして */
+  
+  /* 上下5%ずつフェードアウト */
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,      /* 上端は透明 */
+    rgba(0, 0, 0, 1) 5%, /* 5%の位置から完全表示 */
+    rgba(0, 0, 0, 1) 95%,/* 95%まで完全表示 */
+    transparent 100%     /* 下端は透明 */
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,      
+    rgba(0, 0, 0, 1) 5%, 
+    rgba(0, 0, 0, 1) 95%, 
+    transparent 100%
+  );
+}
+
 
 @media (max-width: 1024px) {
     .work-container-img {

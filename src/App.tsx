@@ -19,7 +19,6 @@ const App: React.FC = () => {
   const skillRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
 
-  
   const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
     if (ref.current) {
       window.scrollTo({
@@ -28,33 +27,6 @@ const App: React.FC = () => {
       });
     }
   };
-
-//   const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
-//   if (!ref.current) return;
-
-//   const targetY = ref.current.offsetTop;
-//   const startY = window.scrollY || window.pageYOffset;
-//   const distance = targetY - startY;
-//   const duration = 3000; // ミリ秒。長くするとゆっくりに
-//   let startTime: number | null = null;
-
-//   const easeInOutQuad = (t: number) =>
-//     t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-
-//   const step = (timestamp: number) => {
-//     if (!startTime) startTime = timestamp;
-//     const elapsed = timestamp - startTime;
-//     const progress = Math.min(elapsed / duration, 1);
-//     const easedProgress = easeInOutQuad(progress);
-//     window.scrollTo(0, startY + distance * easedProgress);
-//     if (elapsed < duration) {
-//       requestAnimationFrame(step);
-//     }
-//   };
-
-//   requestAnimationFrame(step);
-// };
-
 
   // カスタムフックでテキストアニメーションを制御
   const animatedText: string = useTextAnimation("portfolio", "web engineer\nTetsuya Kishi", 4000, 100);
