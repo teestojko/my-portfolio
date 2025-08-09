@@ -30,6 +30,7 @@ const App: React.FC = () => {
   // };
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
+    console.log("scrollToSection called");
   if (!ref.current) return;
 
   const targetY = ref.current.offsetTop;
