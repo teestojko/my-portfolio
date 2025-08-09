@@ -118,10 +118,12 @@
   position: absolute;
   bottom: 0;
   width: 200%;
-  height: 100px;
+  height: 100%;
   background: rgba(255, 255, 255, 0.3);
   border-radius: 1000% 1000% 0 0;
-  animation: wave 10s linear infinite;
+  background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.5) 20%, transparent 21%);
+  background-size: 50px 50px; /* 波の細かさ */
+  animation: waveMove 10s linear infinite;
 }
 
 .wave:nth-child(2) {
@@ -134,7 +136,8 @@
   opacity: 0.3;
 }
 
-@keyframes wave {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+@keyframes waveMove {
+  0% { background-position-x: 0; transform: translateY(0px); }
+  50% { background-position-x: -50px; transform: translateY(5px); }
+  100% { background-position-x: -100px; transform: translateY(0px); }
 }
