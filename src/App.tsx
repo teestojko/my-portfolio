@@ -35,7 +35,7 @@ const App: React.FC = () => {
   const targetY = ref.current.offsetTop;
   const startY = window.scrollY || window.pageYOffset;
   const distance = targetY - startY;
-  const duration = 10000; // ミリ秒。長くするとゆっくりに
+  const duration = 3000; // ミリ秒。長くするとゆっくりに
   let startTime: number | null = null;
 
   const easeInOutQuad = (t: number) =>
@@ -70,11 +70,7 @@ const App: React.FC = () => {
     <div className="portfolio">
       <nav className="fixed-menu">
         <ul>
-          {/* <li onClick={() => scrollToSection(backgroundRef)}>Profile</li> */}
-          <li onClick={() => {
-  console.log("Profile clicked");
-  scrollToSection(backgroundRef);
-}}>Profile</li>
+          <li onClick={() => scrollToSection(backgroundRef)}>Profile</li>
           <li onClick={() => scrollToSection(worksRef)}>Works</li>
           <li onClick={() => scrollToSection(skillRef)}>Skill</li>
           <li onClick={() => scrollToSection(contactRef)}>Contact</li>
