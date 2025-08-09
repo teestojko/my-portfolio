@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import "./price-page.css";
 
-// カテゴリ定義
 const categories = [
     { key: "crud", label: "💻 CRUD機能" },
     { key: "search", label: "🔍 検索＋フィルター" },
-    { key: "laravel", label: "💻 Laravel + Docker" },
+    { key: "laravel", label: "💻 Laravel" },
+    { key: "docker", label: "Docker" },
+    { key: "git", label: "Git" },
+    { key: "file", label: "📺画像アップロード" },
     { key: "extra", label: "✅ 補足タスク" },
-    { key: "complex", label: "📦 複合タスク" },
-    { key: "rate", label: "👨‍💻 時間単価" },
 ] as const;
 
-// 単価データ
 const priceData = {
     crud: [
         {
@@ -32,7 +31,7 @@ const priceData = {
             title: "一覧表示",
             desc: "DBからデータ取得＋Bladeテンプレート構成(複雑・リレーション含む)",
             details: [
-                { hours: "4h", price: "16,000" },
+                { hours: "4h", price: "¥16,000" },
             ],
         },
         {
@@ -76,70 +75,180 @@ const priceData = {
     ],
     laravel: [
         {
-            title: "Docker環境構築",
-            desc: "Laravel + MySQL + Nginx",
-            hours: "6h",
-            price: "¥15,000",
-        },
-        {
             title: "Laravel初期設定",
             desc: ".env設定＋キー生成＋初期ルーティング",
-            hours: "2h",
-            price: "¥4,000",
-        },
-        {
-            title: "マイグレーション作成",
-            desc: "テーブル定義・カラム追加",
-            hours: "1h",
-            price: "¥2,000",
-        },
-    ],
-    extra: [
-        {
-            title: "バリデーション追加",
-            desc: "FormRequestでの検証",
-            hours: "2h",
-            price: "¥4,000",
-        },
-        {
-            title: "Seeder作成",
-            desc: "テストデータ投入",
-            hours: "1h",
-            price: "¥2,000",
-        },
-        {
-            title: "ファイルアップロード",
-            desc: "画像保存＋パス管理",
             hours: "3h",
             price: "¥6,000",
         },
-    ],
-    complex: [
         {
-            title: "複合機能実装",
-            desc: "CRUD＋検索＋API連携",
-            hours: "20h",
-            price: "¥50,000",
+            title: "マイグレーション作成",
+            desc: "テーブル定義・カラム追加(1テーブル毎に)",
+            hours: "1h",
+            price: "¥2,000",
+        },
+        {
+            title: "バリデーション追加",
+            desc: "FormRequestでの検証(1ファイル毎に)",
+            hours: "1h",
+            price: "¥2,000",
+        },
+        {
+            title: "Seeder作成",
+            desc: "テストデータ投入(1ファイル毎に)",
+            hours: "1h",
+            price: "¥2,000",
         },
         {
             title: "権限管理",
             desc: "ユーザーロール別アクセス制御",
             hours: "10h",
-            price: "¥25,000",
+            price: "¥20,000",
+        },
+        {
+            title: "ER図の作成",
+            desc: "DB構造の視覚化（draw.io等）",
+            hours: "4~6h",
+            price: "¥8,000~¥12,000",
         },
     ],
-    rate: [
+    docker: [
         {
-            title: "時間単価（スポット作業）",
-            desc: "短時間対応・バグ修正",
+            title: "Docker環境構築（ベース）",
+            desc: "Dockerfile / docker-compose.yml 作成、基本サービス構成",
+            hours: "4h",
+            price: "¥8,000",
+        },
+        {
+            title: "Laravel用PHPコンテナ設定",
+            desc: "php.ini調整、Composerインストール、必要拡張モジュール導入",
+            hours: "2h",
+            price: "¥4,000",
+        },
+        {
+            title: "MySQLコンテナ設定",
+            desc: "データ永続化設定（volume）、初期DB作成、接続確認",
+            hours: "2h",
+            price: "¥4,000",
+        },
+        {
+            title: "Nginxコンテナ設定",
+            desc: "default.conf 作成、Laravel用ルーティング設定（public配下）",
+            hours: "2h",
+            price: "¥4,000",
+        },
+        {
+            title: "環境変数設定",
+            desc: ".envファイル作成、APP_KEY生成、DB接続設定",
+            hours: "2h",
+            price: "¥4,000",
+        },
+        {
+            title: "動作確認 & デバッグ",
+            desc: "コンテナ起動、ビルド確認、エラーログ確認",
+            hours: "1h",
+            price: "¥2,000",
+        },
+    ],
+    git: [
+        {
+            title: "Git初期設定",
+            desc: "リポジトリ作成、.gitignore設定、初期コミット",
             hours: "1h",
             price: "¥2,000",
         },
         {
-            title: "長時間契約",
-            desc: "10時間以上のまとまった作業",
-            hours: "10h〜",
-            price: "¥18,000〜",
+            title: "Gitフロー構築",
+            desc: "main / develop / feature ブランチ戦略設定、運用ルール作成",
+            hours: "2h",
+            price: "¥4,000",
+        },
+        {
+            title: "リモートリポジトリ連携",
+            desc: "GitHub/GitLabの設定、SSHキー登録、push/pull動作確認",
+            hours: "1h",
+            price: "¥2,000",
+        },
+        {
+            title: "Pull Request運用",
+            desc: "PRテンプレート作成、レビュー手順作成、マージルール設定",
+            hours: "2h",
+            price: "¥4,000",
+        },
+        {
+            title: "タグ・リリース運用",
+            desc: "バージョンタグ付与、リリースブランチ作成、CHANGELOG更新",
+            hours: "1h",
+            price: "¥2,000",
+        },
+        {
+            title: "コンフリクト解消対応",
+            desc: "競合発生時の調査・解消手順、再マージ",
+            hours: "1h〜2h",
+            price: "¥2,000〜¥4,000",
+        },
+    ],
+    file: [
+        {
+            title: "画像アップロード（単枚）",
+            desc: "フォーム作成、バリデーション（形式・容量）、保存処理、表示設定",
+            hours: "3h",
+            price: "¥8,000",
+        },
+        {
+            title: "複数枚アップロード",
+            desc: "複数ファイル対応（3〜5枚）、配列バリデーション、保存・表示",
+            hours: "4h",
+            price: "¥12,000",
+        },
+        {
+            title: "画像リサイズ・サムネイル生成",
+            desc: "Intervention Image等を用いたリサイズ・サムネイル作成",
+            hours: "2h",
+            price: "¥5,000",
+        },
+        {
+            title: "外部ストレージ対応（S3等）",
+            desc: "AWS S3接続設定、.env調整、ACL設定、表示URL管理",
+            hours: "2h",
+            price: "¥5,000",
+        },
+        {
+            title: "非同期アップロード対応",
+            desc: "Axios/jQueryによるAjax送信、プレビュー表示、進捗バー",
+            hours: "3h",
+            price: "¥10,000",
+        },
+        {
+            title: "ファイル削除処理",
+            desc: "ストレージからの削除、DBパス削除、UI反映",
+            hours: "1h",
+            price: "¥3,000",
+        },
+    ],
+    extra: [
+        {
+            title: "PHPUnitテスト作成（単体)",
+            desc: "ControllerやUseCaseのUnitテスト,Mock使用・バリデーション・例外確認など含む",
+            hours: "4h(機能毎に)",
+            price: "¥8,000",
+        },
+        {
+            title: "Featureテスト作成",
+            desc: "複数の動作・権限確認などの流れを確認する機能テスト",
+            hours: "6h(機能毎に)",
+            price: "¥12,000",
+        },
+        {
+            title: "API仕様書（Swagger or Scramble）",
+            desc: "Laravel APIのエンドポイント仕様書作成",
+            hours: "1h(エンドポイント毎に)",
+            price: "¥2,000",
+        },
+        {
+            title: "GitHub Actions導入",
+            desc: "CI/CD設定",
+            hours: "3~6h",
+            price: "¥6,000〜12,000",
         },
     ],
 };
@@ -151,7 +260,6 @@ const PricePage: React.FC = () => {
         <div className="price-page">
             <h1>単価一覧</h1>
 
-            {/* カテゴリボタン */}
             <div className="category-buttons">
                 {categories.map((cat) => (
                 <button
@@ -164,7 +272,6 @@ const PricePage: React.FC = () => {
                 ))}
             </div>
 
-            {/* テーブル表示 */}
             <table className="price-table">
                 <thead>
                 <tr>
