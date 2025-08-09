@@ -21,12 +21,13 @@ const FurimaPage: React.FC = () => {
           ネットショッピングアプリ
         </div>
       
-      
+
     <div className="stars-bg">
       {[...Array(50)].map((_, i) => (
         <div key={i} className="star"></div>
       ))}
-        
+    </div>
+      
 
         {/* Swiperで横スクロール */}
         <div className="furima-img-all">
@@ -76,11 +77,6 @@ const FurimaPage: React.FC = () => {
             Back
           </button>
         </div>
-      
-        
-      </div>
-
-      
     </div>
   );
 }
