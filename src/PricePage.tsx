@@ -36,7 +36,7 @@ const priceData = {
         },
         {
             title: "登録機能",
-            desc: "フォーム表示＋バリデーション＋保存処理()",
+            desc: "フォーム表示＋バリデーション＋保存処理",
             hours: "6h",
             price: "¥12,000",
         },
@@ -55,22 +55,52 @@ const priceData = {
     ],
     search: [
         {
-            title: "検索フォーム作成",
-            desc: "入力フォーム＋クエリパラメータ対応",
+            title: "検索フォーム作成（単一項目）",
+            desc: "入力フォーム＋クエリパラメータ対応、GET送信、Controller処理",
+            hours: "3h",
+            price: "¥6,000",
+        },
+        {
+            title: "複合条件検索フォーム",
+            desc: "複数項目（例：名前＋日付＋カテゴリ）のAND/OR検索対応",
             hours: "5h",
             price: "¥10,000",
         },
         {
-            title: "フィルター機能",
-            desc: "カテゴリ・タグなどの絞り込み",
+            title: "フィルター機能（カテゴリ/タグ）",
+            desc: "カテゴリ・タグ等のプルダウン/チェックボックスによる絞り込み",
             hours: "4h",
             price: "¥8,000",
         },
         {
             title: "ページネーション対応",
-            desc: "検索結果のページ分割",
+            desc: "検索結果のページ分割（Laravel標準paginate）",
             hours: "2h",
             price: "¥4,000",
+        },
+        {
+            title: "ソート機能",
+            desc: "昇順/降順・カスタム並び替え（カラム指定）対応",
+            hours: "2h",
+            price: "¥4,000",
+        },
+        {
+            title: "検索条件保持",
+            desc: "ページネーションや再訪時に条件を保持（セッション・hidden入力）",
+            hours: "2h",
+            price: "¥4,000",
+        },
+        {
+            title: "部分一致・前方一致・完全一致対応",
+            desc: "LIKE・=・REGEXPの切り替え対応",
+            hours: "2h",
+            price: "¥4,000",
+        },
+        {
+            title: "Ajax検索（非同期）",
+            desc: "Axios/jQueryで入力即時反映、候補表示",
+            hours: "3h",
+            price: "¥8,000",
         },
     ],
     laravel: [
@@ -83,20 +113,20 @@ const priceData = {
         {
             title: "マイグレーション作成",
             desc: "テーブル定義・カラム追加",
-            hours: "1h(1テーブル毎に)",
-            price: "¥2,000~",
+            hours: "2h(テーブル毎に)",
+            price: "¥4,000~",
         },
         {
             title: "バリデーション追加",
             desc: "FormRequestでの検証",
-            hours: "1h(1ファイル毎に)",
-            price: "¥2,000~",
+            hours: "2h(ファイル毎に)",
+            price: "¥4,000~",
         },
         {
             title: "Seeder作成",
             desc: "テストデータ投入",
-            hours: "1h(1ファイル毎に)",
-            price: "¥2,000~",
+            hours: "2h(ファイル毎に)",
+            price: "¥4,000~",
         },
         {
             title: "権限管理",
@@ -183,8 +213,8 @@ const priceData = {
         {
             title: "コンフリクト解消対応",
             desc: "競合発生時の調査・解消手順、再マージ",
-            hours: "1h〜2h",
-            price: "¥2,000〜¥4,000",
+            hours: "2h",
+            price: "¥¥4,000",
         },
     ],
     file: [
@@ -247,8 +277,8 @@ const priceData = {
         {
             title: "GitHub Actions導入",
             desc: "CI/CD設定",
-            hours: "3~6h",
-            price: "¥6,000〜12,000",
+            hours: "5h",
+            price: "¥10,000",
         },
     ],
 };
