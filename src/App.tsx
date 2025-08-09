@@ -48,11 +48,11 @@ const App: React.FC = () => {
           <li onClick={() => scrollToSection(contactRef)}>Contact</li>
         </ul>
       </nav>
-      <div className="scene-container">
+      <div className="section scene-container">
         <MovingCube />
         <div className="scene-text">{animatedText}</div>
       </div>
-      <div ref={backgroundRef} className="custom-background">
+      <div ref={backgroundRef} className="section custom-background">
         <div className="profile-container">
           <div className="profile-title">profile</div>
           <ProfileChangeText />
