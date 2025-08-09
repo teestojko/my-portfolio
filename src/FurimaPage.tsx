@@ -52,6 +52,7 @@ const FurimaPage: React.FC = () => {
 
   return (
     <div className="furima">
+      <div className="wrapper" ref={wrapperRef}></div>
       <div className="furima-title">
         ネットショッピングアプリ
       </div>
