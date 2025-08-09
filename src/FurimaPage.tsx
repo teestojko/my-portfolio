@@ -18,7 +18,6 @@ const FurimaPage: React.FC = () => {
   return (
     <div className="furima">
 
-
     <div className="night-ocean">
       {/* 星空 */}
       <div className="stars-bg">
@@ -33,27 +32,6 @@ const FurimaPage: React.FC = () => {
           ></div>
         ))}
       </div>
-
-      {/* <div className="waves">
-        <div className="wave"></div>
-        <div className="wave"></div>
-        <div className="wave"></div>
-      </div> */}
-        
-        <div className="ocean">
-        {Array.from({ length: 10 }).map((_, i) => (
-          <div
-            key={i}
-            className="wave"
-            style={{
-              opacity: 1 - i * 0.09, // 1, 0.91, ... , 0.1
-              animationDelay: `${i * 1.5}s`,
-              bottom: `${i * 3}px`, // 奥の波ほど少し高い位置に
-            }}
-          />
-        ))}
-      </div>
-
     </div>
 
         <div className="furima-title">
@@ -107,11 +85,6 @@ const FurimaPage: React.FC = () => {
             Back
           </button>
         </div>
-      
-
-
-
-
     </div>
   );
 }
