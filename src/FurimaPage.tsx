@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef }  from "react";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -14,6 +14,41 @@ const FurimaPage: React.FC = () => {
   const handleBackButton = () => {
     navigate(-1);  // 前のページに戻る
   };
+
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!wrapperRef.current) return;
+
+    const bubbleLifeTime = 20;
+    const noOfBubbles = 100;
+
+    const init = () => {
+      for (let i = 0; i < noOfBubbles; i++) {
+        wrapperRef.current!.appendChild(createBubble());
+      }
+    };
+
+    const createBubble = () => {
+      const circleContainer = document.createElement("div");
+      circleContainer.classList.add("circle_container");
+      circleContainer.style.transform = `rotate(${Math.floor(Math.random() * 360)}deg)`;
+      circleContainer.appendChild(createCircle());
+      return circleContainer;
+    };
+
+    const createCircle = () => {
+      const circle = document.createElement("div");
+      circle.classList.add("circle");
+      circle.style.animationDelay = `${Math.random() * bubbleLifeTime}s`;
+      const side = `${5 + Math.floor(Math.random() * 5)}px`;
+      circle.style.width = side;
+      circle.style.height = side;
+      return circle;
+    };
+
+    init();
+  }, []);
 
   return (
     <div className="furima">
