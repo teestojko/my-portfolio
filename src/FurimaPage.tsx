@@ -17,18 +17,36 @@ const FurimaPage: React.FC = () => {
 
   return (
     <div className="furima">
+
+
+    <div className="night-ocean">
+      {/* 星空 */}
+      <div className="stars-bg">
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={i}
+            className="star"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+            }}
+          ></div>
+        ))}
+      </div>
+
+      {/* 波 */}
+      <div className="waves">
+        <div className="wave"></div>
+        <div className="wave"></div>
+        <div className="wave"></div>
+      </div>
+    </div>
+
+
+
         <div className="furima-title">
           ネットショッピングアプリ
         </div>
-      
-
-    <div className="stars-bg">
-      {[...Array(50)].map((_, i) => (
-        <div key={i} className="star"></div>
-      ))}
-    </div>
-      
-
         {/* Swiperで横スクロール */}
         <div className="furima-img-all">
           <Swiper
@@ -77,6 +95,11 @@ const FurimaPage: React.FC = () => {
             Back
           </button>
         </div>
+      
+
+
+
+
     </div>
   );
 }
