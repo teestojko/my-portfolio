@@ -71,3 +71,28 @@
     background: linear-gradient(90deg, #f458ff, #ff96c0);
     transition: opacity 1.5s ease-in-out;
 }
+
+.stars-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  width: 2px;
+  height: 2px;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+.star:nth-child(odd) { animation-duration: 5s; }
+.star:nth-child(even) { animation-duration: 7s; }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
