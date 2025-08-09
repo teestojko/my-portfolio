@@ -35,7 +35,7 @@ const App: React.FC = () => {
   const targetY = ref.current.offsetTop;
   const startY = window.scrollY || window.pageYOffset;
   const distance = targetY - startY;
-  const duration = 1500; // ミリ秒。長くするとゆっくりに
+  const duration = 5000; // ミリ秒。長くするとゆっくりに
   let startTime: number | null = null;
 
   const easeInOutQuad = (t: number) =>
