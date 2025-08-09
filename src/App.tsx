@@ -30,7 +30,6 @@ const App: React.FC = () => {
   // };
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
-    console.log("scrollToSection called");
   if (!ref.current) return;
 
   const targetY = ref.current.offsetTop;
@@ -71,7 +70,11 @@ const App: React.FC = () => {
     <div className="portfolio">
       <nav className="fixed-menu">
         <ul>
-          <li onClick={() => scrollToSection(backgroundRef)}>Profile</li>
+          {/* <li onClick={() => scrollToSection(backgroundRef)}>Profile</li> */}
+          <li onClick={() => {
+  console.log("Profile clicked");
+  scrollToSection(backgroundRef);
+}}>Profile</li>
           <li onClick={() => scrollToSection(worksRef)}>Works</li>
           <li onClick={() => scrollToSection(skillRef)}>Skill</li>
           <li onClick={() => scrollToSection(contactRef)}>Contact</li>
