@@ -72,13 +72,12 @@
     transition: opacity 1.5s ease-in-out;
 }
 
-/* 全体の背景（夜空グラデーション） */
 .night-ocean {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
   overflow: hidden;
-  background: linear-gradient(to top, #00111a, #001a33);
+  background: linear-gradient(to top, #00111a, #001a33); /* 夜空っぽいグラデーション */
   z-index: -1;
 }
 
@@ -106,7 +105,7 @@
   50% { opacity: 1; transform: scale(1.5); }
 }
 
-/* 波エリア */
+/* 波 */
 .waves {
   position: absolute;
   bottom: 0;
@@ -115,41 +114,27 @@
   overflow: hidden;
 }
 
-/* 波レイヤー */
 .wave {
   position: absolute;
   bottom: 0;
   width: 200%;
-  height: 100%;
+  height: 100px;
   background: rgba(255, 255, 255, 0.3);
   border-radius: 1000% 1000% 0 0;
-  background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.5) 20%, transparent 21%);
-  background-size: 50px 50px;
-  animation: waveMove 10s linear infinite;
+  animation: wave 10s linear infinite;
 }
 
-/* 波のレイヤーごとに速度・透明度を変える */
 .wave:nth-child(2) {
   animation-duration: 15s;
   opacity: 0.5;
 }
+
 .wave:nth-child(3) {
   animation-duration: 20s;
   opacity: 0.3;
 }
 
-/* 波のスムーズな横移動＋上下揺れ */
-@keyframes waveMove {
-  0% {
-    background-position-x: 0;
-    transform: translateY(0px);
-  }
-  50% {
-    background-position-x: -50px;
-    transform: translateY(5px);
-  }
-  100% {
-    background-position-x: -100px;
-    transform: translateY(0px);
-  }
+@keyframes wave {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

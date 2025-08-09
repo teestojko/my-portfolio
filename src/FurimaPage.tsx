@@ -42,8 +42,6 @@ const FurimaPage: React.FC = () => {
       </div>
     </div>
 
-
-
         <div className="furima-title">
           ネットショッピングアプリ
         </div>
