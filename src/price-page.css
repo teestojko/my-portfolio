@@ -13,10 +13,9 @@
     font-weight: 700;
     text-align: center;
     margin: 2%;
-    color: #1e293b; /* 深めのブルーグレー */
+    color: #1e293b;
 }
 
-/* カテゴリボタン */
 .category-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -28,7 +27,7 @@
     padding: 10px 18px;
     border-radius: 8px;
     border: none;
-    background: #e2e8f0; /* 薄いグレー */
+    background: #e2e8f0;
     cursor: pointer;
     font-size: 0.95rem;
     font-weight: 600;
@@ -37,17 +36,16 @@
 }
 
 .category-buttons button:hover {
-    background: #cbd5e1; /* 少し濃いグレー */
+    background: #cbd5e1;
     transform: translateY(-1px);
 }
 
 .category-buttons button.active {
-    background: #3b82f6; /* ブルー */
+    background: #3b82f6;
     color: #fff;
     box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
 }
 
-/* テーブル */
 .price-table {
     width: 70%;
     margin: 5% 15%;
@@ -82,21 +80,19 @@
 }
 
 .price-table tbody tr:nth-child(even) {
-    background-color: #f9fafb; /* 偶数行薄グレー */
+    background-color: #f9fafb;
 }
 
 .price-table tbody tr:hover {
-    background-color: #e0f2fe; /* 水色系 */
+    background-color: #e0f2fe;
     transition: background-color 0.2s ease;
 }
 
-/* 単価の強調 */
 .price-table td:last-child {
     font-weight: bold;
     color: #1d4ed8;
 }
 
-/* レスポンシブ対応 */
 @media (max-width: 768px) {
     .price-table th,
     .price-table td {

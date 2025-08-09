@@ -31,7 +31,7 @@ const priceData = {
             title: "一覧表示",
             desc: "DBからデータ取得＋Bladeテンプレート構成(複雑・リレーション含む)",
             details: [
-                { hours: "4h", price: "¥16,000" },
+                { hours: "8h", price: "¥16,000" },
             ],
         },
         {
