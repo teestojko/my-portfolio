@@ -20,14 +20,41 @@ const App: React.FC = () => {
   const contactRef = useRef<HTMLDivElement | null>(null);
 
   // スムーズスクロールを実現する関数
+  // const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
+  //   if (ref.current) {
+  //     window.scrollTo({
+  //       top: ref.current.offsetTop,
+  //       behavior: "smooth", // スムーズスクロールを有効化
+  //     });
+  //   }
+  // };
+
   const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
-    if (ref.current) {
-      window.scrollTo({
-        top: ref.current.offsetTop,
-        behavior: "smooth", // スムーズスクロールを有効化
-      });
+  if (!ref.current) return;
+
+  const targetY = ref.current.offsetTop;
+  const startY = window.scrollY || window.pageYOffset;
+  const distance = targetY - startY;
+  const duration = 1500; // ミリ秒。長くするとゆっくりに
+  let startTime: number | null = null;
+
+  const easeInOutQuad = (t: number) =>
+    t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+  const step = (timestamp: number) => {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const easedProgress = easeInOutQuad(progress);
+    window.scrollTo(0, startY + distance * easedProgress);
+    if (elapsed < duration) {
+      requestAnimationFrame(step);
     }
   };
+
+  requestAnimationFrame(step);
+};
+
 
   // カスタムフックでテキストアニメーションを制御
   const animatedText: string = useTextAnimation("portfolio", "web engineer\nTetsuya Kishi", 4000, 100);
