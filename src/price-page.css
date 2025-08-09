@@ -1,12 +1,12 @@
 body{
-  background:#ec6a38;
+  background:#ffefe9;
   -webkit-animation:colour 10s linear infinite;
   -moz-animation:colour 10s linear infinite;
   
 }
 @-webkit-keyframes colour{
   0%{
-    background:#ec6a38
+    background:#ffefe9
   }
 
   40%{
@@ -37,7 +37,7 @@ body{
   }
 
   100%{
-    background:#ec6a38
+    background:#ffefe9
   }
 
 }
