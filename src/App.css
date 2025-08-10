@@ -121,8 +121,14 @@
     left: 0;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
     animation: drop 7s 0s infinite;
+    /* アニメーションを7秒かけて1回実行する 0秒の遅延（すぐに開始） */
+
     animation-fill-mode: forwards;
+    /* アニメーションが終わった後の状態を保持する設定 動き終わった位置（top: 110%）で止まる */
+
     animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+
+
 }
 
 /* :nth-child(1) は CSS で1番目の .line に対応 */
@@ -147,10 +153,14 @@
 
 @keyframes drop {
     0% {
-        top: -50%;
+        top: -10%;
+        /* アニメーションの最初（0%のタイミング）で、要素のtop位置を親の上から50%分上にずらしている。 */
+
     }
     100% {
-        top: 110%;
+        top: 300%;
+        /* アニメーションの最後（100%のタイミング）で、要素のtop位置を親の下から10%分下にずらしている。 */
+
     }
 }
 
