@@ -68,11 +68,11 @@ const App: React.FC = () => {
           <div className="profile-title">profile</div>
           <ProfileChangeText />
 
-          <div className="lines">
+          {/* <div className="lines">
             <div className="line"></div>
             <div className="line"></div>
             <div className="line"></div>
-          </div>
+          </div> */}
 
         </div>
         {Array.from({ length: 10 }).map((_, index) => (
@@ -85,11 +85,11 @@ const App: React.FC = () => {
             WORKS
           </h1>
         
-        <div className="lines">
+        {/* <div className="lines">
           <div className="line"></div>
           <div className="line"></div>
           <div className="line"></div>
-        </div>
+        </div> */}
 
         <div className="work-container-img-all">
           <Link className="link atte-link" to="/atte">
@@ -120,11 +120,11 @@ const App: React.FC = () => {
           <div className="shape shape4"></div>
           <div className="shape shape5"></div>
 
-          <div className="lines">
+          {/* <div className="lines">
             <div className="line"></div>
             <div className="line"></div>
             <div className="line"></div>
-          </div>
+          </div> */}
 
           <div className="icon-all">
             <div className="skill-item">
@@ -187,11 +187,11 @@ const App: React.FC = () => {
 
       <div className="contact">
 
-        <div className="lines">
+        {/* <div className="lines">
           <div className="line"></div>
           <div className="line"></div>
           <div className="line"></div>
-        </div>
+        </div> */}
 
         <div ref={contactRef} className="section contact-section">
           <div>
