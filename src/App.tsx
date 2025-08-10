@@ -50,30 +50,12 @@ const App: React.FC = () => {
       </nav>
       <div className="scene-container">
         <MovingCube />
-
-        
-
-        <div className="lines">
-          <div className="line"></div>
-          <div className="line"></div>
-          <div className="line"></div>
-        </div>
-
-        
-
         <div className="scene-text">{animatedText}</div>
       </div>
       <div ref={backgroundRef} className="section custom-background">
         <div className="profile-container">
           <div className="profile-title">profile</div>
           <ProfileChangeText />
-
-          {/* <div className="lines">
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line"></div>
-          </div> */}
-
         </div>
         {Array.from({ length: 10 }).map((_, index) => (
           <div key={index} className="light-effect"></div>
@@ -84,13 +66,6 @@ const App: React.FC = () => {
           <h1 className="work-container-title">
             WORKS
           </h1>
-        
-        {/* <div className="lines">
-          <div className="line"></div>
-          <div className="line"></div>
-          <div className="line"></div>
-        </div> */}
-
         <div className="work-container-img-all">
           <Link className="link atte-link" to="/atte">
               <img className="work-container-img" src="/images/atte-index.png" alt="atte" />
@@ -119,13 +94,6 @@ const App: React.FC = () => {
           <div className="shape shape3"></div>
           <div className="shape shape4"></div>
           <div className="shape shape5"></div>
-
-          {/* <div className="lines">
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line"></div>
-          </div> */}
-
           <div className="icon-all">
             <div className="skill-item">
               <div className="skill-name">
@@ -186,13 +154,6 @@ const App: React.FC = () => {
       </div>
 
       <div className="contact">
-
-        {/* <div className="lines">
-          <div className="line"></div>
-          <div className="line"></div>
-          <div className="line"></div>
-        </div> */}
-
         <div ref={contactRef} className="section contact-section">
           <div>
             <h1 className="contact-title">Contact</h1>
