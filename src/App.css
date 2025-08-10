@@ -133,6 +133,10 @@
     animation-delay: 2s;
 }
 
+.line:nth-child(2) {
+    display: none;
+}
+
 /* :nth-child(3) は CSS で3番目の .line に対応 */
 .line:nth-child(3) {
     margin-left: 25%;
