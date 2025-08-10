@@ -297,9 +297,7 @@
     width: 100%;
     min-height: 100vh;
     position: relative;
-    background: -moz-linear-gradien #206f7c;
-    background: -webkit-linear-gradient #206f7c;
-    background: linear-gradient#206f7c;
+    background: linear-gradient(0deg, #43abba 0%,#4dcfef 29%,#50b8d5 66%, #3f9eac 100%);
     background-size: 400% 400%;
 	display: flex;
 	flex-direction: column;
