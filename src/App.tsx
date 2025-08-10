@@ -50,6 +50,17 @@ const App: React.FC = () => {
       </nav>
       <div className="scene-container">
         <MovingCube />
+
+        
+
+        <div className="lines">
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
+
+        
+        
         <div className="scene-text">{animatedText}</div>
       </div>
       <div ref={backgroundRef} className="section custom-background">
