@@ -297,9 +297,9 @@
     width: 100%;
     min-height: 100vh;
     position: relative;
-    background: -moz-linear-gradient(90deg, #206f7c ,#53c4e0);
-    background: -webkit-linear-gradient(90deg, #206f7c ,#53c4e0);
-    background: linear-gradient(90deg, #206f7c ,#53c4e0);
+    background: -moz-linear-gradien #206f7c;
+    background: -webkit-linear-gradient #206f7c;
+    background: linear-gradient#206f7c;
     background-size: 400% 400%;
 	display: flex;
 	flex-direction: column;
@@ -418,7 +418,7 @@
     margin: 0;
     height: 30vh;
     width: 100%;
-    background: linear-gradient(0deg, #206f7c 0%,#53c4e0 29%,#4f86d8 66%, #206f7c 100%);
+    background: linear-gradient(0deg, #43abba 0%,#4dcfef 29%,#50b8d5 66%, #3f9eac 100%);
 }
 
 .contact-section {
