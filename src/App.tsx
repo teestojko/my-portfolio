@@ -67,6 +67,13 @@ const App: React.FC = () => {
         <div className="profile-container">
           <div className="profile-title">profile</div>
           <ProfileChangeText />
+
+          <div className="lines">
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+          </div>
+
         </div>
         {Array.from({ length: 10 }).map((_, index) => (
           <div key={index} className="light-effect"></div>
