@@ -66,6 +66,17 @@ const App: React.FC = () => {
           <h1 className="work-container-title">
             WORKS
           </h1>
+        
+        
+
+          <div className="shape shape1"></div>
+          <div className="shape shape2"></div>
+          <div className="shape shape3"></div>
+          <div className="shape shape4"></div>
+          <div className="shape shape5"></div>
+
+        
+
         <div className="work-container-img-all">
           <Link className="link atte-link" to="/atte">
               <img className="work-container-img" src="/images/atte-index.png" alt="atte" />
