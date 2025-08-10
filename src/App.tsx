@@ -62,7 +62,7 @@ const App: React.FC = () => {
         ))}
       </div>
 
-      <div ref={worksRef} className="section profile-section">
+      <div ref={worksRef} className="section work-section">
           <h1 className="work-container-title">
             WORKS
           </h1>

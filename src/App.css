@@ -297,7 +297,7 @@
     transform: translateY(0); /* 元の位置に戻る */
 }
 
-.profile-section,
+.work-section,
 .skill-section{
     margin: 0;
     width: 100%;
@@ -314,8 +314,8 @@
 	overflow: hidden;
 }
 
-.profile-section::before,
-.profile-section::after,
+.work-section::before,
+.work-section::after,
 .skill-section::before,
 .skill-section::after{
 	content: "";
@@ -332,7 +332,7 @@
 	pointer-events: none;
 }
 
-.profile-section::after,
+.work-section::after,
 .skill-section::after {
     width: 70vmin;
     height: 70vmin;
@@ -424,7 +424,7 @@
     margin: 0;
     height: 30vh;
     width: 100%;
-    background: linear-gradient(45deg, #206f7c 0%, #3390a7 29%, #4fb1d8 66%, #2287a3 100%);
+    background: linear-gradient(0deg, #206f7c 0%,#53c4e0 29%,#4f86d8 66%, #206f7c 100%);
 }
 
 .contact-section {
