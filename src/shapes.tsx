@@ -1,5 +1,5 @@
 import React from "react";
-import "./Shapes.css";
+import "./shapes.css";
 
 const Shapes: React.FC = () => {
   // 5つのshapeのスタイルをランダム生成
