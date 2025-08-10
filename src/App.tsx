@@ -120,7 +120,11 @@ const App: React.FC = () => {
           <div className="shape shape4"></div>
           <div className="shape shape5"></div>
 
-
+          <div className="lines">
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+          </div>
 
           <div className="icon-all">
             <div className="skill-item">
@@ -183,6 +187,13 @@ const App: React.FC = () => {
 
       <div className="contact">
         <div ref={contactRef} className="section contact-section">
+
+        <div className="lines">
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
+
           <div>
             <h1 className="contact-title">Contact</h1>
             <div>
