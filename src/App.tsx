@@ -188,14 +188,14 @@ const App: React.FC = () => {
       <div className="contact">
         <div ref={contactRef} className="section contact-section">
           <div>
-            <h1 className="contact-title">Contact</h1>
 
             <div className="lines">
               <div className="line"></div>
               <div className="line"></div>
               <div className="line"></div>
             </div>
-
+            
+            <h1 className="contact-title">Contact</h1>
             <div>
               Email: <a className="contact-mail" href="mailto:7195.teesu.1031@gmail.com">7195.teesu.1031@gmail.com</a>
             </div>
