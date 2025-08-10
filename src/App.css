@@ -93,7 +93,7 @@
     min-height: 100vh;
     margin: 0;
     position: relative;
-    background: linear-gradient(0deg, #696bff, #3844ef, #0f0fda, #00109d, #000);
+    background: linear-gradient(0deg, #43abba, #3896ef, #0f3eda, #00109d, #000);
 }
 
 @keyframes float {
