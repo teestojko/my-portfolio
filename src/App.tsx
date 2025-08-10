@@ -67,13 +67,9 @@ const App: React.FC = () => {
             WORKS
           </h1>
         
-        
+
 
           <div className="shape shape1"></div>
-          <div className="shape shape2"></div>
-          <div className="shape shape3"></div>
-          <div className="shape shape4"></div>
-          <div className="shape shape5"></div>
 
         
 
@@ -98,6 +94,15 @@ const App: React.FC = () => {
       <div ref={skillRef} className="section skill-section">
         <div className="skill-content">
           <h1 className="skill-title">SKILL</h1>
+
+
+          <div className="shape shape1"></div>
+          <div className="shape shape2"></div>
+          <div className="shape shape3"></div>
+          <div className="shape shape4"></div>
+          <div className="shape shape5"></div>
+
+
           <div className="icon-all">
             <div className="skill-item">
               <div className="skill-name">
