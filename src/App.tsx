@@ -6,6 +6,7 @@ import MovingCube from "./movingCube";
 import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
 import ProfileChangeText from "./profileChangeText";
+import Shapes from "./shapes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faJs, faLaravel, faPhp, faDocker,
@@ -66,13 +67,6 @@ const App: React.FC = () => {
           <h1 className="work-container-title">
             WORKS
           </h1>
-        
-
-
-          <div className="shape shape1"></div>
-
-        
-
         <div className="work-container-img-all">
           <Link className="link atte-link" to="/atte">
               <img className="work-container-img" src="/images/atte-index.png" alt="atte" />
@@ -96,11 +90,14 @@ const App: React.FC = () => {
           <h1 className="skill-title">SKILL</h1>
 
 
-          <div className="shape shape1"></div>
+          {/* <div className="shape shape1"></div>
           <div className="shape shape2"></div>
           <div className="shape shape3"></div>
           <div className="shape shape4"></div>
-          <div className="shape shape5"></div>
+          <div className="shape shape5"></div> */}
+
+
+              <Shapes />
 
 
           <div className="icon-all">
