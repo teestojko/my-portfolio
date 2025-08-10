@@ -60,7 +60,7 @@ const App: React.FC = () => {
         </div>
 
         
-        
+
         <div className="scene-text">{animatedText}</div>
       </div>
       <div ref={backgroundRef} className="section custom-background">
@@ -77,6 +77,13 @@ const App: React.FC = () => {
           <h1 className="work-container-title">
             WORKS
           </h1>
+        
+        <div className="lines">
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
+
         <div className="work-container-img-all">
           <Link className="link atte-link" to="/atte">
               <img className="work-container-img" src="/images/atte-index.png" alt="atte" />
