@@ -297,9 +297,9 @@
     width: 100%;
     min-height: 100vh;
     position: relative;
-    background: -moz-linear-gradient(90deg, #206f7c 0%,#53c4e0 29%,#4f86d8 66%, #206f7c 100%);
-    background: -webkit-linear-gradient(90deg, #206f7c 0%,#53c4e0 29%,#4f86d8 66%, #206f7c 100%);
-    background: linear-gradient(90deg, #206f7c 0%,#53c4e0 29%,#4f86d8 66%, #206f7c 100%);
+    background: -moz-linear-gradient(90deg, #206f7c ,#53c4e0);
+    background: -webkit-linear-gradient(90deg, #206f7c ,#53c4e0);
+    background: linear-gradient(90deg, #206f7c ,#53c4e0);
     background-size: 400% 400%;
 	display: flex;
 	flex-direction: column;
