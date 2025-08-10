@@ -297,7 +297,7 @@
     width: 100%;
     min-height: 100vh;
     position: relative;
-    background: linear-gradient(0deg, #43abba 0%,#4dcfef 29%,#50b8d5 66%, #3f9eac 100%);
+    background: #43abba;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
