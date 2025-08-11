@@ -314,10 +314,10 @@
     transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
-/* 表示時の共通スタイル */
-.work-container-img.show {
-    opacity: 1;
-    transform: translateX(0);
+.work-container-img.left.show,
+.work-container-img.right.show {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* ホバー時のアニメーションはそのまま */
