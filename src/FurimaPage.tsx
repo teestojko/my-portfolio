@@ -37,6 +37,11 @@ const FurimaPage: React.FC = () => {
         <div className="furima-title">
           ネットショッピングアプリ
         </div>
+        <div className="back-button">
+          <button onClick={handleBackButton} className="back-button-link">
+            Back
+          </button>
+        </div>
         {/* Swiperで横スクロール */}
         <div className="furima-img-all">
           <Swiper
@@ -78,12 +83,6 @@ const FurimaPage: React.FC = () => {
             <li className="furima-text">ポイント機能</li>
             <li className="furima-text">通報機能</li>
           </ul>
-        </div>
-
-        <div className="back-button">
-          <button onClick={handleBackButton} className="back-button-link">
-            Back
-          </button>
         </div>
     </div>
   );
