@@ -279,32 +279,44 @@
     width: 100%;
 }
 
+.work-container-img-all {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+/* 初期状態（非表示＆下にずらす） */
+.work-container-img {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+    overflow: visible;
+    transform: translateY(50px);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
 /* 左からスライドインの初期状態 */
 .work-container-img.left {
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: transform 0.6s ease, opacity 0.6s ease;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
 /* 右からスライドインの初期状態 */
 .work-container-img.right {
-  opacity: 0;
-  transform: translateX(50px);
-  transition: transform 0.6s ease, opacity 0.6s ease;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
 /* 表示時の共通スタイル */
 .work-container-img.show {
-  opacity: 1;
-  transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* ホバー時のアニメーションはそのまま */
-.work-container-img:hover {
-  transform: translateY(-10px) scale(1.05);
-}
-
-
 .work-container-img:hover {
     transform: translateY(-10px) scale(1.05);
 }

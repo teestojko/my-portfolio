@@ -15,7 +15,7 @@ export default function SlideInImages() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.4 }
     );
 
     imagesRef.current.forEach((img) => {
