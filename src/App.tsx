@@ -88,6 +88,7 @@ const App: React.FC = () => {
               </Link>
             </div>
           </div> */}
+        <SlideInImages />
       </div>
 
       <div ref={skillRef} className="section skill-section">
