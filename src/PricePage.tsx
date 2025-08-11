@@ -290,8 +290,8 @@ const PricePage: React.FC = () => {
         <div
             className="price-page"
             style={{
-                background: `url(${process.env.PUBLIC_URL}/images/noise.png) repeat, 
-                            linear-gradient(135deg, #f9f9f9 0%, #ececec 100%)`,
+                background: `url(${process.env.PUBLIC_URL}/images/noise.png) repeat,
+                            linear-gradient(135deg, #f9f9f9 0%, #858585 100%)`,
                 backgroundBlendMode: "overlay"
             }}
             >
