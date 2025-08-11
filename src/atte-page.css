@@ -23,6 +23,7 @@
 .atte-img {
     width: 100%;
     height: auto;
+    border-radius: 5px;
 }
 
 .atte-img:hover {
