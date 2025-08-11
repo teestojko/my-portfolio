@@ -339,7 +339,7 @@
 }
 
 .price-link {
-    margin-top: 7%;
+    margin: 7% 0;
     display: flex;
     align-items: center;
     justify-content: center;
