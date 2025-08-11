@@ -1,12 +1,17 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
+const containerRef = useRef<HTMLDivElement | null>(null);
+
 export default function SlideInImages() {
   const imagesRef = useRef<(HTMLImageElement | null)[]>([]);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
+        let visibleCount = 0;
+
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("show");
@@ -14,6 +19,19 @@ export default function SlideInImages() {
             entry.target.classList.remove("show");
           }
         });
+
+        // 表示されている画像をカウント
+        imagesRef.current.forEach((img) => {
+          if (img && img.classList.contains("show")) {
+            visibleCount++;
+          }
+        });
+
+        if (containerRef.current) {
+          const baseHeight = window.innerHeight; // 100vh を px で取得
+          const extraHeight = visibleCount > 1 ? (visibleCount - 1) * 350 : 0;
+          containerRef.current.style.height = `${baseHeight + extraHeight}px`;
+        }
       },
       { threshold: 0.2 }
     );
@@ -24,6 +42,7 @@ export default function SlideInImages() {
 
     return () => observer.disconnect();
   }, []);
+  
 
   return (
     <div className="work-container-img-all">
