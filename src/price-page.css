@@ -83,7 +83,7 @@
 }
 
 .price-table tbody tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(181, 181, 181, 0.15);
 }
 
 .price-table tbody tr:hover {
