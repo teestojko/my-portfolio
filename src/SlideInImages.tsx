@@ -3,13 +3,10 @@ import { Link } from "react-router-dom";
 
 export default function SlideInImages() {
   const imagesRef = useRef<(HTMLImageElement | null)[]>([]);
-  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        let visibleCount = 0;
-
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("show");
@@ -17,24 +14,8 @@ export default function SlideInImages() {
             entry.target.classList.remove("show");
           }
         });
-
-        // 表示されている画像をカウント
-        imagesRef.current.forEach((img) => {
-          if (img && img.classList.contains("show")) {
-            visibleCount++;
-          }
-        });
-
-        if (containerRef.current) {
-          const baseHeight = window.innerHeight; // 100vh を px で取得
-          const extraHeight = visibleCount > 1 ? (visibleCount - 1) * 350 : 0;
-          containerRef.current.style.height = `${baseHeight + extraHeight}px`;
-        }
       },
-      {
-        threshold: 0.5,
-        rootMargin: "0px 0px 100px 0px",
-      }
+      { threshold: 0.2 }
     );
 
     imagesRef.current.forEach((img) => {
@@ -43,46 +24,35 @@ export default function SlideInImages() {
 
     return () => observer.disconnect();
   }, []);
-  
+
+  const images = [
+    { to: "/atte", src: "/images/atte-index.png", alt: "atte" },
+    { to: "/rese", src: "/images/rese.png", alt: "rese" },
+    { to: "/furima", src: "/images/furima.png", alt: "furima" },
+  ];
 
   return (
-    <div
-      className="work-container-img-all"
-      ref={containerRef}
-      style={{ height: "100vh", transition: "height 0.5s ease" }}
-    >
-
-      <div className="content atte-content">
-        <Link className="link atte-link" to="/atte">
-          <img
-            ref={(el) => { imagesRef.current[0] = el }}
-            className="work-container-img"
-            src="/images/atte-index.png"
-            alt="atte"
-          />
-        </Link>
-      </div>
-      <div className="content rese-content">
-        <Link className="link rese-link" to="/rese">
-          <img
-            ref={(el) => { imagesRef.current[1] = el }}
-            className="work-container-img"
-            src="/images/rese.png"
-            alt="rese"
-          />
-        </Link>
-      </div>
-      <div className="content furima-content">
-        <Link className="link furima-link" to="/furima">
-          <img
-            ref={(el) => { imagesRef.current[2] = el }}
-            className="work-container-img"
-            src="/images/furima.png"
-            alt="furima"
-          />
-        </Link>
-      </div>
-      <div className="content price-content">
+    <div className="work-container-img-all">
+      {images.map((image, index) => {
+        const slideClass = index % 2 === 0 ? "left" : "right"; // 偶数なら左、奇数なら右
+        return (
+          <Link
+            className={`link ${slideClass}-link`}
+            to={image.to}
+            key={index}
+          >
+            <img
+              ref={(el) => {
+                imagesRef.current[index] = el;
+              }}
+              className={`work-container-img ${slideClass}`}
+              src={image.src}
+              alt={image.alt}
+            />
+          </Link>
+        );
+      })}
+      <div className="price-content">
         <Link className="link price-link" to="/price">
           単価のご相談をされたい方はこちら
         </Link>
