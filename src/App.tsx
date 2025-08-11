@@ -66,22 +66,6 @@ const App: React.FC = () => {
           <h1 className="work-container-title">
             WORKS
           </h1>
-        {/* <div className="work-container-img-all">
-          <Link className="link atte-link" to="/atte">
-              <img className="work-container-img" src="/images/atte-index.png" alt="atte" />
-            </Link>
-            <Link className="link rese-link" to="/rese">
-              <img className="work-container-img" src="/images/rese.png" alt="rese" />
-            </Link>
-            <Link className="link furima-link" to="/furima">
-              <img className="work-container-img" src="/images/furima.png" alt="furima" />
-            </Link>
-            <div className="price-content">
-              <Link className="link price-link" to="/price">
-                  単価のご相談をされたい方はこちら
-              </Link>
-            </div>
-          </div> */}
         <SlideInImages />
       </div>
 
