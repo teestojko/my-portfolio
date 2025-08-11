@@ -17,11 +17,24 @@ const ResePage: React.FC = () => {
 
   return (
     <div className="rese">
+
+      <div className="night-ocean">
+        {/* 星空 */}
+        <div className="stars-bg">
+          {[...Array(50)].map((_, i) => (
+            <div
+              key={i}
+              className="star"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+              }}
+            ></div>
+          ))}
+        </div>
+      </div>
+
       <div className="rese-title">飲食店予約アプリ</div>
-      {/* <div className="rese-img-all">
-        <img className="rese-img" src="/images/shop-detail.png" alt="Shop Detail" />
-        <img className="rese-img" src="/images/rese-my-page.png" alt="My Page" />
-      </div> */}
       {/* Swiperで横スクロール */}
         <div className="furima-img-all">
           <Swiper
@@ -30,7 +43,7 @@ const ResePage: React.FC = () => {
             navigation={true}  // クリックでスライド
             grabCursor={false} // カーソル変更を無効化
             modules={[Navigation]} // 遅延読み込みを追加
-        >
+          >
           <SwiperSlide>
             <img className="rese-img" src="/images/rese.png" alt="Rese" />
           </SwiperSlide>
@@ -48,6 +61,13 @@ const ResePage: React.FC = () => {
           </SwiperSlide>
         </Swiper>
       </div>
+
+      <div className="back-button">
+        <button onClick={handleBackButton} className="back-button-link">
+          Back
+        </button>
+      </div>
+
       <div className="rese-text-all">
         <ul className="rese-ul">
           <li className="rese-text-page">飲食店一覧、詳細、レビューページ &マイページ</li>
@@ -66,11 +86,6 @@ const ResePage: React.FC = () => {
           <li className="rese-text">ユーザーにメール送信機能</li>
           <li className="rese-text">店舗作成、変更機能</li>
         </ul>
-      </div>
-      <div className="back-button">
-        <button onClick={handleBackButton} className="back-button-link">
-          Back
-        </button>
       </div>
     </div>
   );

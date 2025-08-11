@@ -56,10 +56,8 @@
 }
 
 .back-button{
-    text-align: center;
-    position: absolute;
-    top: 0%;
-    right: 10%;
+    text-align: end;
+    height: 8%;
 }
 
 .back-button-link {
@@ -79,34 +77,34 @@
 }
 
 .night-ocean {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  overflow: hidden;
-  background: linear-gradient(to top, #38708d, #001a33); /* 夜空っぽいグラデーション */
-  z-index: -1;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+    background: linear-gradient(to top, #38708d, #001a33); /* 夜空っぽいグラデーション */
+    z-index: -1;
 }
 
 /* 星空 */
 .stars-bg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
 }
 
 .star {
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  width: 2px;
-  height: 2px;
-  animation: twinkle 3s infinite ease-in-out;
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    width: 2px;
+    height: 2px;
+    animation: twinkle 3s infinite ease-in-out;
 }
 
 .star:nth-child(odd) { animation-duration: 5s; }
 .star:nth-child(even) { animation-duration: 7s; }
 
 @keyframes twinkle {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.5); }
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
 }

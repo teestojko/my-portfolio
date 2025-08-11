@@ -16,7 +16,23 @@ const AttePage: React.FC = () => {
     };
 
     return (
-        <div className="atte">
+      <div className="atte">
+
+        <div className="night-ocean">
+          {/* 星空 */}
+          <div className="stars-bg">
+            {[...Array(50)].map((_, i) => (
+              <div
+                key={i}
+                className="star"
+                style={{
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+                }}
+              ></div>
+            ))}
+          </div>
+        </div>
         <div className="atte-title">
             勤怠管理アプリ
         </div>
@@ -24,26 +40,32 @@ const AttePage: React.FC = () => {
         {/* Swiperで横スクロール */}
         <div className="atte-img-all">
             <Swiper
-            spaceBetween={10}
-            slidesPerView={1}  // 一度に表示するスライドを1つに固定
-            navigation={true}  // クリックでスライド
-            grabCursor={false} // カーソル変更を無効化
-            modules={[Navigation]} // 遅延読み込みを追加
+              spaceBetween={10}
+              slidesPerView={1}  // 一度に表示するスライドを1つに固定
+              navigation={true}  // クリックでスライド
+              grabCursor={false} // カーソル変更を無効化
+              modules={[Navigation]} // 遅延読み込みを追加
             >
             <SwiperSlide>
-                <img className="atte-img" src="/images/atte-index.png" alt="atte-index" />
+              <img className="atte-img" src="/images/atte-index.png" alt="atte-index" />
             </SwiperSlide>
             <SwiperSlide>
-                <img className="atte-img" src="/images/atte-date-list.png" alt="atte-date-list" />
+              <img className="atte-img" src="/images/atte-date-list.png" alt="atte-date-list" />
             </SwiperSlide>
             <SwiperSlide>
-                <img className="atte-img" src="/images/atte-user-list.png" alt="atte-user-list" />
+              <img className="atte-img" src="/images/atte-user-list.png" alt="atte-user-list" />
             </SwiperSlide>
             <SwiperSlide>
-                <img className="atte-img" src="/images/atte-user-data.png" alt="atte-user-data" />
+              <img className="atte-img" src="/images/atte-user-data.png" alt="atte-user-data" />
             </SwiperSlide>
             </Swiper>
-        </div>
+          </div>
+
+          <div className="back-button">
+            <button onClick={handleBackButton} className="back-button-link">
+            Back
+            </button>
+          </div>
 
         <div className="atte-text-all">
             <ul className="atte-ul">
@@ -55,13 +77,7 @@ const AttePage: React.FC = () => {
             <li className="atte-text">ユーザー別勤怠管理ページ</li>
             </ul>
         </div>
-
-        <div className="back-button">
-            <button onClick={handleBackButton} className="back-button-link">
-            Back
-            </button>
-        </div>
-        </div>
+      </div>
     );
 }
 
