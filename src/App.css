@@ -304,7 +304,7 @@
 .work-container-img.left {
     opacity: 0;
     transform: translateX(-300px);
-    transition: transform 1.6s ease, opacity 0.6s ease;
+    transition: transform 1.2s ease, opacity 0.6s ease;
     margin-left: 60%;
 }
 
@@ -312,7 +312,7 @@
 .work-container-img.right {
     opacity: 0;
     transform: translateX(300px);
-    transition: transform 1.6s ease, opacity 0.6s ease;
+    transition: transform 1.2s ease, opacity 0.6s ease;
     margin-left: 20%;
 }
 
