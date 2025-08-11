@@ -283,7 +283,9 @@
 .work-container-img {
     width: 300px;
     height: 300px;
+    gap: 50px;
     opacity: 0;
+    overflow: visible;
     transform: translateY(50px);
     transition: transform 0.6s ease, opacity 0.6s ease;
 }
@@ -292,6 +294,10 @@
 .work-container-img.show {
     opacity: 1;
     transform: translateY(0);
+
+    .work-section {
+        height: 200vh;
+    }
 }
 
 .work-container-img:hover {
