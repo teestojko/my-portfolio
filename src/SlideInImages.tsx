@@ -43,7 +43,11 @@ export default function SlideInImages() {
   
 
   return (
-    <div className="work-container-img-all">
+    <div
+      className="work-container-img-all"
+      ref={containerRef}
+      style={{ height: "100vh", transition: "height 0.5s ease" }}
+    >
 
       <div className="content atte-content">
         <Link className="link atte-link" to="/atte">
