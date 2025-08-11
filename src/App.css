@@ -303,7 +303,7 @@
 /* 左からスライドインの初期状態 */
 .work-container-img.left {
     opacity: 0;
-    transform: translateX(-300px);
+    transform: translateX(300px);
     transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
@@ -316,8 +316,8 @@
 
 .work-container-img.left.show,
 .work-container-img.right.show {
-  opacity: 1;
-  transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* ホバー時のアニメーションはそのまま */
@@ -400,17 +400,15 @@
     transform: translateY(0); /* 元の位置に戻る */
 }
 
-
-
 .shape {
-  position: absolute;
-  width: 70vmax;
-  height: 70vmax;
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 40%;
-  animation: morph 15s linear infinite alternate, spin 20s linear infinite;
-  pointer-events: none;
-  z-index: 1;
+    position: absolute;
+    width: 70vmax;
+    height: 70vmax;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 40%;
+    animation: morph 15s linear infinite alternate, spin 20s linear infinite;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .shape1 { left: -20vmin; top: -20vmin; }
@@ -418,9 +416,6 @@
 .shape3 { left: 10vmin; top: 60vmin; animation: morph 18s linear infinite alternate, spin 30s linear infinite; }
 .shape4 { right: 15vmin; top: 30vmin; animation: morph 12s linear infinite alternate, spin 24s linear infinite reverse; }
 .shape5 { left: 40vmin; bottom: -10vmin; animation: morph 20s linear infinite alternate, spin 22s linear infinite; }
-
-
-
 
 .work-section,
 .skill-section{
