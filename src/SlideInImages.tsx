@@ -33,7 +33,7 @@ export default function SlideInImages() {
       },
       {
         threshold: 0.5,
-        rootMargin: "0px 0px -10% 0px",
+        rootMargin: "0px 0px -100px 0px",
       }
     );
 
