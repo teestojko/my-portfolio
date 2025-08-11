@@ -36,20 +36,22 @@ export default function SlideInImages() {
       {images.map((image, index) => {
         const slideClass = index % 2 === 0 ? "left" : "right"; // 偶数なら左、奇数なら右
         return (
-          <Link
-            className={`link ${slideClass}-link`}
-            to={image.to}
-            key={index}
-          >
-            <img
-              ref={(el) => {
-                imagesRef.current[index] = el;
-              }}
-              className={`work-container-img ${slideClass}`}
-              src={image.src}
-              alt={image.alt}
-            />
-          </Link>
+          <div>
+            <Link
+              className={`link ${slideClass}-link`}
+              to={image.to}
+              key={index}
+            >
+              <img
+                ref={(el) => {
+                  imagesRef.current[index] = el;
+                }}
+                className={`work-container-img ${slideClass}`}
+                src={image.src}
+                alt={image.alt}
+              />
+            </Link>
+          </div>
         );
       })}
       <div className="price-content">
