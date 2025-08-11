@@ -38,12 +38,6 @@ const App: React.FC = () => {
 
   useScrollEffect(backgroundRef);
 
-  const imageList = [
-    { src: "/images/atte-index.png", alt: "atte" },
-    { src: "/images/rese.png", alt: "rese" },
-    { src: "/images/furima.png", alt: "furima" },
-  ];
-
   return (
     <div className="portfolio">
       <nav className="fixed-menu">
