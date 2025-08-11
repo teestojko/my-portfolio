@@ -287,7 +287,14 @@ const PricePage: React.FC = () => {
     const [activeKey, setActiveKey] = useState<typeof categories[number]["key"]>("crud");
 
     return (
-        <div className="price-page">
+        <div
+            className="price-page"
+            style={{
+                background: `url(${process.env.PUBLIC_URL}/images/noise.png) repeat, 
+                            linear-gradient(135deg, #f9f9f9 0%, #ececec 100%)`,
+                backgroundBlendMode: "overlay"
+            }}
+            >
             <h1>単価一覧</h1>
 
             <div className="category-buttons">
