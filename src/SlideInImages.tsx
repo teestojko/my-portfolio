@@ -1,8 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
-const containerRef = useRef<HTMLDivElement | null>(null);
-
 export default function SlideInImages() {
   const imagesRef = useRef<(HTMLImageElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement | null>(null);
