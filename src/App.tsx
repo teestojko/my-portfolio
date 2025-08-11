@@ -1,11 +1,11 @@
 import React, { useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "./App.css";
 import { useTextAnimation } from "./changeText";
 import MovingCube from "./movingCube";
 import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
 import ProfileChangeText from "./profileChangeText";
+import SlideDisplay from './SlideDisplay';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faJs, faLaravel, faPhp, faDocker,
@@ -66,7 +66,7 @@ const App: React.FC = () => {
           <h1 className="work-container-title">
             WORKS
           </h1>
-        <div className="work-container-img-all">
+        {/* <div className="work-container-img-all">
           <Link className="link atte-link" to="/atte">
               <img className="work-container-img" src="/images/atte-index.png" alt="atte" />
             </Link>
@@ -81,7 +81,8 @@ const App: React.FC = () => {
                   単価のご相談をされたい方はこちら
               </Link>
             </div>
-          </div>
+          </div> */}
+        <SlideDisplay />
       </div>
 
       <div ref={skillRef} className="section skill-section">
