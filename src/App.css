@@ -277,6 +277,8 @@
 
 /* 初期状態（非表示＆下にずらす） */
 .work-container-img {
+    width: 200px;
+    height: 300px;
     opacity: 0;
     transform: translateY(50px);
     transition: transform 0.6s ease, opacity 0.6s ease;
