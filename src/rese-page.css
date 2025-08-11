@@ -8,6 +8,7 @@
     text-align: center;
     font-weight: bolder;
     font-size: 2rem;
+    color: white;
     height: 10%;
     align-content: center;
 }
@@ -64,6 +65,7 @@
 .back-button{
     text-align: end;
     height: 8%;
+    margin-right: 15%;
 }
 
 .back-button-link {
