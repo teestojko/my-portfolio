@@ -38,13 +38,6 @@ export default function SlideInImages({
   return (
     <div
       className="work-container-img-all"
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "space-evenly",
-        gap,
-        width: "100%",
-      }}
     >
       {images.map((image, index) => (
         <img
