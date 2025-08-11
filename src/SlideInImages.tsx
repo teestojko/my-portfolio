@@ -31,7 +31,10 @@ export default function SlideInImages() {
           containerRef.current.style.height = `${baseHeight + extraHeight}px`;
         }
       },
-      { threshold: 0.2 }
+      {
+        threshold: 0.5,
+        rootMargin: "0px 0px -10% 0px",
+      }
     );
 
     imagesRef.current.forEach((img) => {
