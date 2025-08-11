@@ -303,8 +303,9 @@
 /* 左からスライドインの初期状態 */
 .work-container-img.left {
     opacity: 0;
-    transform: translateX(300px);
+    transform: translateX(-300px);
     transition: transform 0.6s ease, opacity 0.6s ease;
+    margin-left: 60%;
 }
 
 /* 右からスライドインの初期状態 */
