@@ -58,8 +58,8 @@
 .back-button{
     text-align: center;
     position: absolute;
-    top: 5%;
-    right: 20%;
+    top: 0%;
+    right: 10%;
 }
 
 .back-button-link {
