@@ -275,7 +275,7 @@
     }
 }
 
-.work-container-img-all{
+/* .work-container-img-all{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -290,7 +290,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     gap: 50px;
-}
+} */
 
 .work-container-img.show {
     opacity: 1;
