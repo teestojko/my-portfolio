@@ -5,7 +5,10 @@
     font-family: "Segoe UI", Roboto, sans-serif;
     padding: 20px;
     margin: 0 auto;
-    color: #333;
+    background:
+        url("/images/noise.png") repeat, /* ノイズ画像を全面に敷く */
+        linear-gradient(135deg, #f9f9f9 0%, #ececec 100%); /* 上に色のグラデーション */
+    background-blend-mode: overlay; /* ノイズとグラデを馴染ませる */
 }
 
 .price-page h1 {
