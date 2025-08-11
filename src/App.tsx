@@ -5,7 +5,7 @@ import MovingCube from "./movingCube";
 import { randomizeLights } from "./lightEffect";
 import { useScrollEffect } from "./scroll";
 import ProfileChangeText from "./profileChangeText";
-import SlideDisplay from './SlideDisplay';
+import SlideInImages from "./SlideInImages";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faJs, faLaravel, faPhp, faDocker,
@@ -37,6 +37,12 @@ const App: React.FC = () => {
   }, []);
 
   useScrollEffect(backgroundRef);
+
+  const imageList = [
+    { src: "/images/atte-index.png", alt: "atte" },
+    { src: "/images/rese.png", alt: "rese" },
+    { src: "/images/furima.png", alt: "furima" },
+  ];
 
   return (
     <div className="portfolio">
@@ -82,7 +88,12 @@ const App: React.FC = () => {
               </Link>
             </div>
           </div> */}
-        <SlideDisplay />
+        <SlideInImages
+          images={imageList}
+          gap="50px"
+          width="400px"
+          height="350px"
+        />
       </div>
 
       <div ref={skillRef} className="section skill-section">
