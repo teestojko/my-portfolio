@@ -275,9 +275,13 @@
     }
 }
 
+.content {
+    width: 100%;
+}
+
 /* 初期状態（非表示＆下にずらす） */
 .work-container-img {
-    width: 200px;
+    width: 300px;
     height: 300px;
     opacity: 0;
     transform: translateY(50px);

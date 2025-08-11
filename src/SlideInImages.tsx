@@ -27,31 +27,38 @@ export default function SlideInImages() {
 
   return (
     <div className="work-container-img-all">
-      <Link className="link atte-link" to="/atte">
-        <img
-          ref={(el) => { imagesRef.current[0] = el }}
-          className="work-container-img"
-          src="/images/atte-index.png"
-          alt="atte"
-        />
-      </Link>
-      <Link className="link rese-link" to="/rese">
-        <img
-          ref={(el) => { imagesRef.current[1] = el }}
-          className="work-container-img"
-          src="/images/rese.png"
-          alt="rese"
-        />
-      </Link>
-      <Link className="link furima-link" to="/furima">
-        <img
-          ref={(el) => { imagesRef.current[2] = el }}
-          className="work-container-img"
-          src="/images/furima.png"
-          alt="furima"
-        />
-      </Link>
-      <div className="price-content">
+
+      <div className="content atte-content">
+        <Link className="link atte-link" to="/atte">
+          <img
+            ref={(el) => { imagesRef.current[0] = el }}
+            className="work-container-img"
+            src="/images/atte-index.png"
+            alt="atte"
+          />
+        </Link>
+      </div>
+      <div className="content rese-content">
+        <Link className="link rese-link" to="/rese">
+          <img
+            ref={(el) => { imagesRef.current[1] = el }}
+            className="work-container-img"
+            src="/images/rese.png"
+            alt="rese"
+          />
+        </Link>
+      </div>
+      <div className="content furima-content">
+        <Link className="link furima-link" to="/furima">
+          <img
+            ref={(el) => { imagesRef.current[2] = el }}
+            className="work-container-img"
+            src="/images/furima.png"
+            alt="furima"
+          />
+        </Link>
+      </div>
+      <div className="content price-content">
         <Link className="link price-link" to="/price">
           単価のご相談をされたい方はこちら
         </Link>
