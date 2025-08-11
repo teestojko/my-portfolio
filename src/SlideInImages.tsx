@@ -36,7 +36,7 @@ export default function SlideInImages() {
       {images.map((image, index) => {
         const slideClass = index % 2 === 0 ? "left" : "right"; // 偶数なら左、奇数なら右
         return (
-          <div>
+          <div className="work-container-img-item">
             <Link
               className={`link ${slideClass}-link`}
               to={image.to}
