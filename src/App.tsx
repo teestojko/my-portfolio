@@ -88,12 +88,6 @@ const App: React.FC = () => {
               </Link>
             </div>
           </div> */}
-        <SlideInImages
-          images={imageList}
-          gap="50px"
-          width="400px"
-          height="350px"
-        />
       </div>
 
       <div ref={skillRef} className="section skill-section">
