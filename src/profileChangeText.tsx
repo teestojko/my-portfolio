@@ -7,7 +7,7 @@ const ProfileChangeText: React.FC = () => {
         "バックエンドのPHP・Laravelから、フロントエンドのReact・TypeScriptまで幅広く対応可能です。",
         "また、Docker・Git・MySQL・AWS を駆使した開発環境の構築やデプロイにも精通しています。",
         "✨アイデアを形にするお手伝いをいたします✨",
-        "💻 フルスタックエンジニア｜岸 哲也",
+        "💻 webエンジニア 岸 哲也",
     ];
 
     const textRef = useRef<HTMLParagraphElement | null>(null);
