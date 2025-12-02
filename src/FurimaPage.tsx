@@ -60,7 +60,7 @@ const FurimaPage: React.FC = () => {
             </SwiperSlide>
           </Swiper>
         </div>
-      
+
         <div className="back-button">
           <button onClick={handleBackButton} className="back-button-link">
             Back

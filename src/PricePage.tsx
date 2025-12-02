@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./price-page.css";
+import { useNavigate } from "react-router-dom";
 
 const categories = [
     { key: "crud", label: "💻 CRUD機能" },
@@ -286,6 +287,13 @@ const priceData = {
 const PricePage: React.FC = () => {
     const [activeKey, setActiveKey] = useState<typeof categories[number]["key"]>("crud");
 
+    const navigate = useNavigate();  // navigate関数を使用
+
+    // 戻るボタンのクリックハンドラー
+    const handleBackButton = () => {
+        navigate(-1);  // 前のページに戻る
+    };
+
     return (
         <div
             className="price-page"
@@ -342,6 +350,13 @@ const PricePage: React.FC = () => {
                     ))}
                 </tbody>
             </table>
+
+            <div className="back-button">
+                <button onClick={handleBackButton} className="back-button-link">
+                    Back
+                </button>
+            </div>
+
         </div>
     );
 };

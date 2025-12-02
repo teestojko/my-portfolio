@@ -96,6 +96,28 @@
     color: #3b82f6;
 }
 
+.back-button {
+    text-align: end;
+    height: 8%;
+    margin-right: 15%;
+}
+
+.back-button-link {
+    background: #6e97ca;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.back-button-link:hover {
+    background: #3d78c1;
+    transition: opacity 1.5s ease-in-out;
+}
+
 @media (max-width: 768px) {
     .price-table th,
     .price-table td {
