@@ -143,7 +143,7 @@ const App: React.FC = () => {
           <div>
             <h1 className="contact-title">Contact</h1>
             <div>
-              Email: <a className="contact-mail" href="mailto:7195.teesu.1031@gmail.com">7195.teesu.1031@gmail.com</a>
+              Email: <a className="contact-mail" href="mailto:info@ti-s-webtech.com">info@ti-s-webtech.com</a>
             </div>
           </div>
         </div>
