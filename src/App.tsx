@@ -17,7 +17,7 @@ const App: React.FC = () => {
   const backgroundRef = useRef<HTMLDivElement | null>(null);
   const worksRef = useRef<HTMLDivElement | null>(null);
   const skillRef = useRef<HTMLDivElement | null>(null);
-  const contactRef = useRef<HTMLDivElement | null>(null);
+  // const contactRef = useRef<HTMLDivElement | null>(null);
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
     if (ref.current) {
@@ -29,7 +29,7 @@ const App: React.FC = () => {
   };
 
   // カスタムフックでテキストアニメーションを制御
-  const animatedText: string = useTextAnimation("portfolio", "web engineer\nTetsuya Kishi", 4000, 100);
+  const animatedText: string = useTextAnimation("portfolio", "web engineer\nT K", 4000, 100);
 
   useEffect(() => {
     // 光のエフェクトを初期化
@@ -45,7 +45,7 @@ const App: React.FC = () => {
           <li onClick={() => scrollToSection(backgroundRef)}>Profile</li>
           <li onClick={() => scrollToSection(worksRef)}>Works</li>
           <li onClick={() => scrollToSection(skillRef)}>Skill</li>
-          <li onClick={() => scrollToSection(contactRef)}>Contact</li>
+          {/* <li onClick={() => scrollToSection(contactRef)}>Contact</li> */}
         </ul>
       </nav>
       <div className="scene-container">
@@ -138,7 +138,7 @@ const App: React.FC = () => {
         </div>
       </div>
 
-      <div className="contact">
+      {/* <div className="contact">
         <div ref={contactRef} className="section contact-section">
           <div>
             <h1 className="contact-title">Contact</h1>
@@ -147,7 +147,7 @@ const App: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
