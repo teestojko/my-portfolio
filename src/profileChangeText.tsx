@@ -42,7 +42,7 @@ const ProfileChangeText: React.FC = () => {
                     className={`fade-in-text ${isVisible ? "visible" : ""}`}
                     style={{
                         display: "block",
-                        transitionDelay: `${index * 3}s`, // 各行に3秒ずつ遅らせてフェードイン
+                        transitionDelay: `${index * 1}s`, // 各行に3秒ずつ遅らせてフェードイン
                         marginBottom: index === 2 ? "3rem" : "0",
                     }}
                 >
