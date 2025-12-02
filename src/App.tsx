@@ -29,7 +29,7 @@ const App: React.FC = () => {
   };
 
   // カスタムフックでテキストアニメーションを制御
-  const animatedText: string = useTextAnimation("portfolio", "web engineer\nT K", 4000, 100);
+  const animatedText: string = useTextAnimation("portfolio", "web engineer\nT K", 3000, 100);
 
   useEffect(() => {
     // 光のエフェクトを初期化
