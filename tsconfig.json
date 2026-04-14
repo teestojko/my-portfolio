@@ -10,16 +10,16 @@
 
         "esModuleInterop": true,
 
-        "moduleResolution": "node",
+        "moduleResolution": "bundler",
 
         "skipLibCheck": true,
 
         "forceConsistentCasingInFileNames": true,
 
-        "baseUrl": "./src",
-
         "paths": {
-            "@/*": ["*"]
+            "@/*": [
+                "./src/*"
+            ]
         }
     },
 
