@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from "react";
 const ProfileChangeText: React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);
     const profileTexts: string[] = [
-        "プログラミングスクールで培った確かなスキルを活かし、現在フルスタックエンジニアとして活動中です。",
         "バックエンドのPHP・Laravelから、フロントエンドのReact・TypeScriptまで幅広く対応可能です。",
         "また、Docker・Git・MySQL・AWS を駆使した開発環境の構築やデプロイにも精通しています。",
         "✨アイデアを形にするお手伝いをいたします✨",
